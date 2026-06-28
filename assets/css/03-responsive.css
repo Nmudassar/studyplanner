@@ -1,0 +1,190 @@
+/* =====================================
+   Responsive CSS
+   StudySmart Planner
+===================================== */
+
+/* =====================================
+   Large Tablets (1024px and below)
+===================================== */
+
+@media screen and (max-width: 1024px){
+
+    /* Reduce page width */
+    .container{
+        width: 95%;
+    }
+
+    /* Hero heading */
+    h1{
+        font-size: 48px;
+    }
+
+    /* Section headings */
+    h2{
+        font-size: 32px;
+    }
+
+    /* Feature section becomes 2 columns */
+    .feature-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+
+    /* Footer layout */
+    .footer-content{
+        gap: 40px;
+    }
+
+}
+
+
+/* =====================================
+   Tablets (768px and below)
+===================================== */
+
+@media screen and (max-width:768px){
+
+    /* Header becomes vertical */
+    header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Navigation becomes vertical */
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    /* Hero section */
+    .hero-section{
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    h1{
+        font-size: 42px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    /* Hero buttons stack */
+    .hero-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Feature cards */
+    .feature-container{
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+}
+
+
+/* =====================================
+   Mobile Devices (576px and below)
+===================================== */
+
+@media screen and (max-width:576px){
+
+    /* Reduce page padding */
+    .container{
+        width: 95%;
+    }
+
+    /* Headings */
+    h1{
+        font-size: 34px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    /* Paragraphs */
+    p{
+        font-size: 15px;
+    }
+
+    /* Buttons */
+    .btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero section */
+    .hero-section{
+        padding: 40px 15px;
+    }
+
+    /* Feature cards */
+    .feature-card{
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer{
+        padding: 40px 20px;
+    }
+
+}
+
+
+/* =====================================
+   Small Mobile Devices (400px and below)
+===================================== */
+
+@media screen and (max-width:400px){
+
+    /* Main heading */
+    h1{
+        font-size: 28px;
+    }
+
+    /* Section heading */
+    h2{
+        font-size: 22px;
+    }
+
+    /* Small heading */
+    h3{
+        font-size: 18px;
+    }
+
+    /* Navigation links */
+    nav ul li{
+        font-size: 15px;
+    }
+
+    /* Hero buttons */
+    .btn{
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    /* Footer text */
+    footer{
+        font-size: 14px;
+    }
+
+}
