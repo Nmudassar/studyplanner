@@ -3,95 +3,75 @@
 ========================= */
 
 .hero{
+    width: 100%;
+    min-height: 80vh;
+    margin: 0;
+    padding: 80px 8%;
+    background-color: rgb(227, 237, 115);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    max-width: 1200px;
-    min-height: 85vh;
-
-    margin: 0 auto;
-
-    padding: 120px 40px 80px;
-
-    gap: 70px;
+    gap: 60px;
 }
 
-/* Left Column */
-
+/* Left column */
 .hero-content{
     flex: 1;
+    min-width: 0px;
 }
 
+/* Badge */
 .hero-badge{
     display: inline-block;
-
     padding: 10px 20px;
-
     margin-bottom: 30px;
-
     border-radius: 30px;
-
-    background: white;
-
+    background: var(--white);
     border: 2px solid #dbeafe;
-
     font-weight: 600;
-
     color: var(--primary-color);
 }
 
+/* Heading */
 .hero-content h2{
     font-size: 58px;
-
-    color: #10213f;
-
     line-height: 1.1;
-
     margin-bottom: 25px;
-
     text-align: left;
+    color: black;
 }
 
+/* Paragraph */
 .hero-content p{
+    max-width: 550px;
     font-size: 20px;
-
-    color: #475569;
-
-    line-height: 1.7;
-
+    line-height: 1.8;
     margin-bottom: 35px;
-
     text-align: left;
+    color: black;
 }
 
 /* Buttons */
-
 .hero-btn{
     display: flex;
-
     gap: 20px;
 }
 
-/* Right Column */
-
+/* Right column */
 .hero-image{
     flex: 1;
-
+    flex-shrink: 0;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 }
 
+/* Hero image */
 .hero-image img{
-
     width: 100%;
-
-    max-width: 550px;
-
+    min-width: 0px;
     height: auto;
+    object-fit: contain;
+    border-radius: 20px;
 }
-
-

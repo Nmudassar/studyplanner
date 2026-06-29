@@ -9,35 +9,50 @@
 
 @media all and (max-width: 1024px){
 
-    /* Reduce page width */
     .container{
         width: 95%;
     }
 
-    /* Hero heading */
     h1{
         font-size: 48px;
     }
 
-    /* Section headings */
     h2{
         font-size: 32px;
     }
 
-    /* Feature section becomes 2 columns */
+    .hero{
+        padding: 70px 5%;
+        gap: 40px;
+    }
+
+    .hero-content{
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .hero-content h2{
+        font-size: 48px;
+    }
+
+    .hero-content p{
+        font-size: 18px;
+    }
+
+    .hero-image img{
+        max-width: 520px;
+    }
+
     .feature-container{
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 20px;
     }
 
-    /* Footer layout */
     .footer-content{
         gap: 40px;
     }
-
 }
-
 
 /* =====================================
    Tablets (768px and below)
@@ -45,7 +60,6 @@
 
 @media all and (max-width:768px){
 
-    /* Header becomes vertical */
     header{
         flex-direction: column;
         align-items: center;
@@ -53,7 +67,17 @@
         padding: 20px;
     }
 
-    /* Navigation becomes vertical */
+    .navbar{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-left: 0;
+    }
+
+    .header-buttons{
+        justify-content: center;
+    }
+
     nav ul{
         display: flex;
         flex-direction: column;
@@ -61,10 +85,47 @@
         margin-top: 20px;
     }
 
-    /* Hero section */
-    .hero-section{
+    .hero{
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 50px 20px;
+        min-height: auto;
+        padding: 60px 25px;
+        gap: 40px;
+        overflow: hidden;
+    }
+
+    .hero-content{
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .hero-content h2,
+    .hero-content p{
+        text-align: center;
+    }
+
+    .hero-content h2{
+        font-size: 42px;
+    }
+
+    .hero-btn,
+    .hero-buttons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-image{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-image img{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
     }
 
     h1{
@@ -75,27 +136,35 @@
         font-size: 30px;
     }
 
-    /* Hero buttons stack */
-    .hero-buttons{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Feature cards */
     .feature-container{
         grid-template-columns: 1fr;
     }
 
-    /* Footer */
+    .feature-strip{
+        grid-template-columns: 1fr;
+        margin: 30px auto 50px;
+    }
+
+    .feature-item{
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+    }
+
+    .feature-item:last-child{
+        border-bottom: none;
+    }
+
     .footer-content{
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
+    .social-icons{
+        justify-content: center;
+    }
 }
-
 
 /* =====================================
    Mobile Devices (576px and below)
@@ -103,12 +172,10 @@
 
 @media all and (max-width:576px){
 
-    /* Reduce page padding */
     .container{
         width: 95%;
     }
 
-    /* Headings */
     h1{
         font-size: 34px;
     }
@@ -121,34 +188,73 @@
         font-size: 20px;
     }
 
-    /* Paragraphs */
     p{
         font-size: 15px;
     }
 
-    /* Buttons */
+    .navbar{
+        gap: 14px;
+    }
+
+    .navbar a{
+        font-size: 15px;
+    }
+
+    .header-buttons{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .login-btn,
+    .signup-btn{
+        width: 150px;
+    }
+
     .btn{
         width: 100%;
         text-align: center;
     }
 
-    /* Hero section */
-    .hero-section{
-        padding: 40px 15px;
+    .hero{
+        padding: 45px 18px;
     }
 
-    /* Feature cards */
+    .hero-content h2{
+        font-size: 34px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-badge{
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .hero-btn{
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-btn button{
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .hero-image img{
+        max-width: 360px;
+    }
+
     .feature-card{
         padding: 20px;
     }
 
-    /* Footer */
     footer{
         padding: 40px 20px;
     }
-
 }
-
 
 /* =====================================
    Small Mobile Devices (400px and below)
@@ -156,35 +262,56 @@
 
 @media all and (max-width:400px){
 
-    /* Main heading */
     h1{
         font-size: 28px;
     }
 
-    /* Section heading */
     h2{
         font-size: 22px;
     }
 
-    /* Small heading */
     h3{
         font-size: 18px;
     }
 
-    /* Navigation links */
+    .logo-container{
+        font-size: 28px;
+    }
+
+    .subtitle{
+        font-size: 14px;
+    }
+
+    .navbar{
+        gap: 10px;
+    }
+
+    .navbar a{
+        font-size: 14px;
+    }
+
     nav ul li{
         font-size: 15px;
     }
 
-    /* Hero buttons */
     .btn{
         font-size: 14px;
         padding: 12px;
     }
 
-    /* Footer text */
+    .hero{
+        padding: 35px 15px;
+    }
+
+    .hero-content h2{
+        font-size: 30px;
+    }
+
+    .hero-image img{
+        max-width: 300px;
+    }
+
     footer{
         font-size: 14px;
     }
-
 }

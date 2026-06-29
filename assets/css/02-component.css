@@ -1,6 +1,3 @@
-/* =========================
-   Header / Navbar
-========================= */
 
 /* =========================
    Header / Navbar
@@ -96,7 +93,7 @@ header{
 }
 
 .login-btn{
-    background: white;
+    background: rgb(255, 255, 255);
     color: var(--primary-color);
     border: none;
     padding: 12px 28px;
