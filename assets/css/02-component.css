@@ -40,25 +40,50 @@ header{
     margin-bottom: 5px;
 }
 
-.logo p{
-    color: var(--white);
+.subtitle {
+    color: var(--dark-blue);
     font-size: 16px;
 }
 
-.navbar ul{
+/* Navigation container */
+.navbar {
     display: flex;
-    gap: 30px;
     align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.navbar ul li a{
-    color: var(--white);
-    font-weight: 500;
+/* Navigation links */
+.navbar a{
+    position: relative;
     font-size: 18px;
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    gap: 50px;
 }
 
-.navbar ul li a:hover{
-    color: #ffb703;
+/* Underline hover effect */
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: var(--dark-blue);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+/* Show underline on hover */
+.navbar a:hover::after{
+    transform: scaleX(1);
 }
 
 /* =========================
