@@ -17,8 +17,8 @@
     );
 
     /* Text colours */
-    --dark-blue: black;
-    --text-color: BLACK;
+    --dark-blue: white;
+    --text-color: white;
 
     /* Background colours */
     --light-bg: #eef7ff;
@@ -80,20 +80,20 @@ h1,
 h2,
 h3{
     color: var(--dark-blue);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 h1{
-    font-size: 56px;
+    font-size: 40px;
     line-height: 1.1;
 }
 
 h2{
-    font-size: 36px;
+    font-size: 30px;
 }
 
 h3{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 /* =========================
