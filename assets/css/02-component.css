@@ -2,37 +2,62 @@
    Header / Navbar
 ========================= */
 
+/* =========================
+   Header / Navbar
+========================= */
+
 header{
-    background: linear-gradient(135deg, #300a80, #6C2CF6, #c6a9f7);
+    position: sticky;        /* Or fixed if you want it to stay at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #5f9f16 0%,
+        #80B918 50%,
+        #9FD52A 100%
+    );
+
     padding: 20px 8%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+    z-index: 1000;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
 }
 
-header h1{
-    color: white;
+.logo h1{
+    color: var(--white);
     font-size: 28px;
     margin-bottom: 5px;
 }
 
-header p{
-    color: white;
+.logo p{
+    color: var(--white);
     font-size: 16px;
 }
 
-nav ul{
+.navbar ul{
     display: flex;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
 }
 
-nav ul li a{
-    color: white;
+.navbar ul li a{
+    color: var(--white);
     font-weight: 500;
+    font-size: 18px;
 }
 
-nav ul li a:hover{
+.navbar ul li a:hover{
     color: #ffb703;
 }
 
@@ -40,42 +65,56 @@ nav ul li a:hover{
    Buttons
 ========================= */
 
-button,
-.btn{
-    padding: 12px 24px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+.header-buttons{
+    display:flex;
+    gap:15px;
 }
 
-.btn-primary,
-header button:first-of-type{
-    background: #0b74ff;
-    color: white;
-}
-
-.btn-secondary,
-header button:last-of-type{
+.login-btn{
     background: white;
-    color: #300a80;
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
 }
 
+.signup-btn{
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-btn:hover{
+    background: var(--secondary-color);
+    color:white;
+}
+
+.signup-btn:hover{
+    background:#5d8b14;
+}
 /* =========================
-   Feature Cards
+   Feature Strip
 ========================= */
 
 .feature-strip{
     width: 92%;
     max-width: 1200px;
     margin: -50px auto 60px;
-    background: white;
+    background: var(--white);
     border-radius: 24px;
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+    box-shadow: var(--shadow);
     position: relative;
     z-index: 10;
 }
@@ -87,13 +126,13 @@ header button:last-of-type{
 }
 
 .feature-item h3{
-    color: #10213f;
+    color: var(--dark-blue);
     font-size: 20px;
     margin-bottom: 8px;
 }
 
 .feature-item p{
-    color: #64748b;
+    color: var(--text-color);
     font-size: 15px;
 }
 
@@ -102,8 +141,8 @@ header button:last-of-type{
 ========================= */
 
 footer{
-    background: #300a80;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 40px 8% 20px;
 }
 
@@ -114,13 +153,13 @@ footer{
 }
 
 .footer-section h3{
-    color: white;
+    color: var(--dark-blue);
     margin-bottom: 15px;
 }
 
 .footer-section p,
 .footer-section li{
-    color: white;
+    color: var(--white);
     margin-bottom: 8px;
 }
 
@@ -130,7 +169,7 @@ footer{
 }
 
 .social-icons a{
-    color: white;
+    color: var(--white);
     font-size: 22px;
 }
 

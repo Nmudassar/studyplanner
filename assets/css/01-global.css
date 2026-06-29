@@ -2,231 +2,142 @@
    1. CSS Variables
 ========================= */
 
-/* :root stores reusable variables that can be used anywhere in the project */
 :root{
+    /* Main brand colours */
+    --primary-color: #80B918;
+    --secondary-color: #BFD200;
+    --light-yellow: #EEEF20;
 
-    /* Main blue colour used for buttons and links */
-    --primary-color: #0b74ff;
+    /* Header gradient */
+    --main-gradient: linear-gradient(
+        135deg,
+        #80B918,
+        #BFD200 50%,
+        #EEEF20 100%
+    );
 
-    /* Dark blue colour used for headings */
-    --dark-blue: #10213f;
+    /* Text colours */
+    --dark-blue: WHITE;
+    --text-color: BLACK;
 
-    /* Default text colour for paragraphs */
-    --text-color: #334155;
-
-    /* Light background colour used across pages */
+    /* Background colours */
     --light-bg: #eef7ff;
-
-    /* Pure white colour */
     --white: #ffffff;
 
-    /* Light grey colour for borders */
+    /* Border and shadow */
     --border-color: #e5e7eb;
-
-    /* Standard shadow used on cards and containers */
     --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-
 
 /* =========================
    2. Reset
 ========================= */
 
-/* Select every HTML element */
 *{
-
-    /* Remove the browser's default outside spacing */
     margin: 0;
-
-    /* Remove the browser's default inside spacing */
     padding: 0;
-
-    /* Include padding and border inside the element's width */
     box-sizing: border-box;
 }
-
 
 /* =========================
    3. Base Page Style
 ========================= */
 
-/* Apply styles to the entire HTML document */
 html{
-
-    /* Make scrolling between sections smooth */
     scroll-behavior: smooth;
 }
 
-/* Apply styles to the whole webpage */
 body{
-
-    /* Default font for every page */
     font-family: Arial, Helvetica, sans-serif;
-
-    /* Default background colour */
     background: var(--light-bg);
-
-    /* Default text colour */
     color: var(--text-color);
-
-    /* Increase space between lines of text */
     line-height: 1.6;
 }
-
 
 /* =========================
    4. Common Elements
 ========================= */
 
-/* Apply to every image */
 img{
-
-    /* Prevent images from becoming wider than their container */
     max-width: 100%;
-
-    /* Removes small white space below images */
     display: block;
 }
 
-/* Apply to every hyperlink */
 a{
-
-    /* Remove the default underline */
     text-decoration: none;
-
-    /* Inherit the colour from the parent element */
     color: inherit;
 }
 
-/* Apply to every unordered and ordered list */
 ul{
-
-    /* Remove default bullet points */
     list-style: none;
 }
-
 
 /* =========================
    5. Headings
 ========================= */
 
-/* Apply the same styles to all heading levels */
 h1,
 h2,
 h3{
-
-    /* Set heading colour */
     color: var(--dark-blue);
-
-    /* Make headings bold */
     font-weight: 700;
 }
 
-/* Main page heading */
 h1{
-
-    /* Large font size */
     font-size: 56px;
-
-    /* Reduce space between multiple lines */
     line-height: 1.1;
 }
 
-/* Section heading */
 h2{
-
-    /* Medium heading size */
     font-size: 36px;
 }
 
-/* Small heading */
 h3{
-
-    /* Card heading size */
     font-size: 22px;
 }
-
 
 /* =========================
    6. Reusable Container
 ========================= */
 
-/* General container used throughout the website */
 .container{
-
-    /* Container occupies 90% of the screen */
     width: 90%;
-
-    /* Prevent container becoming too wide */
     max-width: 1200px;
-
-    /* Centre the container horizontally */
     margin: 0 auto;
 }
-
 
 /* =========================
    7. Common Buttons
 ========================= */
 
-/* Base button style */
 .btn{
-
-    /* Display like a block but remain inline */
     display: inline-block;
-
-    /* Vertical and horizontal spacing inside button */
     padding: 12px 28px;
-
-    /* Rounded corners */
     border-radius: 10px;
-
-    /* Semi-bold text */
     font-weight: 600;
-
-    /* Change mouse cursor when hovering */
     cursor: pointer;
-
-    /* Remove default border */
     border: none;
 }
 
-/* Filled blue button */
 .btn-primary{
-
-    /* Blue background */
     background: var(--primary-color);
-
-    /* White text */
     color: var(--white);
 }
 
-/* Outline button */
 .btn-outline{
-
-    /* Blue border */
     border: 2px solid var(--primary-color);
-
-    /* Blue text */
     color: var(--primary-color);
-
-    /* Transparent background */
     background: transparent;
 }
-
 
 /* =========================
    8. Utility Classes
 ========================= */
 
-/* Centre text horizontally */
 .text-center{
-
     text-align: center;
 }
 
-/* Add equal spacing above and below sections */
 .section-padding{
-
     padding: 80px 0;
 }
