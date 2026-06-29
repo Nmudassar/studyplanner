@@ -7,7 +7,7 @@
    Large Tablets (1024px and below)
 ===================================== */
 
-@media screen and (max-width: 1024px){
+@media all and (max-width: 1024px){
 
     /* Reduce page width */
     .container{
@@ -43,7 +43,7 @@
    Tablets (768px and below)
 ===================================== */
 
-@media screen and (max-width:768px){
+@media all and (max-width:768px){
 
     /* Header becomes vertical */
     header{
@@ -101,7 +101,7 @@
    Mobile Devices (576px and below)
 ===================================== */
 
-@media screen and (max-width:576px){
+@media all and (max-width:576px){
 
     /* Reduce page padding */
     .container{
@@ -154,7 +154,7 @@
    Small Mobile Devices (400px and below)
 ===================================== */
 
-@media screen and (max-width:400px){
+@media all and (max-width:400px){
 
     /* Main heading */
     h1{

@@ -1,0 +1,140 @@
+/* =========================
+   Header / Navbar
+========================= */
+
+header{
+    background: linear-gradient(135deg, #300a80, #6C2CF6, #c6a9f7);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p{
+    color: white;
+    font-size: 16px;
+}
+
+nav ul{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav ul li a{
+    color: white;
+    font-weight: 500;
+}
+
+nav ul li a:hover{
+    color: #ffb703;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+button,
+.btn{
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary,
+header button:first-of-type{
+    background: #0b74ff;
+    color: white;
+}
+
+.btn-secondary,
+header button:last-of-type{
+    background: white;
+    color: #300a80;
+}
+
+/* =========================
+   Feature Cards
+========================= */
+
+.feature-strip{
+    width: 92%;
+    max-width: 1200px;
+    margin: -50px auto 60px;
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+    position: relative;
+    z-index: 10;
+}
+
+.feature-item{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.feature-item h3{
+    color: #10213f;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.feature-item p{
+    color: #64748b;
+    font-size: 15px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    background: #300a80;
+    color: white;
+    padding: 40px 8% 20px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-section h3{
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section li{
+    color: white;
+    margin-bottom: 8px;
+}
+
+.social-icons{
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a{
+    color: white;
+    font-size: 22px;
+}
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 25px;
+}
