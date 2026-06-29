@@ -9,12 +9,7 @@ header{
     left: 0;
     width: 100%;
 
-    background: linear-gradient(
-        135deg,
-        #5f9f16 0%,
-        #80B918 50%,
-        #9FD52A 100%
-    );
+    background: var(--main-gradient);
 
     padding: 20px 8%;
 

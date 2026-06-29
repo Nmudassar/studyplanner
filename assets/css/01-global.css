@@ -4,16 +4,16 @@
 
 :root{
     /* Main brand colours */
-    --primary-color: #80B918;
-    --secondary-color: #BFD200;
-    --light-yellow: #EEEF20;
+    --primary-color: #03045E;
+    --secondary-color: #00B4D8;
+    --light-yellow: #90E0EF;
 
     /* Header gradient */
     --main-gradient: linear-gradient(
         135deg,
-        #6b9d0e,
-        #BFD200 50%,
-        #EEEF20 100%
+        #03045E,
+        #00B4D8 50%,
+        #90E0EF 100%
     );
 
     /* Text colours */
