@@ -1,1 +1,97 @@
-Z
+/* =========================
+   Hero Section
+========================= */
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    min-height: 85vh;
+
+    margin: 0 auto;
+
+    padding: 120px 40px 80px;
+
+    gap: 70px;
+}
+
+/* Left Column */
+
+.hero-content{
+    flex: 1;
+}
+
+.hero-badge{
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    margin-bottom: 30px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    border: 2px solid #dbeafe;
+
+    font-weight: 600;
+
+    color: var(--primary-color);
+}
+
+.hero-content h2{
+    font-size: 58px;
+
+    color: #10213f;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+}
+
+.hero-content p{
+    font-size: 20px;
+
+    color: #475569;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+    text-align: left;
+}
+
+/* Buttons */
+
+.hero-btn{
+    display: flex;
+
+    gap: 20px;
+}
+
+/* Right Column */
+
+.hero-image{
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.hero-image img{
+
+    width: 100%;
+
+    max-width: 550px;
+
+    height: auto;
+}
+
+
