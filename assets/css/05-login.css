@@ -1,47 +1,106 @@
 body{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     text-align: center;
+    background: var(--main-gradient);
 }
 .wrapper{
+    position: relative;
+    width: 420px;
+    height: 70vh;
+    margin: 0 auto;
+    padding: 20px;
+
+    background: var(--primary-color);
+    border-radius: 12px;
     box-sizing: border-box;
-    width: 100%; /* Makes the container span the full browser width */
-    height: 100vh;
-    padding: 100px;
+    z-index: 1;
+}
+
+/* Register custom property */
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Login / Signup Wrapper */
+.wrapper{
+    position: relative;
+    width: 420px;
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--primary-color);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Animated Border */
+.wrapper::before{
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 0 20px 20px 0;
-    transform: translate(-50%, -50%);
-    background: var(--main-gradient);
+    inset: -3px;
+
+    background: conic-gradient(
+        from var(--angle),
+        #03045E,
+        #00d8b4,
+        #b113ac,
+        #00B4D8,
+        #03045E
+    );
+
+    border-radius: 14px;
+    z-index: -2;
+
+    animation: spin 4s linear infinite;
+}
+
+/* Covers the middle so only the border is visible */
+.wrapper::after{
+    content: "";
+    position: absolute;
+    inset: 3px;
+
+    background: var(--primary-color);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+/* Border Rotation */
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+
+    to{
+        --angle: 360deg;
+    }
 }
 /*================
 Form Heading
 =================*/
 .wrapper h1{
-    font-size: 38px;
-    margin-bottom: 30px;
+    font-size: 30px;    /*heading size*/
+    margin-bottom: 20px; 
     position: relative;
 }
 
 /*  underline below heading */
-
 .wrapper h1::after{
-
     content: '';                     /* Creates pseudo-element */
-
-    width: 300px;                     /* Underline width */
-
+    width: 100px;                     /* Underline width */
     height: 4px;                     /* Underline thickness */
-
     background: white;
-
-    position: absolute;              /* Positions underline relative to heading */
-
+    position: absolute;   /* Positions underline relative to heading */
     left: 50%;                       /* Centers underline */
-
-    bottom: -12px;                   /* Places underline below heading */
-
+    bottom: -12px;                 /* Places underline below heading */
     transform: translateX(-50%);     /* Perfect horizontal centering */
-
     border-radius: 15px;             /* Rounded underline */
+}
+.wrapper .i{
+    width: 50px;
 }
