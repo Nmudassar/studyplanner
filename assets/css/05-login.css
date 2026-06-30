@@ -14,3 +14,34 @@ body{
     transform: translate(-50%, -50%);
     background: var(--main-gradient);
 }
+/*================
+Form Heading
+=================*/
+.wrapper h1{
+    font-size: 38px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/*  underline below heading */
+
+.wrapper h1::after{
+
+    content: '';                     /* Creates pseudo-element */
+
+    width: 300px;                     /* Underline width */
+
+    height: 4px;                     /* Underline thickness */
+
+    background: white;
+
+    position: absolute;              /* Positions underline relative to heading */
+
+    left: 50%;                       /* Centers underline */
+
+    bottom: -12px;                   /* Places underline below heading */
+
+    transform: translateX(-50%);     /* Perfect horizontal centering */
+
+    border-radius: 15px;             /* Rounded underline */
+}
