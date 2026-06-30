@@ -1,0 +1,311 @@
+/* =====================================
+   Responsive CSS
+   StudySmart Planner
+===================================== */
+
+
+/* =====================================
+   Large Desktop (1200px and below)
+===================================== */
+
+@media (max-width:1200px){
+
+    /* Header */
+    header{
+        padding:20px 5%;
+    }
+
+    .navbar{
+        gap:25px;
+    }
+
+    /* Hero */
+    .hero{
+        padding:80px 5%;
+        gap:50px;
+    }
+
+    .hero-content h2{
+        font-size:48px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .hero-image img{
+        max-width:550px;
+    }
+
+    /* Features */
+
+    .feature-strip{
+        width:95%;
+        gap:20px;
+    }
+
+    /* Footer */
+
+    footer{
+        padding:40px 5%;
+    }
+
+}
+
+
+/* =====================================
+   Laptop / Tablet (1024px and below)
+===================================== */
+
+@media (max-width:1024px){
+
+    /* Header */
+
+    header{
+        padding:18px 5%;
+    }
+
+    .navbar{
+        gap:20px;
+    }
+
+    .navbar a{
+        font-size:16px;
+    }
+
+    .login-btn,
+    .signup-btn{
+        padding:10px 22px;
+    }
+
+    /* Hero */
+
+    .hero{
+        padding:70px 5%;
+        gap:40px;
+    }
+
+    .hero-content h2{
+        font-size:40px;
+    }
+
+    .hero-content p{
+        font-size:17px;
+    }
+
+    .hero-image img{
+        max-width:450px;
+    }
+
+    /* Feature Cards */
+
+    .feature-strip{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    /* Footer */
+
+    .footer-content{
+        gap:30px;
+    }
+
+}
+
+
+/* =====================================
+   Tablet (768px and below)
+===================================== */
+
+@media (max-width:768px){
+
+    /* Header */
+
+    header{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        gap:20px;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .header-buttons{
+        justify-content:center;
+    }
+
+    /* Hero */
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 25px;
+        gap:40px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-content h2{
+        font-size:36px;
+        text-align:center;
+    }
+
+    .hero-content p{
+        text-align:center;
+        font-size:16px;
+    }
+
+    .hero-btn{
+        justify-content:center;
+    }
+
+    .hero-image{
+        width:100%;
+    }
+
+    .hero-image img{
+        max-width:420px;
+        margin:auto;
+    }
+
+    /* Feature */
+
+    .feature-strip{
+        grid-template-columns:1fr;
+        width:95%;
+        gap:18px;
+    }
+
+    .feature-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    /* Footer */
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+}
+
+
+/* =====================================
+   Mobile (480px and below)
+===================================== */
+
+@media (max-width:480px){
+
+    /* Header */
+
+    header{
+        padding:15px;
+    }
+
+    .logo h1{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .navbar a{
+        font-size:15px;
+    }
+
+    .header-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .login-btn,
+    .signup-btn{
+        width:180px;
+    }
+
+    /* Hero */
+
+    .hero{
+        padding:40px 20px;
+    }
+
+    .hero-badge{
+        font-size:14px;
+        padding:8px 15px;
+    }
+
+    .hero-content h2{
+        font-size:30px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .hero-btn{
+        width:100%;
+    }
+
+    .hero-btn button{
+        width:100%;
+        max-width:250px;
+    }
+
+    .hero-image img{
+        max-width:300px;
+    }
+
+    /* Features */
+
+    .feature-strip{
+        width:100%;
+        padding:20px;
+        border-radius:0;
+    }
+
+    .feature-item{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    /* Footer */
+
+    footer{
+        padding:30px 20px;
+    }
+
+    .footer-section h3{
+        font-size:22px;
+    }
+
+    .footer-section p,
+    .footer-section li{
+        font-size:15px;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+}
