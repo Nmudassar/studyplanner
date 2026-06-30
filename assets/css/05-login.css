@@ -10,13 +10,9 @@ body{
 .wrapper{
     position: relative;
     width: 420px;
-    height: 70vh;
-    margin: 0 auto;
-    padding: 20px;
-
-    background: var(--primary-color);
+    padding: 30px;
     border-radius: 12px;
-    box-sizing: border-box;
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -25,17 +21,6 @@ body{
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-}
-
-/* Login / Signup Wrapper */
-.wrapper{
-    position: relative;
-    width: 420px;
-    padding: 30px;
-    border-radius: 12px;
-    background: var(--primary-color);
-    overflow: hidden;
-    z-index: 1;
 }
 
 /* Animated Border */
@@ -65,7 +50,7 @@ body{
     position: absolute;
     inset: 3px;
 
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 10px;
     z-index: -1;
 }
@@ -87,6 +72,7 @@ Form Heading
     font-size: 30px;    /*heading size*/
     margin-bottom: 20px; 
     position: relative;
+    color: #03045E;
 }
 
 /*  underline below heading */
@@ -94,13 +80,145 @@ Form Heading
     content: '';                     /* Creates pseudo-element */
     width: 100px;                     /* Underline width */
     height: 4px;                     /* Underline thickness */
-    background: white;
+    background: #03045E;
     position: absolute;   /* Positions underline relative to heading */
     left: 50%;                       /* Centers underline */
     bottom: -12px;                 /* Places underline below heading */
     transform: translateX(-50%);     /* Perfect horizontal centering */
     border-radius: 15px;             /* Rounded underline */
 }
-.wrapper .i{
-    width: 50px;
+/* ==========================
+   Form
+========================== */
+
+form{
+    width: min(400px, 100%);
+    margin: 25px auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Input Row */
+form > div:not(.btn-field){
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(29, 17, 95, 0.2);
+    border-radius: 12px;
+
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+form > div:hover{
+    border-color: #d83a00;
+}
+
+/* Focus */
+form > div:focus-within{
+    border-color: #90E0EF;
+    box-shadow: 0 0 12px rgba(165, 223, 235, 0.4);
+}
+
+/* Font Awesome Icon */
+form i{
+    width: 55px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #03045E;   /* dark icon box */
+    color: #03045E;        /* white icon */
+
+    font-size: 18px;
+}
+
+/* Input */
+form input{
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: #00B4D8;
+    color: #00B4D8;
+
+    font-size: 16px;
+    padding: 0 18px;
+}
+
+/* Placeholder */
+form input::placeholder{
+    color: rgba(239, 229, 229, 0.7);
+}
+
+.btn-field{
+
+    width: 100%;                     /* Full width */
+
+    display: flex;                   /* Places buttons side-by-side */
+
+    justify-content: space-between;  /* Adds equal spacing */
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.btn-field button{
+
+    flex-basis: 48%; /* Each button uses almost half the width */
+    background: #03045E;          /* Purple background */
+    color: #ffffff;                  /* White text */
+    height: 40px;                    /* Button height */
+    border-radius: 20px;             /* Rounded button */
+    border: 0;                       /* Removes border */
+    outline: 0;                /* Removes focus outline */
+    cursor: pointer;              /* Shows hand cursor */
+    transition: background 1s;       /* Smooth colour transition */
+}
+
+
+/* ==========================================================
+   Input Group
+   ========================================================== */
+
+.input-group{
+
+    height: 230px;                   /* Fixed height for animated input area */
+}
+
+
+/* ==========================================================
+   Disabled Button Style
+   ========================================================== */
+
+.btn-field button.disable{
+
+    background: #eaeaea;          /* Grey background */
+    color: #555555;                  /* Dark grey text */
+}
+
+/* ==========
+   Form Text
+   ========== */
+wrapper p{
+    text-align: left;            /* Align text to left */
+    color: #808080;            /* Grey text */
+    font-size: 14px;                 /* Small font */
+}
+
+wrapper  p a{
+
+    text-decoration: none;        /* Removes underline */
+
+    color: #3c00a0;           /* Purple link */
 }
