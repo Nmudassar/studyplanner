@@ -76,3 +76,129 @@ body{
 
     color:white;
 }
+
+/* ===========================
+   Hero Card
+===========================*/
+
+.hero-card{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero-card h2{
+
+    margin-top:10px;
+
+    font-size:38px;
+}
+
+.hero-card p{
+
+    font-size:18px;
+}
+
+/* ===========================
+   Focus Timer
+===========================*/
+
+.focus-card{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.timer-circle{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:10px solid var(--secondary-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--primary-color);
+
+    font-weight:bold;
+}
+
+.timer-circle span{
+
+    font-size:42px;
+}
+
+.timer-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.timer-buttons button{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:var(--light-yellow);
+
+    color:var(--primary-color);
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.3s;
+}
+
+.timer-buttons button:hover{
+
+    background:var(--secondary-color);
+
+    color:white;
+}
+
+.play{
+
+    background:var(--primary-color)!important;
+
+    color:white!important;
+}
