@@ -1,46 +1,33 @@
-/* ===========================
-   Dashboard Layout
-===========================*/
-
-body{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color),
-        var(--secondary-color),
-        var(--light-yellow)
-    );
-}
-
 .dashboard-layout{
     display: flex;
     min-height: 100vh;
 }
-}
 
 .sidebar{
     width: 260px;
-    background: #03045E;
-    padding: 25px 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    flex-shrink: 0;
 }
 
-.logo h1{
-    font-size: 26px;
-    color: #03045E;
-    margin-bottom: 5px;
+.main-content{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    align-items: start;
 }
 
-.logo p{
-    font-size: 14px;
-    color: #64748b;
+.left-content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
-.menu-btn{
-    font-size: 22px;
-    color: var(--primary-color);
-    margin:20px 0;
-    cursor:pointer;
+
+.calendar-card{
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 500px;
 }
 
 /* ===========================
@@ -247,4 +234,54 @@ body{
 .stat-card p{
 
     color:#666;
+}
+
+
+/* ===========================
+   Right Sidebar
+===========================*/
+
+.right-sidebar{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.right-sidebar h3{
+
+    color:var(--primary-color);
+
+    margin-bottom:20px;
+}
+
+.right-sidebar ul{
+
+    padding-left:20px;
+}
+
+.right-sidebar li{
+
+    margin-bottom:15px;
+
+    color:#555;
+}
+
+/* ===========================
+   Footer
+===========================*/
+
+footer{
+
+    background:var(--primary-color);
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
 }
