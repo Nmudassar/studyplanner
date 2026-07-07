@@ -1,6 +1,44 @@
-.grid-conatiner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+/* ===========================
+   Dashboard Layout
+===========================*/
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color),
+        var(--light-yellow)
+    );
+}
+
+.dashboard-layout{
+    display: flex;
+    min-height: 100vh;
+}
+}
+
+.sidebar{
+    width: 260px;
+    background: #03045E;
+    padding: 25px 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.logo h1{
+    font-size: 26px;
+    color: #03045E;
+    margin-bottom: 5px;
+}
+
+.logo p{
+    font-size: 14px;
+    color: #64748b;
+}
+.menu-btn{
+    font-size: 22px;
+    color: var(--primary-color);
+    margin:20px 0;
+    cursor:pointer;
 }
