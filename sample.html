@@ -1,114 +1,92 @@
-<section class="main-content">
+<section class="hero-card">
 
-    <!-- LEFT SIDE -->
-    <div class="left-content">
+    <div class="hero-text">
+        <p>0 Tasks Due Today</p>
+        <h2>Focus</h2>
+    </div>
 
-        <!-- Hero Card -->
-        <div class="hero-card">
+    <div class="focus-card">
 
-            <div class="hero-text">
-                <p>0 tasks due today.</p>
-                <h2>Good Night.</h2>
-            </div>
-
-            <div class="focus-card">
-
-                <div class="timer-circle">
-                    <h3>Focus</h3>
-                    <span>25:00</span>
-                </div>
-
-                <div class="timer-buttons">
-
-                    <button>
-                        <i class="fa-solid fa-gear"></i>
-                    </button>
-
-                    <button class="play">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-
-                    <button>
-                        <i class="fa-solid fa-rotate"></i>
-                    </button>
-
-                </div>
-
-            </div>
-
+        <div class="timer-circle">
+            <h3>Focus</h3>
+            <span id="timer">25:00</span>
         </div>
 
-        <!-- Statistics -->
-        <div class="stats-grid">
+        <div class="timer-buttons">
 
-            <div class="stat-card">
-                <h4>👀 Pending Tasks</h4>
-                <h2>0</h2>
-                <p>Last 7 days</p>
-            </div>
+            <button id="settingsBtn">
+                <i class="fa-solid fa-gear"></i>
+            </button>
 
-            <div class="stat-card">
-                <h4>⚠ Overdue Tasks</h4>
-                <h2>0</h2>
-                <p>Last 7 days</p>
-            </div>
+            <button class="play" id="startBtn">
+                <i class="fa-solid fa-play"></i>
+            </button>
 
-            <div class="stat-card">
-                <h4>👍 Tasks Completed</h4>
-                <h2>0</h2>
-                <p>Last 7 days</p>
-            </div>
-
-            <div class="stat-card">
-                <h4>🔥 Your Streak</h4>
-                <h2>0</h2>
-                <p>Last 7 days</p>
-            </div>
+            <button id="resetBtn">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
 
         </div>
 
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="calendar-card">
+    <!-- ================= Timer Settings ================= -->
 
-        <div class="calendar-header">
+    <div class="timer-settings" id="timerSettings">
 
-            <h2>Calendar</h2>
+        <h3>Pomodoro Settings</h3>
 
-            <button>Day</button>
+        <div class="setting-grid">
 
-        </div>
-
-        <div class="week-days">
-
-            <div>Mon<br><strong>29</strong></div>
-
-            <div>Tue<br><strong>30</strong></div>
-
-            <div class="active">
-                Wed<br><strong>1</strong>
+            <div class="setting-item">
+                <label>Focus Time</label>
+                <select id="focusTime">
+                    <option value="25">25 Minutes</option>
+                    <option value="30">30 Minutes</option>
+                    <option value="45">45 Minutes</option>
+                    <option value="60">60 Minutes</option>
+                </select>
             </div>
 
-            <div>Thu<br><strong>2</strong></div>
+            <div class="setting-item">
+                <label>Short Break</label>
+                <select id="shortBreak">
+                    <option value="5">5 Minutes</option>
+                    <option value="10">10 Minutes</option>
+                    <option value="15">15 Minutes</option>
+                </select>
+            </div>
 
-            <div>Fri<br><strong>3</strong></div>
+            <div class="setting-item">
+                <label>Long Break</label>
+                <select id="longBreak">
+                    <option value="20">20 Minutes</option>
+                    <option value="25">25 Minutes</option>
+                    <option value="30">30 Minutes</option>
+                </select>
+            </div>
 
-            <div>Sat<br><strong>4</strong></div>
-
-            <div>Sun<br><strong>5</strong></div>
+            <div class="setting-item">
+                <label>Long Break Interval</label>
+                <select id="interval">
+                    <option value="2">2 Sessions</option>
+                    <option value="4" selected>4 Sessions</option>
+                    <option value="6">6 Sessions</option>
+                </select>
+            </div>
 
         </div>
 
-        <div class="schedule">
+        <div class="sound-option">
+            <label>
+                <input type="checkbox" id="sound" checked>
+                Enable Alert Sound
+            </label>
+        </div>
 
-            <div>9 AM</div>
-            <div>10 AM</div>
-            <div>11 AM</div>
-            <div>12 PM</div>
-            <div>1 PM</div>
-            <div>2 PM</div>
-
+        <div class="setting-buttons">
+            <button id="saveSettings">Save</button>
+            <button id="cancelSettings">Cancel</button>
         </div>
 
     </div>
