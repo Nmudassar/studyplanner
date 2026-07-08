@@ -8,3 +8,18 @@
     box-shadow: 0 15px 35px rgba(0,0,0,.15);
 
 }
+/* ===========================
+   Heading
+=========================== */
+
+.settings-container h1{
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.settings-container p{
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
