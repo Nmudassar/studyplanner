@@ -4,99 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promodoro Settinf</title>
+    <title>Pomodoro Settings</title>
+
     <link rel="stylesheet" href="assets/css/01-global.css">
-    <link rel="stylesheet" href="assets/css/10-pomodoro-setting.css">
+    <link rel="stylesheet" href="assets/css/10-pomodoro.css">
 </head>
 
 <body>
+
     <div class="setting-container">
-        <!----Second Step Header---->
-        <h1>Promodoro Setting</h1>
+
+        <h1>Pomodoro Settings</h1>
+
         <p>Set your preferred focus and break durations for the Pomodoro technique.</p>
-    </div>
-    <div class="settings-grid">
 
-        <div class="setting-card">
+        <div class="settings-grid">
 
-            <label>Focus Time</label>
+            <div class="setting-card">
+                <label>Focus Time</label>
+                <select id="focusTime">
+                    <option>25 Minutes</option>
+                    <option>30 Minutes</option>
+                    <option>45 Minutes</option>
+                    <option>60 Minutes</option>
+                </select>
+            </div>
 
-            <select id="focusTime">
-                <option>25 Minutes</option>
-                <option>30 Minutes</option>
-                <option>45 Minutes</option>
-                <option>60 Minutes</option>
-            </select>
+            <div class="setting-card">
+                <label>Short Break</label>
+                <select id="shortBreak">
+                    <option>5 Minutes</option>
+                    <option>10 Minutes</option>
+                    <option>15 Minutes</option>
+                </select>
+            </div>
 
-        </div>
+            <div class="setting-card">
+                <label>Long Break</label>
+                <select id="longBreak">
+                    <option>20 Minutes</option>
+                    <option>25 Minutes</option>
+                    <option>30 Minutes</option>
+                </select>
+            </div>
 
-        <div class="setting-card">
-
-            <label>Short Break</label>
-
-            <select id="shortBreak">
-                <option>5 Minutes</option>
-                <option>10 Minutes</option>
-                <option>15 Minutes</option>
-            </select>
-
-        </div>
-
-        <div class="setting-card">
-
-            <label>Long Break</label>
-
-            <select id="longBreak">
-                <option>20 Minutes</option>
-                <option>25 Minutes</option>
-                <option>30 Minutes</option>
-            </select>
-
-        </div>
-
-        <div class="setting-card">
-
-            <label>Long Break Interval</label>
-
-            <select id="interval">
-                <option>2 Sessions</option>
-                <option selected>4 Sessions</option>
-                <option>6 Sessions</option>
-            </select>
+            <div class="setting-card">
+                <label>Long Break Interval</label>
+                <select id="interval">
+                    <option>2 Sessions</option>
+                    <option selected>4 Sessions</option>
+                    <option>6 Sessions</option>
+                </select>
+            </div>
 
         </div>
 
-    </div>
-    <!---4 – Alert Sound-->
-    <div class="sound-box">
+        <div class="sound-box">
+            <label>
+                <input type="checkbox" checked>
+                Enable Alert Sound
+            </label>
+        </div>
 
-        <label>
-
-            <input type="checkbox" checked>
-
-            Enable Alert Sound
-
-        </label>
-
-    </div>
-    <!---5 – Save Button-->
-    <div class="button-group">
-
-        <button class="save-btn">
-            Save
-        </button>
-
-        <button class="cancel-btn">
-            Cancel
-        </button>
+        <div class="button-group">
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Cancel</button>
+        </div>
 
     </div>
-
-
-
 
 </body>
-
-
 
 </html>
