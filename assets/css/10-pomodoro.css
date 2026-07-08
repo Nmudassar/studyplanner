@@ -83,3 +83,45 @@
     width: 20px;
     height: 20px;
 }
+
+/* ===========================
+   Buttons
+=========================== */
+
+.button-group{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.save-btn,
+.cancel-btn{
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.save-btn{
+    border: none;
+    background: var(--secondary-color);
+    color: white;
+}
+
+.save-btn:hover{
+    background: var(--primary-color);
+}
+
+.cancel-btn{
+    border: 2px solid var(--secondary-color);
+    background: white;
+    color: var(--secondary-color);
+}
+
+.cancel-btn:hover{
+    background: var(--secondary-color);
+    color: white;
+}
