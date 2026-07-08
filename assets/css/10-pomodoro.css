@@ -125,3 +125,23 @@
     background: var(--secondary-color);
     color: white;
 }
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:768px){
+
+    .settings-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .button-group{
+        flex-direction: column;
+    }
+
+    .save-btn,
+    .cancel-btn{
+        width: 100%;
+    }
+}
