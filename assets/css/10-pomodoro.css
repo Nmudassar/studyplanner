@@ -23,3 +23,39 @@
     color: #666;
     margin-bottom: 40px;
 }
+/* ===========================
+   Settings Grid
+=========================== */
+
+.settings-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.setting-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-card label{
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.setting-card select{
+    height: 50px;
+    padding: 0 15px;
+    border: 2px solid var(--light-yellow);
+    border-radius: 10px;
+    background: #f8fdff;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.setting-card select:focus{
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(0,180,216,.25);
+}
