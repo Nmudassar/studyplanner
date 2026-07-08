@@ -59,3 +59,27 @@
     border-color: var(--secondary-color);
     box-shadow: 0 0 10px rgba(0,180,216,.25);
 }
+/* ===========================
+   Sound Option
+=========================== */
+
+.sound-box{
+    margin-top: 30px;
+    padding: 20px;
+    background: #eef9fd;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sound-box label{
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.sound-box input{
+    width: 20px;
+    height: 20px;
+}
