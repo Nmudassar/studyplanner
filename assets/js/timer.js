@@ -24,3 +24,45 @@ function updateDisplay() {
 
 // Show saved time when dashboard loads
 updateDisplay();
+
+/*=======3 – Add Start / Pause functionality=======*/
+// Start / Pause timer
+startBtn.addEventListener("click", function () {
+
+    if (interval) {
+
+        clearInterval(interval);
+        interval = null;
+
+        startBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+
+        return;
+    }
+
+    startBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+    interval = setInterval(function () {
+
+        timer--;
+
+        updateDisplay();
+
+        if (timer <= 0) {
+
+            clearInterval(interval);
+            interval = null;
+
+            alert("Focus session completed!");
+
+            timer = totalSeconds;
+
+            updateDisplay();
+
+            startBtn.innerHTML =
+                '<i class="fa-solid fa-play"></i>';
+
+        }
+
+    }, 1000);
+
+});
