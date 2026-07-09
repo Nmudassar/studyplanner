@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="assets/css/01-global.css">
     <link rel="stylesheet" href="assets/css/06-dashboard.css">
+    <link rel="stylesheet" href="assets/css/03-responsive.css">
+
+
 
     <script src="https://kit.fontawesome.com/62d2ea7a17.js" crossorigin="anonymous"></script>
 </head>
@@ -49,24 +52,35 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
+
+                <li class="nav-dropdown">
+                    <a href="#" onclick="toggleActivities(event)">
                         <i class="fa-solid fa-chart-line"></i>
                         <span>Activities</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
                     </a>
+
+                    <ul class="submenu" id="activitiesMenu">
+                        <li>
+                            <a href="03-activities.html">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Subjects</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="04-tasks.html">
+                                <i class="fa-solid fa-list-check"></i>
+                                <span>Tasks</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="11-pomodoro-settings.html">
                         <i class="fa-solid fa-hourglass-half"></i>
                         <span>Focus Timer</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <span>Calendar Sync</span>
                     </a>
                 </li>
 
@@ -131,7 +145,7 @@
 
                         <div class="timer-buttons">
 
-                            <button id="settingsBtn">
+                            <button href="11-pomodoro-settings.html" id="settingsBtn" class="timer-setting-btn">
                                 <i class="fa-solid fa-gear"></i>
                             </button>
 
