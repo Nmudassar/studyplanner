@@ -142,39 +142,38 @@ h3{
     padding: 80px 0;
 }
 
-//* ===========================
+/* ===========================
    Global Sidebar Layout
 =========================== */
 
-.layout {
-  display: flex;
-  min-height: 100vh;
+.layout{
+    display:flex;
+    min-height:100vh;
 }
 
-.sidebar {
-  width: 250px;
-  min-width: 250px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+.sidebar{
+    width:250px;
+    min-width:250px;
+    height:100vh;
 
-  background: var(--white);
-  padding: 30px 20px;
-  box-shadow: var(--shadow);
+    position:sticky;
+    top:0;
+
+    flex-shrink:0;
+
+    background:var(--white);
+
+    padding:30px 20px;
+
+    box-shadow:var(--shadow);
+
+    overflow-y:auto;
 }
 
-.sidebar h2 {
-  color: var(--primary-color);
-  margin-bottom: 40px;
-}
-
-.sidebar h2 span {
-  color: var(--secondary-color);
-}
-
-.main-content {
-  flex: 1;
-  padding: 40px;
+.main-content{
+    flex:1;
+    padding:40px;
+    overflow-x:hidden;
 }
 
 /* ===========================
