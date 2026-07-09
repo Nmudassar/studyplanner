@@ -1,7 +1,6 @@
-.main-content {
-    flex: 1;
-    padding: 35px;
-}
+/* ===========================
+   Subjects Page Header
+=========================== */
 
 .top-bar {
     display: flex;
@@ -13,22 +12,26 @@
 .top-bar input {
     width: 350px;
     padding: 14px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
+    background: var(--white);
 }
 
 .user {
-    font-weight: bold;
-    color: #300A80;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.subjects-header {
+    margin-bottom: 35px;
 }
 
 .subjects-header h1 {
-    font-size: 36px;
-    color: #300A80;
+    color: var(--primary-color);
     margin-bottom: 8px;
 }
 
 .subjects-header p {
     color: #666;
-    margin-bottom: 30px;
 }
+
