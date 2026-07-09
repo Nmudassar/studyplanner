@@ -64,6 +64,28 @@
     color:white;
 }
 
+
+.nav-dropdown .submenu {
+  display: none;
+  list-style: none;
+  padding-left: 25px;
+  margin-top: 8px;
+}
+
+.nav-dropdown .submenu.show {
+  display: block;
+}
+
+.submenu li a {
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.arrow {
+  margin-left: auto;
+}
+
+
 /* ===========================
    Hero Card
 ===========================*/
