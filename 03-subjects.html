@@ -14,110 +14,75 @@
   <div class="layout">
 
     <aside class="sidebar">
-
       <h2>Study<span>Smart</span></h2>
 
       <nav>
-
         <a href="02-dashboard.html">Dashboard</a>
-
         <a href="03-subjects.html" class="active">Subjects</a>
-
         <a href="06-tasks.html">Tasks</a>
-
         <a href="07-calendar.html">Calendar</a>
-
         <a href="11-pomodoro-settings.html">Focus Timer</a>
-
       </nav>
-
     </aside>
 
+    <main class="main-content">
+
+      <header class="top-bar">
+        <input type="text" placeholder="Search subject...">
+        <div class="user">Nadia Syed</div>
+      </header>
+
+      <section class="subjects-header">
+        <h1>Subjects</h1>
+        <p>Choose a subject, then select GCSE or A-Level to view topics.</p>
+      </section>
+
+      <section class="subjects-grid">
+
+        <div class="subject-card" onclick="openLevelBox('biology')">
+          <h2>🧬 Biology</h2>
+          <p>Cells, organisation, genetics, ecology and homeostasis.</p>
+          <button type="button">Choose Subject</button>
+        </div>
+
+        <div class="subject-card" onclick="openLevelBox('maths')">
+          <h2>📘 Mathematics</h2>
+          <p>Number, algebra, geometry, probability and statistics.</p>
+          <button type="button">Choose Subject</button>
+        </div>
+
+        <div class="subject-card" onclick="openLevelBox('chemistry')">
+          <h2>⚗️ Chemistry</h2>
+          <p>Atoms, bonding, reactions, energy and chemical analysis.</p>
+          <button type="button">Choose Subject</button>
+        </div>
+
+        <div class="subject-card" onclick="openLevelBox('physics')">
+          <h2>⚡ Physics</h2>
+          <p>Energy, forces, waves, electricity and magnetism.</p>
+          <button type="button">Choose Subject</button>
+        </div>
+
+      </section>
+
+    </main>
+
   </div>
-  <!---Add Main Content Header-->
-  <main class="main-content">
 
-    <header class="top-bar">
-      <input type="text" placeholder="Search subject...">
-      <div class="user">Nadia Syed</div>
-    </header>
+  <!-- Level Popup -->
+  <div class="level-popup" id="levelPopup">
+    <div class="popup-content">
+      <button type="button" class="close-btn" onclick="closeLevelBox()">×</button>
 
-    <section class="subjects-header">
-      <h1>Subjects</h1>
-      <p>Choose a subject to view topics.</p>
-    </section>
+      <h2 id="popupSubjectTitle">Choose Level</h2>
+      <p>Select your study level.</p>
 
-    <!----Add Subject Cards-->
-    <section class="subjects-grid">
-
-      <div class="subject-card" onclick="openLevelBox('biology')">
-        <h2>🧬 Biology</h2>
-        <p>Cells, organisation, genetics, ecology and homeostasis.</p>
-        <button type="button">Choose Subject</button>
-      </div>
-
-      <div class="subject-card" onclick="openLevelBox('maths')">
-        <h2>📘 Mathematics</h2>
-        <p>Number, algebra, geometry, probability and statistics.</p>
-        <button type="button">Choose Subject</button>
-      </div>
-
-      <div class="subject-card" onclick="openLevelBox('chemistry')">
-        <h2>⚗️ Chemistry</h2>
-        <p>Atoms, bonding, reactions, energy and chemical analysis.</p>
-        <button type="button">Choose Subject</button>
-      </div>
-
-      <div class="subject-card" onclick="openLevelBox('physics')">
-        <h2>⚡ Physics</h2>
-        <p>Energy, forces, waves, electricity and magnetism.</p>
-        <button type="button">Choose Subject</button>
-      </div>
-    </section>
-    <div class="level-popup" id="levelPopup">
-
-      <div class="popup-content">
-
-        <button type="button" class="close-btn" onclick="closeLevelBox()">
-          ×
-        </button>
-
-        <h2 id="popupSubjectTitle">
-          Choose Level
-        </h2>
-
-        <p>
-          Select your study level.
-        </p>
-
-        <button type="button" onclick="goToTopics('GCSE')">
-          GCSE
-        </button>
-
-        <button type="button" onclick="goToTopics('A-Level')">
-          A-Level
-        </button>
-
-      </div>
-
+      <button type="button" onclick="goToTopics('GCSE')">GCSE</button>
+      <button type="button" onclick="goToTopics('A-Level')">A-Level</button>
     </div>
+  </div>
 
-    <!----Link Subjects JavaScript-->
-    <script src="assets/js/subjects.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="assets/js/subjects.js"></script>
+  <script src="assets/js/subjects.js"></script>
 
 </body>
 
