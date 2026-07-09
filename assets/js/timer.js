@@ -66,3 +66,19 @@ startBtn.addEventListener("click", function () {
     }, 1000);
 
 });
+/*=======4 – Add Reset functionality=======*/
+// Reset timer
+resetBtn.addEventListener("click", function () {
+
+    clearInterval(interval);
+
+    interval = null;
+
+    timer = totalSeconds;
+
+    updateDisplay();
+
+    startBtn.innerHTML =
+        '<i class="fa-solid fa-play"></i>';
+
+});
