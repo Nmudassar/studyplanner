@@ -100,38 +100,77 @@
 =========================== */
 
 .level-popup {
-    display: none;
-    position: fixed;
-    inset: 0;
+  display: none;
+  position: fixed;
+  inset: 0;
 
-    background: rgba(0,0,0,.45);
+  background: rgba(0, 0, 0, 0.45);
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    z-index: 999;
+  padding: 20px;
+  z-index: 9999;
 }
 
 .popup-content {
-    background: white;
-    width: 360px;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
+  position: relative;
+
+  width: min(360px, 100%);
+  padding: 32px;
+
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+
+  text-align: center;
 }
 
 .popup-content h2 {
-    color: var(--primary-color);
-    margin-bottom: 12px;
+  margin-bottom: 12px;
+  padding-right: 35px;
+
+  color: var(--primary-color);
 }
 
 .popup-content p {
-    color: #666;
-    margin-bottom: 25px;
+  margin-bottom: 24px;
+  color: #666;
 }
 
-.popup-content button {
-    width: 100%;
-    margin-top: 12px;
+.popup-content .btn + .btn {
+  margin-top: 14px;
+}
+
+/* Close button is different from the main buttons */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--light-bg);
+  color: var(--primary-color);
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: rotate(90deg);
 }
