@@ -141,3 +141,68 @@ h3{
 .section-padding{
     padding: 80px 0;
 }
+
+/* ===========================
+   Global Navigation
+=========================== */
+
+.sidebar nav,
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a,
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar button:hover,
+.sidebar a.active {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* Dropdown */
+.nav-dropdown .submenu {
+  display: none;
+  list-style: none;
+  padding-left: 25px;
+  margin-top: 8px;
+}
+
+.nav-dropdown .submenu.show {
+  display: block;
+}
+
+.submenu li a {
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.arrow {
+  margin-left: auto;
+}
