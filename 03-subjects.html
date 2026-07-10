@@ -37,14 +37,22 @@
         <a href="11-pomodoro-settings.html">Focus Timer</a>
       </nav>
     </aside>
-
+    <!-- ================= Main Content ================= -->
     <main class="main-content">
+      <!-- Top Bar -->
 
       <header class="top-bar">
         <input type="text" placeholder="Search subject...">
         <div class="user"></div>
+
+        <div class="user">
+          <div class="user-avatar">
+            FN
+          </div>
+          <span>username </span>
       </header>
 
+      <!-- Subjects heading -->
       <section class="subjects-header">
 
         <div class="subjects-header-text">
@@ -61,30 +69,33 @@
         </button>
 
       </section>
+      <!-- ================= Subject Cards ================= -->
+      <section class="subjects-grid" id="subjcetGrid" aria-label="Avaiable Subjects">
 
-      <section class="subjects-grid">
-
+        <!-- Biology -->
         <div class="subject-card" onclick="openLevelBox('biology')">
           <h2>🧬 Biology</h2>
-          <p>Cells, organisation, genetics, ecology and homeostasis.</p>
+          <p> GCSE and ALevel topics including Cells, organisation, genetics, ecology and homeostasis.</p>
           <button type="button">Choose Subject</button>
         </div>
-
+        <!-- Mathematics -->
         <div class="subject-card" onclick="openLevelBox('maths')">
           <h2>📘 Mathematics</h2>
-          <p>Number, algebra, geometry, probability and statistics.</p>
+          <p> GCSE and ALevel topics including Number, algebra, geometry, probability and statistics.</p>
           <button type="button">Choose Subject</button>
         </div>
+        <!-- Chemistry -->
 
         <div class="subject-card" onclick="openLevelBox('chemistry')">
           <h2>⚗️ Chemistry</h2>
-          <p>Atoms, bonding, reactions, energy and chemical analysis.</p>
+          <p> GCSE and ALevel topics including Atoms, bonding, reactions, energy and chemical analysis.</p>
           <button type="button">Choose Subject</button>
         </div>
+        <!-- Physics -->
 
         <div class="subject-card" onclick="openLevelBox('physics')">
           <h2>⚡ Physics</h2>
-          <p>Energy, forces, waves, electricity and magnetism.</p>
+          <p>GCSE and ALevel topics including Energy, forces, waves, electricity and magnetism.</p>
           <button type="button">Choose Subject</button>
         </div>
 
@@ -97,44 +108,172 @@
   <!-- Level Popup -->
   <div class="level-popup" id="levelPopup">
     <div class="popup-content">
-
       <button type="button" class="close-btn" onclick="closeLevelBox()" aria-label="Close level selection">
-        ×
-      </button>
 
+      </button>
       <h2 id="popupSubjectTitle">Choose Level</h2>
       <p>Select your study level.</p>
-
       <button type="button" class="btn btn-block" onclick="goToTopics('GCSE')">
         GCSE
       </button>
-
       <button type="button" class="btn btn-block" onclick="goToTopics('A-Level')">
         A-Level
       </button>
-
     </div>
   </div>
-  <script src="assets/js/subjects.js"></script>
+
+  <!----Topic Popup Planner---->
+  <div class="topic-popup" id="topicPopup">
+    <div class="topic-popup-content">
+      <button type="button" class="close-btn" onclick="closeTopicBox()" aria-label="Close topic planner">
+
+      </button>
+      <h2>Add Study Plan</h2>
+      <p class="selected-plan-summary">
+        <strong id="selectedSubjectDisplay">
+          Biology
+        </strong>
+
+        <span>•</span>
+
+        <strong id="selectedLevelDisplay">
+          GCSE
+        </strong>
+
+      </p>
+
+      <form id="studyPlanForm">
+
+        <!-- Topic dropdown -->
+        <div class="form-group">
+
+          <label for="topicSelect">
+            Choose a topic
+          </label>
+
+          <select id="topicSelect" required onchange="showSelectedTopicDetails()">
+
+            <option value="">
+              Select a topic
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- Hidden until a topic is selected -->
+        <div id="studyPlanSettings" hidden>
+
+          <div class="form-group">
+
+            <label for="weeklyMinutes">
+              Study time per week
+            </label>
+
+            <select id="weeklyMinutes" required onchange="validateStudyPlan()">
+
+              <option value="">
+                Choose study time
+              </option>
+
+              <option value="15">
+                15 minutes per week
+              </option>
+
+              <option value="30">
+                30 minutes per week
+              </option>
+
+              <option value="45">
+                45 minutes per week
+              </option>
+
+              <option value="60">
+                1 hour per week
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="preferredDay">
+              Preferred study day
+            </label>
+
+            <select id="preferredDay" required onchange="validateStudyPlan()">
+
+              <option value="">
+                Choose a day
+              </option>
+
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+              <option value="0">Sunday</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="planStartDate">
+              Start date
+            </label>
+
+            <input type="date" id="planStartDate" required onchange="validateStudyPlan()">
+
+          </div>
+
+          <!-- Subtopics preview -->
+          <div class="subtopics-preview" id="subtopicsPreview">
+
+            <h3>
+              These topics will be added to your calendar
+            </h3>
+
+            <p>
+              One subtopic will appear each week.
+            </p>
+
+            <ul id="subtopicsList"></ul>
+
+          </div>
+
+        </div>
+
+        <p class="planner-message" id="plannerMessage"></p>
+
+        <div class="popup-buttons">
+
+          <button type="button" class="btn btn-outline" onclick="backToLevelPopup()">
+            Back
+          </button>
+
+          <button type="submit" class="btn" id="generatePlanButton" disabled>
+            Generate Plan
+          </button>
+
+        </div>
+
+      </form>
+
+      å
+    </div>
+
+  </div>
+
+
+
+
+  <script src="assets/js/subjects.js">
+  </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-<aside class="sidebar">
-
-
-  <nav>
-    <a href="02-dashboard.html">Dashboard</a>
-    <a href="03-subjects.html" class="active">Subjects</a>
-    <a href="06-tasks.html">Tasks</a>
-    <a href="07-calendar.html">Calendar</a>
-    <a href="11-pomodoro-settings.html">Focus Timer</a>
-  </nav>
-
-</aside>
