@@ -1,383 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudySmart Planner - Subjects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="assets/css/01-global.css">
-  <link rel="stylesheet" href="assets/css/07-subject.css">
-  <script src="https://kit.fontawesome.com/62d2ea7a17.js" crossorigin="anonymous"></script>
+    <title>StudySmart Planner - Subjects</title>
 
-</head>
+    <link rel="stylesheet" href="assets/css/01-global.css" />
 
-<body>
+    <link rel="stylesheet" href="assets/css/07-subject.css" />
 
-  <div class="layout">
+    <script
+      src="https://kit.fontawesome.com/62d2ea7a17.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-    <aside class="sidebar">
-      <div class="logo-details">
+  <body>
+    <div class="layout">
+      <!-- ================= Sidebar ================= -->
+      <aside class="sidebar">
+        <div class="logo-details">
+          <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
 
-        <div class="logo">
-
-          <i class="fa-solid fa-graduation-cap"></i>
-
-          <div class="logo-name">
-            Study<span>Smart</span>
+            <div class="logo-name">Study<span>Smart</span></div>
           </div>
         </div>
-      </div>
 
-      <nav>
-        <a href="02-dashboard.html">Dashboard</a>
-        <a href="03-subjects.html" class="active">Subjects</a>
-        <a href="06-tasks.html">Tasks</a>
-        <a href="07-calendar.html">Calendar</a>
-        <a href="11-pomodoro-settings.html">Focus Timer</a>
-      </nav>
-    </aside>
-    <!-- ================= Main Content ================= -->
-    <main class="main-content">
-      <!-- Top Bar -->
+        <nav>
+          <a href="02-dashboard.html"> Dashboard </a>
 
-      <header class="top-bar">
-        <input type="text" placeholder="Search subject...">
-        <div class="user"></div>
+          <a href="03-subjects.html" class="active"> Subjects </a>
 
-        <div class="user">
-          <div class="user-avatar">
-            FN
+          <a href="06-tasks.html"> Tasks </a>
+
+          <a href="07-calendar.html"> Calendar </a>
+
+          <a href="11-pomodoro-settings.html"> Focus Timer </a>
+        </nav>
+      </aside>
+
+      <!-- ================= Main Content ================= -->
+      <main class="main-content">
+        <!-- ================= Top Bar ================= -->
+        <header class="top-bar">
+          <input type="text" placeholder="Search subject..." />
+
+          <div class="user">
+            <div class="user-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
           </div>
-          <span>username </span>
-      </header>
+        </header>
 
-      <!-- Subjects heading -->
-      <section class="subjects-header">
+        <!-- ================= Subjects Heading ================= -->
+        <section class="subjects-header">
+          <div class="subjects-header-text">
+            <h1>Subjects</h1>
 
-        <div class="subjects-header-text">
-          <h1>Subjects</h1>
-
-          <p>
-            Choose a subject, then select GCSE or A-Level to view topics.
-          </p>
-        </div>
-
-        <button type="button" class="btn" id="openStudyPlanPopup">
-          <i class="fa-solid fa-calendar-plus"></i>
-          Add Study Plan
-        </button>
-
-      </section>
-      <!-- ================= Subject Cards ================= -->
-      <section class="subjects-grid" id="subjcetGrid" aria-label="Avaiable Subjects">
-
-        <!-- Biology -->
-        <div class="subject-card" onclick="openLevelBox('biology')">
-          <h2>🧬 Biology</h2>
-          <p> GCSE and ALevel topics including Cells, organisation, genetics, ecology and homeostasis.</p>
-          <button type="button">Choose Subject</button>
-        </div>
-        <!-- Mathematics -->
-        <div class="subject-card" onclick="openLevelBox('maths')">
-          <h2>📘 Mathematics</h2>
-          <p> GCSE and ALevel topics including Number, algebra, geometry, probability and statistics.</p>
-          <button type="button">Choose Subject</button>
-        </div>
-        <!-- Chemistry -->
-
-        <div class="subject-card" onclick="openLevelBox('chemistry')">
-          <h2>⚗️ Chemistry</h2>
-          <p> GCSE and ALevel topics including Atoms, bonding, reactions, energy and chemical analysis.</p>
-          <button type="button">Choose Subject</button>
-        </div>
-        <!-- Physics -->
-
-        <div class="subject-card" onclick="openLevelBox('physics')">
-          <h2>⚡ Physics</h2>
-          <p>GCSE and ALevel topics including Energy, forces, waves, electricity and magnetism.</p>
-          <button type="button">Choose Subject</button>
-        </div>
-
-      </section>
-
-    </main>
-
-  </div>
-
-  <!-- Level Popup -->
-  <div class="level-popup" id="levelPopup">
-    <div class="popup-content">
-      <button type="button" class="close-btn" onclick="closeLevelBox()" aria-label="Close level selection">
-
-      </button>
-      <h2 id="popupSubjectTitle">Choose Level</h2>
-      <p>Select your study level.</p>
-      <button type="button" class="btn btn-block" onclick="goToTopics('GCSE')">
-        GCSE
-      </button>
-      <button type="button" class="btn btn-block" onclick="goToTopics('A-Level')">
-        A-Level
-      </button>
-    </div>
-  </div>
-
-  <!----Topic Popup Planner---->
-  <div class="topic-popup" id="topicPopup">
-    <div class="topic-popup-content">
-      <button type="button" class="close-btn" onclick="closeTopicBox()" aria-label="Close topic planner">
-
-      </button>
-      <h2>Add Study Plan</h2>
-      <p class="selected-plan-summary">
-        <strong id="selectedSubjectDisplay">
-          Biology
-        </strong>
-
-        <span>•</span>
-
-        <strong id="selectedLevelDisplay">
-          GCSE
-        </strong>
-
-      </p>
-
-      <form id="studyPlanForm">
-
-        <!-- Topic dropdown -->
-        <div class="form-group">
-
-          <label for="topicSelect">
-            Choose a topic
-          </label>
-
-          <select id="topicSelect" required onchange="showSelectedTopicDetails()">
-
-            <option value="">
-              Select a topic
-            </option>
-
-          </select>
-
-        </div>
-
-        <!-- Hidden until a topic is selected -->
-        <div id="studyPlanSettings" hidden>
-
-          <div class="form-group">
-
-            <label for="weeklyMinutes">
-              Study time per week
-            </label>
-
-            <select id="weeklyMinutes" required onchange="validateStudyPlan()">
-
-              <option value="">
-                Choose study time
-              </option>
-
-              <option value="15">
-                15 minutes per week
-              </option>
-
-              <option value="30">
-                30 minutes per week
-              </option>
-
-              <option value="45">
-                45 minutes per week
-              </option>
-
-              <option value="60">
-                1 hour per week
-              </option>
-
-            </select>
-
+            <p>Choose a subject, then select GCSE or A-Level to view topics.</p>
           </div>
 
-          <div class="form-group">
+          <button type="button" class="btn" id="openStudyPlanPopup">
+            <i class="fa-solid fa-calendar-plus"></i>
 
-            <label for="preferredDay">
-              Preferred study day
-            </label>
+            Add Study Plan
+          </button>
+        </section>
 
-            <select id="preferredDay" required onchange="validateStudyPlan()">
-
-              <option value="">
-                Choose a day
-              </option>
-
-              <option value="1">Monday</option>
-              <option value="2">Tuesday</option>
-              <option value="3">Wednesday</option>
-              <option value="4">Thursday</option>
-              <option value="5">Friday</option>
-              <option value="6">Saturday</option>
-              <option value="0">Sunday</option>
-
-            </select>
-
-          </div>
-
-          <div class="form-group">
-
-            <label for="planStartDate">
-              Start date
-            </label>
-
-            <input type="date" id="planStartDate" required onchange="validateStudyPlan()">
-
-          </div>
-
-          <!-- Subtopics preview -->
-          <div class="subtopics-preview" id="subtopicsPreview">
-
-            <h3>
-              These topics will be added to your calendar
-            </h3>
+        <!-- ================= Subject Cards ================= -->
+        <section
+          class="subjects-grid"
+          id="subjectGrid"
+          aria-label="Available Subjects"
+        >
+          <!-- Biology -->
+          <div class="subject-card" onclick="openLevelBox('biology')">
+            <h2>🧬 Biology</h2>
 
             <p>
-              One subtopic will appear each week.
+              GCSE and A-Level topics including Cells, Organisation, Genetics,
+              Ecology and Homeostasis.
             </p>
 
-            <ul id="subtopicsList"></ul>
-
+            <button type="button">Choose Subject</button>
           </div>
 
-        </div>
+          <!-- Mathematics -->
+          <div class="subject-card" onclick="openLevelBox('mathematics')">
+            <h2>📘 Mathematics</h2>
 
-        <p class="planner-message" id="plannerMessage"></p>
+            <p>
+              GCSE and A-Level topics including Number, Algebra, Geometry,
+              Probability and Statistics.
+            </p>
 
-        <div class="popup-buttons">
+            <button type="button">Choose Subject</button>
+          </div>
 
-          <button type="button" class="btn btn-outline" onclick="backToLevelPopup()">
-            Back
-          </button>
+          <!-- Chemistry -->
+          <div class="subject-card" onclick="openLevelBox('chemistry')">
+            <h2>⚗️ Chemistry</h2>
 
-          <button type="submit" class="btn" id="generatePlanButton" disabled>
-            Generate Plan
-          </button>
+            <p>
+              GCSE and A-Level topics including Atoms, Bonding, Reactions,
+              Energy and Chemical Analysis.
+            </p>
 
-        </div>
+            <button type="button">Choose Subject</button>
+          </div>
 
-      </form>
+          <!-- Physics -->
+          <div class="subject-card" onclick="openLevelBox('physics')">
+            <h2>⚡ Physics</h2>
 
-      <!-- Topic dropdown -->
+            <p>
+              GCSE and A-Level topics including Energy, Forces, Waves,
+              Electricity and Magnetism.
+            </p>
+
+            <button type="button">Choose Subject</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ================= Level Popup ================= -->
+    <div class="level-popup" id="levelPopup">
+      <div class="popup-content">
+        <button
+          type="button"
+          class="close-btn"
+          onclick="closeLevelBox()"
+          aria-label="Close level selection"
+        >
+          ×
+        </button>
+
+        <h2 id="popupSubjectTitle">Choose Level</h2>
+
+        <p>Select your study level.</p>
+
+        <button
+          type="button"
+          class="btn btn-block"
+          onclick="goToTopics('gcse')"
+        >
+          GCSE
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-block"
+          onclick="goToTopics('alevel')"
+        >
+          A-Level
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= Topic Planner Popup ================= -->
+    <div class="topic-popup" id="topicPopup">
+      <div class="topic-popup-content">
+        <button
+          type="button"
+          class="close-btn"
+          onclick="closeTopicBox()"
+          aria-label="Close topic planner"
+        >
+          ×
+        </button>
+
+        <h2>Add Study Plan</h2>
+
+        <p class="selected-plan-summary">
+          <strong id="selectedSubjectDisplay"> Biology </strong>
+
+          <span>•</span>
+
+          <strong id="selectedLevelDisplay"> GCSE </strong>
+        </p>
+
+        <!-- the planner form and topic dropdown -->
+             <form id="studyPlanForm">
+
+      <!-- ================= Topic Selection ================= -->
       <div class="form-group">
 
         <label for="topicSelect">
           Choose a topic
         </label>
 
-        <select id="topicSelect" required onchange="showSelectedTopicDetails()">
-
+        <select
+          id="topicSelect"
+          required
+          onchange="showSelectedTopicDetails()"
+        >
           <option value="">
             Select a topic
           </option>
-
         </select>
 
-      </div>
-
-      <!-- Hidden until a topic is selected -->
-      <div id="studyPlanSettings" hidden>
-
-        <div class="form-group">
-
-          <label for="weeklyMinutes">
-            Study time per week
-          </label>
-
-          <select id="weeklyMinutes" required onchange="validateStudyPlan()">
-
-            <option value="">
-              Choose study time
-            </option>
-
-            <option value="15">
-              15 minutes per week
-            </option>
-
-            <option value="30">
-              30 minutes per week
-            </option>
-
-            <option value="45">
-              45 minutes per week
-            </option>
-
-            <option value="60">
-              1 hour per week
-            </option>
-
-          </select>
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="preferredDay">
-            Preferred study day
-          </label>
-
-          <select id="preferredDay" required onchange="validateStudyPlan()">
-
-            <option value="">
-              Choose a day
-            </option>
-
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
-            <option value="3">Wednesday</option>
-            <option value="4">Thursday</option>
-            <option value="5">Friday</option>
-            <option value="6">Saturday</option>
-            <option value="0">Sunday</option>
-
-          </select>
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="planStartDate">
-            Start date
-          </label>
-
-          <input type="date" id="planStartDate" required onchange="validateStudyPlan()">
-
-        </div>
-
-        <!-- ================= Subtopic Preview ================= -->
-        <div class="subtopics-preview" id="subtopicsPreview">
-
-          <h3>
-            These topics will be added to your calendar
-          </h3>
-
-          <p>
-            One subtopic will appear each week.
-          </p>
-
-          <ul id="subtopicsList">
-            <!-- JavaScript adds the subtopics here -->
-          </ul>
-
-        </div>
+        <!----->
 
       </div>
-
-
-
-      å
+      </div>
     </div>
 
-  </div>
-
-
-
-
-</body>
-
+    <!-- JavaScript -->
+    <script src="assets/js/subjects-data.js"></script>
+    <script src="assets/js/subjects.js"></script>
+  </body>
 </html>
