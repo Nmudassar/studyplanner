@@ -51,3 +51,31 @@
 
     gap: 28px;
 }
+
+/* ===========================
+   Topic Card
+=========================== */
+
+.topic-card{
+
+    background: var(--white);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.topic-card:hover{
+
+    transform:translateY(-6px);
+
+    border:2px solid var(--secondary-color);
+}
