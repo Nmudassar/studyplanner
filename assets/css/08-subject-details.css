@@ -101,3 +101,20 @@
 
     margin-bottom:20px;
 }
+
+/* ===========================
+   Topic Information
+=========================== */
+
+.topic-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    color:#555;
+
+    font-size:15px;
+}
