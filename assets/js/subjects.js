@@ -92,3 +92,13 @@ function openLevelBox(subjectId) {
   // Open the popup
   showPopup("levelPopup");
 }
+
+/* ==========================================
+   Close Level Popup
+========================================== */
+
+// This function closes the GCSE/A-Level popup
+function closeLevelBox() {
+  // Hide the level popup
+  hidePopup("levelPopup");
+}
