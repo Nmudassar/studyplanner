@@ -147,3 +147,27 @@ function goToTopics(levelId) {
   // Open the topic popup
   showPopup("topicPopup");
 }
+
+/* ==========================================
+   07- Update Topic Popup Summary
+========================================== */
+
+// Shows the selected subject and level
+// at the top of the topic popup
+function updateTopicPopupSummary(subject, levelData) {
+  // Find where the subject name should appear
+  const subjectDisplay = document.getElementById("selectedSubjectDisplay");
+
+  // Find where the level name should appear
+  const levelDisplay = document.getElementById("selectedLevelDisplay");
+
+  // Show the selected subject
+  if (subjectDisplay) {
+    subjectDisplay.textContent = subject.name;
+  }
+
+  // Show the selected level
+  if (levelDisplay) {
+    levelDisplay.textContent = levelData.name;
+  }
+}
