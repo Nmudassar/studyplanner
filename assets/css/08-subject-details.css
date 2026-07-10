@@ -12,3 +12,29 @@
     max-width: 1300px;
     margin: 0 auto;
 }
+
+√/* ===========================
+   Subject Header
+=========================== */
+
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.subject-info h1 {
+    color: var(--primary-color);
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subject-info p {
+    color: #666;
+    font-size: 17px;
+}
+
+.back-btn {
+    text-decoration: none;
+}
