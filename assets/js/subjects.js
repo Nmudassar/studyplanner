@@ -13,32 +13,54 @@ let selectedLevel = ""; //This variable stores the level chosen by the student. 
 
 // Wait until the whole HTML page has loaded
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Set up the page
-    initialiseSubjectsPage();
-
+  // Set up the page
+  initialiseSubjectsPage();
 });
-
 
 // This function prepares the page
 function initialiseSubjectsPage() {
+  // Hide the level popup
+  hidePopup("levelPopup");
 
-    // Hide the level popup
-    hidePopup("levelPopup");
+  // Hide the topic popup
+  hidePopup("topicPopup");
 
-    // Hide the topic popup
-    hidePopup("topicPopup");
+  // Set today's date as the minimum date
+  setMinimumStartDate();
 
-    // Set today's date as the minimum date
-    setMinimumStartDate();
+  // Connect the study plan form
+  connectStudyPlanForm();
 
-    // Connect the study plan form
-    connectStudyPlanForm();
+  // Enable the search box
+  connectSubjectSearch();
 
-    // Enable the search box
-    connectSubjectSearch();
+  // Enable the Add Study Plan button
+  connectAddStudyPlanButton();
+}
 
-    // Enable the Add Study Plan button
-    connectAddStudyPlanButton();
+/* ==========================================
+3- Add Study Plan Button
+========================================== */
 
+function connectAddStudyPlanButton() {
+  // find the study plan button
+  const addStudyPlanButton = document.getElementById("openStudyPlanPopup");
+  //if it dose not exist, stop the function
+  if (!studyPlanButton) {
+    return;
+  }
+  //wait for the user to click the button
+  button.addEventListener("click", function () {
+    //find the subject card
+    const subjectGrid = document.getElementById("subjectGrid");
+
+    //scroll down to the card
+    if (subjectGrid) {
+      subjectGrid.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    // Tell the student what to do
+    alert("Choose a subject first.");
+  });
 }
