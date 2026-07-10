@@ -203,6 +203,47 @@
           </option>
         </select>
 
+        <!---Weekly study time-->
+              <!-- ================= Study Plan Settings ================= -->
+      <div
+        id="studyPlanSettings"
+        hidden
+      >
+
+        <!-- Weekly Study Time -->
+        <div class="form-group">
+
+          <label for="weeklyMinutes">
+            Study time per week
+          </label>
+
+          <select
+            id="weeklyMinutes"
+            required
+            onchange="validateStudyPlan()"
+          >
+            <option value="">
+              Choose study time
+            </option>
+
+            <option value="15">
+              15 minutes per week
+            </option>
+
+            <option value="30">
+              30 minutes per week
+            </option>
+
+            <option value="45">
+              45 minutes per week
+            </option>
+
+            <option value="60">
+              1 hour per week
+            </option>
+          </select>
+
+        </div>
         <!----->
 
       </div>
