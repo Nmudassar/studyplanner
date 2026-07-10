@@ -66,13 +66,72 @@
             </nav>
 
         </aside>
+        <!-- ================= Main Content ================= -->
+        <main class="main-content">
 
+            <div class="details-container">
 
-        <!-- Load the data first -->
-        <script src="assets/js/subjects-data.js"></script>
+                <!-- Subject header -->
+                <header class="subject-header">
 
-        <!-- Then load the page logic -->
-        <script src="assets/js/subject-details.js"></script>
+                    <div class="subject-info">
+                        <p class="breadcrumb">
+                            Subjects
+                            <span>›</span>
+                            <span id="breadcrumbSubject">Subject</span>
+                        </p>
+
+                        <h1 id="subjectTitle">
+                            Subject Topics
+                        </h1>
+
+                        <p id="subjectDescription">
+                            Choose a topic to start studying.
+                        </p>
+                    </div>
+
+                    <a href="03-subjects.html" class="btn btn-outline back-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Subjects
+                    </a>
+
+                </header>
+
+                <!-- Topics section -->
+                <section class="topics-section">
+
+                    <div class="section-heading">
+                        <h2>Topics</h2>
+                        <p>Select a topic to view notes, videos, revision cards and tasks.</p>
+                    </div>
+
+                    <!-- JavaScript creates topic cards here -->
+                    <div class="topics-grid" id="topicsGrid"></div>
+
+                    <!-- Error message -->
+                    <div class="empty-state" id="emptyState" hidden>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h2>Topics not found</h2>
+                        <p>Please return to the Subjects page and choose a subject and level again.</p>
+
+                        <a href="03-subjects.html" class="btn">
+                            Choose a Subject
+                        </a>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Load the data first -->
+    <script src="assets/js/subjects-data.js"></script>
+
+    <!-- Then load the page logic -->
+    <script src="assets/js/subject-details.js"></script>
 
 </body>
 
