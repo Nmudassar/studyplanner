@@ -1,0 +1,14 @@
+/* ===========================
+   Subject Details Layout
+=========================== */
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    overflow-y: auto;
+}
+
+.details-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
