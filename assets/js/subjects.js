@@ -94,11 +94,56 @@ function openLevelBox(subjectId) {
 }
 
 /* ==========================================
-   Close Level Popup
+   5-Close Level Popup
 ========================================== */
 
 // This function closes the GCSE/A-Level popup
 function closeLevelBox() {
   // Hide the level popup
   hidePopup("levelPopup");
+}
+
+/* ==========================================
+   6- Choose GCSE or A-Level
+========================================== */
+
+// Runs when the student chooses GCSE or A-Level
+function goToTopics(levelId) {
+  // Make sure a subject has already been selected
+  if (!selectedSubject) {
+    alert("Please choose a subject first.");
+
+    return;
+  }
+
+  // Save the selected level
+  selectedLevel = levelId;
+
+  // Get the selected subject data
+  const subject = subjectsData[selectedSubject];
+
+  // Get the selected level data
+  const levelData = subject.levels[selectedLevel];
+
+  // Check that the level exists
+  if (!levelData) {
+    alert("This study level is not available.");
+
+    return;
+  }
+
+  // Show the selected subject and level
+  updateTopicPopupSummary(subject, levelData);
+
+  // Add the correct topics to the dropdown
+  populateTopicDropdown(levelData.topics);
+
+  // Reset any old planner values
+  resetTopicPlanner();
+
+  // Close the level popup
+  closeLevelBox();
+
+  // Open the topic popup
+  showPopup("topicPopup");
 }
