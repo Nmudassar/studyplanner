@@ -171,3 +171,45 @@ function updateTopicPopupSummary(subject, levelData) {
     levelDisplay.textContent = levelData.name;
   }
 }
+
+/* ==========================================
+   08- Fill Topic Dropdown
+========================================== */
+
+// Adds the correct topics to the dropdown
+function populateTopicDropdown(topics) {
+  // Find the topic dropdown
+  const topicSelect = document.getElementById("topicSelect");
+
+  // Stop if the dropdown is missing
+  if (!topicSelect) {
+    return;
+  }
+
+  // Reset the dropdown
+  topicSelect.innerHTML = `
+    <option value="">
+      Select a topic
+    </option>
+  `;
+
+  // Stop if topics is not an array
+  if (!Array.isArray(topics)) {
+    return;
+  }
+
+  // Add one option for every topic
+  topics.forEach(function (topic) {
+    // Create a new option element
+    const option = document.createElement("option");
+
+    // Store the topic ID
+    option.value = topic.id;
+
+    // Show the topic title
+    option.textContent = topic.title;
+
+    // Add the option to the dropdown
+    topicSelect.appendChild(option);
+  });
+}
