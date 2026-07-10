@@ -161,9 +161,12 @@
       </div>
     </div>
 
-    <!-- ================= Topic Planner Popup ================= -->
+    <!-- ==================================================
+     Topic Planner Popup
+================================================== -->
     <div class="topic-popup" id="topicPopup">
       <div class="topic-popup-content">
+        <!-- Close Button -->
         <button
           type="button"
           class="close-btn"
@@ -173,80 +176,149 @@
           ×
         </button>
 
-        <h2>Add Study Plan</h2>
+        <!-- Popup Heading -->
+        <div class="topic-popup-heading">
+          <div class="topic-popup-icon">
+            <i class="fa-solid fa-calendar-plus"></i>
+          </div>
 
-        <p class="selected-plan-summary">
-          <strong id="selectedSubjectDisplay"> Biology </strong>
+          <div>
+            <h2>Add Study Plan</h2>
 
-          <span>•</span>
-
-          <strong id="selectedLevelDisplay"> GCSE </strong>
-        </p>
-
-        <!-- the planner form and topic dropdown -->
-             <form id="studyPlanForm">
-
-      <!-- ================= Topic Selection ================= -->
-      <div class="form-group">
-
-        <label for="topicSelect">
-          Choose a topic
-        </label>
-
-        <select
-          id="topicSelect"
-          required
-          onchange="showSelectedTopicDetails()"
-        >
-          <option value="">
-            Select a topic
-          </option>
-        </select>
-
-        <!---Weekly study time-->
-              <!-- ================= Study Plan Settings ================= -->
-      <div
-        id="studyPlanSettings"
-        hidden
-      >
-
-        <!-- Weekly Study Time -->
-        <div class="form-group">
-
-          <label for="weeklyMinutes">
-            Study time per week
-          </label>
-
-          <select
-            id="weeklyMinutes"
-            required
-            onchange="validateStudyPlan()"
-          >
-            <option value="">
-              Choose study time
-            </option>
-
-            <option value="15">
-              15 minutes per week
-            </option>
-
-            <option value="30">
-              30 minutes per week
-            </option>
-
-            <option value="45">
-              45 minutes per week
-            </option>
-
-            <option value="60">
-              1 hour per week
-            </option>
-          </select>
-
+            <p>Choose a topic and create your weekly study rotation.</p>
+          </div>
         </div>
-        <!----->
 
-      </div>
+        <!-- Selected Subject and Level -->
+        <div class="selected-plan-summary">
+          <div class="selected-plan-item">
+            <span> Subject </span>
+
+            <strong id="selectedSubjectDisplay"> Biology </strong>
+          </div>
+
+          <span class="summary-divider"> • </span>
+
+          <div class="selected-plan-item">
+            <span> Level </span>
+
+            <strong id="selectedLevelDisplay"> GCSE </strong>
+          </div>
+        </div>
+
+        <!-- ================= Study Plan Form ================= -->
+        <form id="studyPlanForm">
+          <!-- Topic Selection -->
+          <div class="form-group">
+            <label for="topicSelect"> Choose a topic </label>
+
+            <select
+              id="topicSelect"
+              required
+              onchange="showSelectedTopicDetails()"
+            >
+              <option value="">Select a topic</option>
+            </select>
+          </div>
+
+          <!-- Hidden until the student chooses a topic -->
+          <div id="studyPlanSettings" hidden>
+            <!-- Weekly Study Time -->
+            <div class="form-group">
+              <label for="weeklyMinutes"> Study time per week </label>
+
+              <select
+                id="weeklyMinutes"
+                required
+                onchange="validateStudyPlan()"
+              >
+                <option value="">Choose study time</option>
+
+                <option value="15">15 minutes per week</option>
+
+                <option value="30">30 minutes per week</option>
+
+                <option value="45">45 minutes per week</option>
+
+                <option value="60">1 hour per week</option>
+              </select>
+            </div>
+
+            <!-- Preferred Study Day -->
+            <div class="form-group">
+              <label for="preferredDay"> Preferred study day </label>
+
+              <select id="preferredDay" required onchange="validateStudyPlan()">
+                <option value="">Choose a day</option>
+
+                <option value="1">Monday</option>
+
+                <option value="2">Tuesday</option>
+
+                <option value="3">Wednesday</option>
+
+                <option value="4">Thursday</option>
+
+                <option value="5">Friday</option>
+
+                <option value="6">Saturday</option>
+
+                <option value="0">Sunday</option>
+              </select>
+            </div>
+
+            <!-- Start Date -->
+            <div class="form-group">
+              <label for="planStartDate"> Start date </label>
+
+              <input
+                type="date"
+                id="planStartDate"
+                required
+                onchange="validateStudyPlan()"
+              />
+            </div>
+
+            <!-- Subtopic Preview -->
+            <div class="subtopics-preview" id="subtopicsPreview">
+              <div class="subtopics-preview-heading">
+                <div>
+                  <h3>These topics will be added to your calendar</h3>
+
+                  <p>One subtopic will appear each week.</p>
+                </div>
+
+                <span class="subtopic-count" id="subtopicCount">
+                  0 topics
+                </span>
+              </div>
+
+              <ul id="subtopicsList">
+                <!-- JavaScript creates the subtopic list here -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Status Message -->
+          <p class="planner-message" id="plannerMessage" aria-live="polite"></p>
+
+          <!-- Action Buttons -->
+          <div class="popup-buttons">
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="backToLevelPopup()"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+              Back
+            </button>
+
+            <button type="submit" class="btn" id="generatePlanButton" disabled>
+              <i class="fa-regular fa-calendar-check"></i>
+              Generate Plan
+            </button>
+          </div>
+        </form>
       </div>
     </div>
 
