@@ -79,3 +79,25 @@
 
     border:2px solid var(--secondary-color);
 }
+
+/* ===========================
+   Topic Title
+=========================== */
+
+.topic-card h2{
+
+    color:var(--primary-color);
+
+    margin-bottom:15px;
+
+    font-size:25px;
+}
+
+.topic-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
