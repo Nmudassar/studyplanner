@@ -64,3 +64,31 @@ function connectAddStudyPlanButton() {
     alert("Choose a subject first.");
   });
 }
+
+/* ==========================================
+   4- Open Level Popup
+========================================== */
+
+function openLevelBox(subjectId) {
+  // Get the selected subject
+  const subject = subjectsData[subjectId];
+
+  // If the subject doesn't exist
+  if (!subject) {
+    alert("Subject not found.");
+
+    return;
+  }
+
+  // Save the selected subject
+  selectedSubject = subjectId;
+
+  // Reset the level
+  selectedLevel = "";
+
+  // Show the subject name
+  document.getElementById("popupSubjectTitle").textContent = subject.name;
+
+  // Open the popup
+  showPopup("levelPopup");
+}
