@@ -213,3 +213,79 @@ function populateTopicDropdown(topics) {
     topicSelect.appendChild(option);
   });
 }
+
+/* ==========================================
+   09- Show Topic Details
+========================================== */
+
+// Shows the selected topic's subtopics
+function showSelectedTopicDetails() {
+  // Get the selected topic
+  const selectedTopic = getSelectedTopic();
+
+  // Find the hidden planner settings
+  const studyPlanSettings = document.getElementById("studyPlanSettings");
+
+  // Find the subtopic list
+  const subtopicsList = document.getElementById("subtopicsList");
+
+  // Find the topic counter
+  const subtopicCount = document.getElementById("subtopicCount");
+
+  // Find the Generate Plan button
+  const generateButton = document.getElementById("generatePlanButton");
+
+  // Clear any old subtopics
+  if (subtopicsList) {
+    subtopicsList.innerHTML = "";
+  }
+
+  // If no topic is selected
+  if (!selectedTopic) {
+    // Hide planner settings
+    if (studyPlanSettings) {
+      studyPlanSettings.hidden = true;
+    }
+
+    // Reset topic count
+    if (subtopicCount) {
+      subtopicCount.textContent = "0 topics";
+    }
+
+    // Disable Generate Plan button
+    if (generateButton) {
+      generateButton.disabled = true;
+    }
+
+    return;
+  }
+
+  // Get the subtopics
+  const subtopics = selectedTopic.subtopics || [];
+
+  // Create one list item for each subtopic
+  subtopics.forEach(function (subtopic, index) {
+    const listItem = document.createElement("li");
+
+    listItem.textContent = `Week ${index + 1}: ${getSubtopicTitle(subtopic)}`;
+
+    subtopicsList.appendChild(listItem);
+  });
+
+  // Update the topic count
+  if (subtopicCount) {
+    if (subtopics.length === 1) {
+      subtopicCount.textContent = "1 topic";
+    } else {
+      subtopicCount.textContent = `${subtopics.length} topics`;
+    }
+  }
+
+  // Show planner settings
+  if (studyPlanSettings) {
+    studyPlanSettings.hidden = false;
+  }
+
+  // Check whether the form is complete
+  validateStudyPlan();
+}
