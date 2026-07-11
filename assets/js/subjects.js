@@ -1,145 +1,130 @@
-"use strict"; //This tells JavaScript to use stricter error checking.//
+"use strict";
 
 /* ==================================================
    Current Student Selection
 ================================================== */
 
-let selectedSubject = ""; //This variable stores the subject chosen by the student.//
-let selectedLevel = ""; //This variable stores the level chosen by the student. It also starts empty because the student has not chosen a level yet.//
+let selectedSubject = "";
+let selectedLevel = "";
 
-/* ==========================================
+/* ==================================================
    Page Setup
-========================================== */
+================================================== */
 
-// Wait until the whole HTML page has loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Set up the page
   initialiseSubjectsPage();
 });
 
-// This function prepares the page
 function initialiseSubjectsPage() {
-  // Hide the level popup
   hidePopup("levelPopup");
-
-  // Hide the topic popup
   hidePopup("topicPopup");
 
-  // Set today's date as the minimum date
   setMinimumStartDate();
-
-  // Connect the study plan form
   connectStudyPlanForm();
-
-  // Enable the search box
   connectSubjectSearch();
-
-  // Enable the Add Study Plan button
   connectAddStudyPlanButton();
 }
 
-/* ==========================================
-3- Add Study Plan Button
-========================================== */
+/* ==================================================
+   Add Study Plan Button
+================================================== */
 
 function connectAddStudyPlanButton() {
-  // find the study plan button
   const addStudyPlanButton = document.getElementById("openStudyPlanPopup");
-  //if it dose not exist, stop the function
-  if (!studyPlanButton) {
+
+  if (!addStudyPlanButton) {
     return;
   }
-  //wait for the user to click the button
-  button.addEventListener("click", function () {
-    //find the subject card
+
+  addStudyPlanButton.addEventListener("click", function () {
     const subjectGrid = document.getElementById("subjectGrid");
 
-    //scroll down to the card
     if (subjectGrid) {
       subjectGrid.scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
     }
-    // Tell the student what to do
-    alert("Choose a subject first.");
+
+    alert("Choose a subject card first, then select GCSE or A-Level.");
   });
 }
 
-/* ==========================================
-   4- Open Level Popup
-========================================== */
+/* ==================================================
+   Open Level Popup
+================================================== */
 
 function openLevelBox(subjectId) {
-  // Get the selected subject
   const subject = subjectsData[subjectId];
 
-  // If the subject doesn't exist
   if (!subject) {
-    alert("Subject not found.");
-
+    alert(`Subject "${subjectId}" was not found.`);
     return;
   }
 
-  // Save the selected subject
+  // Save the subject selected by the student
   selectedSubject = subjectId;
 
-  // Reset the level
+  // Clear any previously selected level
   selectedLevel = "";
 
-  // Show the subject name
-  document.getElementById("popupSubjectTitle").textContent = subject.name;
+  const popupTitle = document.getElementById("popupSubjectTitle");
 
-  // Open the popup
+  if (popupTitle) {
+    popupTitle.textContent = `${subject.icon} ${subject.name}`;
+  }
+
   showPopup("levelPopup");
 }
+/* ==================================================
+   Close Level Popup
+================================================== */
 
-/* ==========================================
-   5-Close Level Popup
-========================================== */
-
-// This function closes the GCSE/A-Level popup
 function closeLevelBox() {
-  // Hide the level popup
   hidePopup("levelPopup");
 }
 
-/* ==========================================
-   6- Choose GCSE or A-Level
-========================================== */
+f; /* ==================================================
+   Select GCSE or A-Level
+================================================== */
 
-// Runs when the student chooses GCSE or A-Level
 function goToTopics(levelId) {
-  // Make sure a subject has already been selected
+  // Stop if no subject has been selected
   if (!selectedSubject) {
     alert("Please choose a subject first.");
+    return;
+  }
 
+  // Convert the level into the same format used in subjects-data.js
+  const normalisedLevel = normaliseLevel(levelId);
+
+  // Get the chosen subject data
+  const subject = subjectsData[selectedSubject];
+
+  // Get the GCSE or A-Level data
+  const levelData = subject?.levels?.[normalisedLevel];
+
+  // Stop if the selected level does not exist
+  if (!levelData) {
+    console.error(
+      `The level "${normalisedLevel}" was not found for ${selectedSubject}.`,
+    );
+
+    alert("This study level is currently unavailable.");
     return;
   }
 
   // Save the selected level
-  selectedLevel = levelId;
+  selectedLevel = normalisedLevel;
 
-  // Get the selected subject data
-  const subject = subjectsData[selectedSubject];
-
-  // Get the selected level data
-  const levelData = subject.levels[selectedLevel];
-
-  // Check that the level exists
-  if (!levelData) {
-    alert("This study level is not available.");
-
-    return;
-  }
-
-  // Show the selected subject and level
-  updateTopicPopupSummary(subject, levelData);
+  // Clear old planner values first
+  resetTopicPlanner();
 
   // Add the correct topics to the dropdown
   populateTopicDropdown(levelData.topics);
 
-  // Reset any old planner values
-  resetTopicPlanner();
+  // Show the selected subject and level
+  updateTopicPopupSummary(subject, levelData);
 
   // Close the level popup
   closeLevelBox();
@@ -147,112 +132,125 @@ function goToTopics(levelId) {
   // Open the topic popup
   showPopup("topicPopup");
 }
+/* ==================================================
+   Normalise Level Values
+================================================== */
 
-/* ==========================================
-   07- Update Topic Popup Summary
-========================================== */
+function normaliseLevel(levelId) {
+  const value = String(levelId).trim().toLowerCase().replace("-", "");
 
-// Shows the selected subject and level
-// at the top of the topic popup
+  if (value === "gcse") {
+    return "gcse";
+  }
+
+  if (value === "alevel" || value === "a level") {
+    return "alevel";
+  }
+
+  return value;
+}
+
+/* ==================================================
+   Update Topic Popup Heading
+================================================== */
+
 function updateTopicPopupSummary(subject, levelData) {
-  // Find where the subject name should appear
   const subjectDisplay = document.getElementById("selectedSubjectDisplay");
 
-  // Find where the level name should appear
   const levelDisplay = document.getElementById("selectedLevelDisplay");
 
-  // Show the selected subject
   if (subjectDisplay) {
     subjectDisplay.textContent = subject.name;
   }
 
-  // Show the selected level
   if (levelDisplay) {
     levelDisplay.textContent = levelData.name;
   }
 }
 
-/* ==========================================
-   08- Fill Topic Dropdown
-========================================== */
+/* ==================================================
+   Populate Topic Dropdown
+================================================== */
 
-// Adds the correct topics to the dropdown
 function populateTopicDropdown(topics) {
-  // Find the topic dropdown
   const topicSelect = document.getElementById("topicSelect");
 
-  // Stop if the dropdown is missing
   if (!topicSelect) {
     return;
   }
 
-  // Reset the dropdown
   topicSelect.innerHTML = `
     <option value="">
       Select a topic
     </option>
   `;
 
-  // Stop if topics is not an array
   if (!Array.isArray(topics)) {
     return;
   }
 
-  // Add one option for every topic
   topics.forEach(function (topic) {
-    // Create a new option element
     const option = document.createElement("option");
 
-    // Store the topic ID
     option.value = topic.id;
-
-    // Show the topic title
     option.textContent = topic.title;
 
-    // Add the option to the dropdown
     topicSelect.appendChild(option);
   });
 }
 
-/* ==========================================
-   09- Show Topic Details
-========================================== */
+/* ==================================================
+   Find Selected Topic
+================================================== */
 
-// Shows the selected topic's subtopics
+function getSelectedTopic() {
+  const topicSelect = document.getElementById("topicSelect");
+
+  if (!selectedSubject || !selectedLevel || !topicSelect?.value) {
+    return null;
+  }
+
+  const topics = subjectsData[selectedSubject]?.levels?.[selectedLevel]?.topics;
+
+  if (!Array.isArray(topics)) {
+    return null;
+  }
+
+  return (
+    topics.find(function (topic) {
+      return topic.id === topicSelect.value;
+    }) || null
+  );
+}
+
+/* ==================================================
+   Show Topic Details and Subtopics
+================================================== */
+
 function showSelectedTopicDetails() {
-  // Get the selected topic
   const selectedTopic = getSelectedTopic();
 
-  // Find the hidden planner settings
   const studyPlanSettings = document.getElementById("studyPlanSettings");
 
-  // Find the subtopic list
   const subtopicsList = document.getElementById("subtopicsList");
 
-  // Find the topic counter
   const subtopicCount = document.getElementById("subtopicCount");
 
-  // Find the Generate Plan button
   const generateButton = document.getElementById("generatePlanButton");
 
-  // Clear any old subtopics
   if (subtopicsList) {
     subtopicsList.innerHTML = "";
   }
 
-  // If no topic is selected
   if (!selectedTopic) {
-    // Hide planner settings
     if (studyPlanSettings) {
       studyPlanSettings.hidden = true;
     }
 
-    // Reset topic count
     if (subtopicCount) {
       subtopicCount.textContent = "0 topics";
     }
 
-    // Disable Generate Plan button
     if (generateButton) {
       generateButton.disabled = true;
     }
@@ -260,32 +258,448 @@ function showSelectedTopicDetails() {
     return;
   }
 
-  // Get the subtopics
   const subtopics = selectedTopic.subtopics || [];
 
-  // Create one list item for each subtopic
   subtopics.forEach(function (subtopic, index) {
     const listItem = document.createElement("li");
 
-    listItem.textContent = `Week ${index + 1}: ${getSubtopicTitle(subtopic)}`;
+    const subtopicTitle = getSubtopicTitle(subtopic);
 
-    subtopicsList.appendChild(listItem);
+    listItem.innerHTML = `
+      <span class="subtopic-week">
+        Week ${index + 1}
+      </span>
+
+      <span class="subtopic-name">
+        ${subtopicTitle}
+      </span>
+    `;
+
+    subtopicsList?.appendChild(listItem);
   });
 
-  // Update the topic count
   if (subtopicCount) {
-    if (subtopics.length === 1) {
-      subtopicCount.textContent = "1 topic";
-    } else {
-      subtopicCount.textContent = `${subtopics.length} topics`;
-    }
+    const label = subtopics.length === 1 ? "topic" : "topics";
+
+    subtopicCount.textContent = `${subtopics.length} ${label}`;
   }
 
-  // Show planner settings
   if (studyPlanSettings) {
     studyPlanSettings.hidden = false;
   }
 
-  // Check whether the form is complete
   validateStudyPlan();
+}
+
+/* ==================================================
+   Support String or Object Subtopics
+================================================== */
+
+function getSubtopicTitle(subtopic) {
+  if (typeof subtopic === "string") {
+    return subtopic;
+  }
+
+  return subtopic?.title || "Study topic";
+}
+
+function getSubtopicId(subtopic, index) {
+  if (typeof subtopic === "object" && subtopic?.id) {
+    return subtopic.id;
+  }
+
+  return `subtopic-${index + 1}`;
+}
+
+/* ==================================================
+   Validate Planner Form
+================================================== */
+
+function validateStudyPlan() {
+  const topicValue = document.getElementById("topicSelect")?.value;
+
+  const weeklyMinutes = document.getElementById("weeklyMinutes")?.value;
+
+  const preferredDay = document.getElementById("preferredDay")?.value;
+
+  const startDate = document.getElementById("planStartDate")?.value;
+
+  const generateButton = document.getElementById("generatePlanButton");
+
+  const formIsComplete = Boolean(
+    selectedSubject &&
+    selectedLevel &&
+    topicValue &&
+    weeklyMinutes &&
+    preferredDay !== "" &&
+    startDate,
+  );
+
+  if (generateButton) {
+    generateButton.disabled = !formIsComplete;
+  }
+
+  return formIsComplete;
+}
+
+/* ==================================================
+   Close Topic Popup
+================================================== */
+
+function closeTopicBox() {
+  hidePopup("topicPopup");
+  resetTopicPlanner();
+}
+
+/* ==================================================
+   Return to Level Popup
+================================================== */
+
+function backToLevelPopup() {
+  hidePopup("topicPopup");
+
+  const currentSubject = selectedSubject;
+
+  selectedLevel = "";
+
+  resetTopicPlanner();
+
+  if (currentSubject) {
+    openLevelBox(currentSubject);
+  }
+}
+
+/* ==================================================
+   Reset Topic Planner Fields
+================================================== */
+
+function resetTopicPlanner() {
+  const topicSelect = document.getElementById("topicSelect");
+
+  const weeklyMinutes = document.getElementById("weeklyMinutes");
+
+  const preferredDay = document.getElementById("preferredDay");
+
+  const startDate = document.getElementById("planStartDate");
+
+  const settings = document.getElementById("studyPlanSettings");
+
+  const subtopicsList = document.getElementById("subtopicsList");
+
+  const subtopicCount = document.getElementById("subtopicCount");
+
+  const plannerMessage = document.getElementById("plannerMessage");
+
+  const generateButton = document.getElementById("generatePlanButton");
+
+  if (topicSelect) {
+    topicSelect.value = "";
+  }
+
+  if (weeklyMinutes) {
+    weeklyMinutes.value = "";
+  }
+
+  if (preferredDay) {
+    preferredDay.value = "";
+  }
+
+  if (startDate) {
+    startDate.value = "";
+  }
+
+  if (settings) {
+    settings.hidden = true;
+  }
+
+  if (subtopicsList) {
+    subtopicsList.innerHTML = "";
+  }
+
+  if (subtopicCount) {
+    subtopicCount.textContent = "0 topics";
+  }
+
+  if (plannerMessage) {
+    plannerMessage.textContent = "";
+  }
+
+  if (generateButton) {
+    generateButton.disabled = true;
+  }
+}
+
+/* ==================================================
+   Connect Form Submission
+================================================== */
+
+function connectStudyPlanForm() {
+  const studyPlanForm = document.getElementById("studyPlanForm");
+
+  if (!studyPlanForm) {
+    return;
+  }
+
+  studyPlanForm.addEventListener("submit", generateStudyPlan);
+}
+
+/* ==================================================
+   Generate Study Plan
+================================================== */
+
+function generateStudyPlan(event) {
+  event.preventDefault();
+
+  if (!validateStudyPlan()) {
+    showPlannerMessage("Please complete every field.", "error");
+
+    return;
+  }
+
+  const selectedTopic = getSelectedTopic();
+
+  if (!selectedTopic) {
+    showPlannerMessage("Please select a valid topic.", "error");
+
+    return;
+  }
+
+  const weeklyMinutes = Number(document.getElementById("weeklyMinutes").value);
+
+  const preferredDay = Number(document.getElementById("preferredDay").value);
+
+  const startDateValue = document.getElementById("planStartDate").value;
+
+  const sessions = createRotatingSessions({
+    topic: selectedTopic,
+    weeklyMinutes,
+    preferredDay,
+    startDateValue,
+  });
+
+  saveStudySessions(sessions);
+
+  showPlannerMessage(
+    `${sessions.length} study sessions were added to your calendar.`,
+    "success",
+  );
+
+  setTimeout(function () {
+    window.location.href = "07-calendar.html";
+  }, 800);
+}
+
+/* ==================================================
+   Create Weekly Rotating Sessions
+================================================== */
+
+function createRotatingSessions({
+  topic,
+  weeklyMinutes,
+  preferredDay,
+  startDateValue,
+}) {
+  const subject = subjectsData[selectedSubject];
+
+  const levelData = subject.levels[selectedLevel];
+
+  const selectedDate = new Date(`${startDateValue}T09:00:00`);
+
+  const firstStudyDate = findNextStudyDay(selectedDate, preferredDay);
+
+  return topic.subtopics.map(function (subtopic, index) {
+    const sessionDate = new Date(firstStudyDate);
+
+    sessionDate.setDate(firstStudyDate.getDate() + index * 7);
+
+    return {
+      id: createSessionId(topic.id, index),
+
+      subjectId: selectedSubject,
+
+      subjectName: subject.name,
+
+      levelId: selectedLevel,
+
+      levelName: levelData.name,
+
+      topicId: topic.id,
+
+      topicTitle: topic.title,
+
+      subtopicId: getSubtopicId(subtopic, index),
+
+      subtopicTitle: getSubtopicTitle(subtopic),
+
+      date: formatDate(sessionDate),
+
+      startTime: "09:00",
+
+      durationMinutes: weeklyMinutes,
+
+      completed: false,
+
+      type: "study-session",
+    };
+  });
+}
+
+/* ==================================================
+   Find First Preferred Study Day
+================================================== */
+
+function findNextStudyDay(startDate, preferredDay) {
+  const date = new Date(startDate);
+
+  const currentDay = date.getDay();
+
+  let daysToAdd = preferredDay - currentDay;
+
+  if (daysToAdd < 0) {
+    daysToAdd += 7;
+  }
+
+  date.setDate(date.getDate() + daysToAdd);
+
+  return date;
+}
+
+/* ==================================================
+   Save Sessions to localStorage
+================================================== */
+
+function saveStudySessions(newSessions) {
+  let existingSessions = [];
+
+  try {
+    existingSessions = JSON.parse(localStorage.getItem("studySessions")) || [];
+  } catch (error) {
+    console.error("Could not read saved study sessions:", error);
+  }
+
+  const allSessions = [...existingSessions, ...newSessions];
+
+  localStorage.setItem("studySessions", JSON.stringify(allSessions));
+}
+
+/* ==================================================
+   Planner Status Message
+================================================== */
+
+function showPlannerMessage(message, type) {
+  const plannerMessage = document.getElementById("plannerMessage");
+
+  if (!plannerMessage) {
+    return;
+  }
+
+  plannerMessage.textContent = message;
+
+  plannerMessage.classList.remove("success", "error");
+
+  plannerMessage.classList.add(type);
+}
+
+/* ==================================================
+   Popup Helpers
+================================================== */
+
+function showPopup(popupId) {
+  const popup = document.getElementById(popupId);
+
+  if (!popup) {
+    return;
+  }
+
+  popup.style.display = "flex";
+
+  document.body.classList.add("popup-open");
+}
+
+function hidePopup(popupId) {
+  const popup = document.getElementById(popupId);
+
+  if (!popup) {
+    return;
+  }
+
+  popup.style.display = "none";
+
+  const levelPopup = document.getElementById("levelPopup");
+
+  const topicPopup = document.getElementById("topicPopup");
+
+  const levelIsOpen = levelPopup?.style.display === "flex";
+
+  const topicIsOpen = topicPopup?.style.display === "flex";
+
+  if (!levelIsOpen && !topicIsOpen) {
+    document.body.classList.remove("popup-open");
+  }
+}
+
+/* ==================================================
+   Minimum Start Date
+================================================== */
+
+function setMinimumStartDate() {
+  const dateInput = document.getElementById("planStartDate");
+
+  if (!dateInput) {
+    return;
+  }
+
+  dateInput.min = formatDate(new Date());
+}
+
+/* ==================================================
+   Date Formatting
+================================================== */
+
+function formatDate(date) {
+  const year = date.getFullYear();
+
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+/* ==================================================
+   Unique Session ID
+================================================== */
+
+function createSessionId(topicId, index) {
+  const randomPart = Math.random().toString(36).slice(2, 8);
+
+  return [topicId, Date.now(), index, randomPart].join("-");
+}
+
+/* ==================================================
+   Subject Search
+================================================== */
+
+function connectSubjectSearch() {
+  const searchInput = document.getElementById("subjectSearch");
+
+  if (!searchInput) {
+    return;
+  }
+
+  searchInput.addEventListener("input", filterSubjectCards);
+}
+
+function filterSubjectCards(event) {
+  const searchValue = event.target.value.trim().toLowerCase();
+
+  const subjectCards = document.querySelectorAll(".subject-card");
+
+  subjectCards.forEach(function (card) {
+    const cardText = card.textContent.toLowerCase();
+
+    const matchesSearch = cardText.includes(searchValue);
+
+    card.style.display = matchesSearch ? "" : "none";
+  });
 }
