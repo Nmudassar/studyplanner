@@ -252,41 +252,406 @@
 }
 
 
-/* ===========================
-   Right Sidebar
-===========================*/
+/* ==================================================
+   Dashboard Calendar Card
+================================================== */
 
-.right-sidebar{
+.dashboard-calendar-card {
+  width: 100%;
+  min-height: 600px;
 
-    background:white;
+  padding: 24px;
 
-    border-radius:20px;
+  background: var(--white);
+  border-radius: 20px;
 
-    padding:30px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+  box-shadow: var(--shadow);
 }
 
-.right-sidebar h3{
+
+/* ==================================================
+   Dashboard Calendar Header
+================================================== */
+
+.dashboard-calendar-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.dashboard-calendar-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--secondary-color);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dashboard-calendar-header h2 {
+  margin: 0 0 5px;
+
+  color: var(--primary-color);
+}
+
+.dashboard-calendar-header p {
+  margin: 0;
+
+  color: #666;
+  font-size: 13px;
+}
+
+.dashboard-calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--secondary-color);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* ==================================================
+   Dashboard Calendar Controls
+================================================== */
+
+.dashboard-calendar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.dashboard-calendar-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: #eef7ff;
+  color: var(--primary-color);
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.dashboard-calendar-controls strong {
+  min-width: 130px;
+
+  color: var(--primary-color);
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   Dashboard Weekly Calendar
+================================================== */
+
+.dashboard-week-calendar {
+  display: grid;
+  grid-template-columns:
+    repeat(7, minmax(105px, 1fr));
+
+  overflow-x: auto;
+
+  border: 1px solid #dfe7ef;
+  border-radius: 14px;
+}
+
+.dashboard-calendar-day {
+  min-height: 360px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #dfe7ef;
+}
+
+.dashboard-calendar-day:last-child {
+  border-right: none;
+}
+
+.dashboard-calendar-day.today {
+  background: #f3fbff;
+}
+
+.dashboard-calendar-day header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 11px 9px;
+
+  border-bottom: 1px solid #dfe7ef;
+}
+
+.dashboard-calendar-day header span {
+  color: #666;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.dashboard-calendar-day header strong {
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.dashboard-calendar-day.today header strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  background: var(--secondary-color);
+  color: var(--white);
+
+  border-radius: 50%;
+}
+
+
+/* ==================================================
+   Dashboard Day Sessions
+================================================== */
+
+.dashboard-day-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 8px;
+}
+
+.dashboard-no-session {
+  display: block;
+
+  margin-top: 30px;
+
+  color: #aaa;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   Dashboard Session Card
+================================================== */
+
+.dashboard-study-session {
+  display: block;
+
+  padding: 9px;
+
+  background: #f3efff;
+  color: inherit;
+
+  border: 1px solid #cfc1ff;
+  border-radius: 8px;
+
+  text-decoration: none;
+}
+
+.dashboard-study-session.completed {
+  opacity: 0.7;
+
+  background: #e5f7e9;
+  border-color: #a3d7af;
+}
+
+.dashboard-session-time {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--secondary-color);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dashboard-study-session strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--primary-color);
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.dashboard-study-session small {
+  display: block;
+
+  color: #777;
+
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.dashboard-more-sessions {
+  color: var(--secondary-color);
+
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/* ==================================================
+   Dashboard Calendar Empty State
+================================================== */
+
+.dashboard-calendar-empty {
+  padding: 30px 15px;
+
+  text-align: center;
+}
+
+.dashboard-calendar-empty i {
+  margin-bottom: 10px;
+
+  color: var(--secondary-color);
+
+  font-size: 30px;
+}
+
+.dashboard-calendar-empty p {
+  margin-bottom: 14px;
+
+  color: #666;
+}
+
+
+/* ==================================================
+   Responsive Dashboard Calendar
+================================================== */
+
+@media screen and (max-width: 1000px) {
+  .dashboard-week-calendar {
+    grid-template-columns:
+      repeat(7, minmax(160px, 1fr));
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .dashboard-calendar-card {
+    padding: 18px;
+  }
+
+  .dashboard-calendar-header {
+    flex-direction: column;
+  }
+
+  .dashboard-week-calendar {
+    grid-template-columns:
+      repeat(7, minmax(180px, 1fr));
+  }
+
+
+  /* ==================================================
+   How It Works Card
+================================================== */
+
+.how-it-works-card{
+
+    margin-top:25px;
+
+    padding:24px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.how-it-works-card h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
 
     color:var(--primary-color);
 
     margin-bottom:20px;
+
 }
 
-.right-sidebar ul{
+.step-item{
 
-    padding-left:20px;
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:18px;
+
 }
 
-.right-sidebar li{
+.step-number{
 
-    margin-bottom:15px;
+    width:34px;
 
-    color:#555;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--secondary-color);
+
+    color:#fff;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
 }
 
-/* ===========================
+.step-item strong{
+
+    color:var(--primary-color);
+
+}
+
+.step-item p{
+
+    margin-top:3px;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+}/* ===========================
    Footer
 ===========================*/
 

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>StudySmart Planner - Calendar</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/css/01-global.css" />
+
+    <!-- Calendar CSS -->
+    <link rel="stylesheet" href="assets/css/11-calendar.css" />
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/62d2ea7a17.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="layout">
+      <!-- ================= Sidebar ================= -->
+      <aside class="sidebar">
+        <div class="logo-details">
+          <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div class="logo-name">Study<span>Smart</span></div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="02-dashboard.html"> Dashboard </a>
+
+          <a href="03-subjects.html"> Subjects </a>
+
+          <a href="06-tasks.html"> Tasks </a>
+
+          <a href="07-calendar.html" class="active"> Calendar </a>
+
+          <a href="11-pomodoro-settings.html"> Focus Timer </a>
+        </nav>
+      </aside>
+
+      <!-- ================= Main Content ================= -->
+      <main class="main-content">
+        <!-- ==================================================
+           Study Calendar
+      ================================================== -->
+        <section class="calendar-page">
+          <!-- Calendar Heading -->
+          <header class="calendar-page-header">
+            <div>
+              <h1>Study Calendar</h1>
+
+              <p>View your automatically generated study sessions.</p>
+            </div>
+
+            <a href="03-subjects.html" class="btn">
+              <i class="fa-solid fa-calendar-plus"></i>
+              Add Study Plan
+            </a>
+          </header>
+
+          <!-- Calendar Controls -->
+          <div class="calendar-controls">
+            <button
+              type="button"
+              class="calendar-control-button"
+              id="previousWeekButton"
+              aria-label="Show previous week"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div>
+              <h2 id="calendarMonthTitle">Study Schedule</h2>
+
+              <p id="calendarWeekRange"></p>
+            </div>
+
+            <button
+              type="button"
+              class="calendar-control-button"
+              id="nextWeekButton"
+              aria-label="Show next week"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Weekly Calendar -->
+          <div class="week-calendar" id="weekCalendar">
+            <!-- JavaScript creates the seven days here -->
+          </div>
+
+          <!-- Empty Calendar Message -->
+          <div class="calendar-empty-state" id="calendarEmptyState" hidden>
+            <i class="fa-regular fa-calendar"></i>
+
+            <h2>No study sessions yet</h2>
+
+            <p>Choose a subject and generate your first study plan.</p>
+
+            <a href="03-subjects.html" class="btn"> Create Study Plan </a>
+          </div>
+
+          <!-- Calendar Summary -->
+          <div class="calendar-summary" id="calendarSummary">
+            <!-- JavaScript adds the summary here -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Calendar JavaScript -->
+    <script src="assets/js/calendar.js"></script>
+  </body>
+</html>
