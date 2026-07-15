@@ -38,23 +38,31 @@
 
 .user-avatar {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  width: 42px;
-  height: 42px;
-
-  background: var(--white);
-  color: var(--primary-color);
+  width: 50px;
+  height: 50px;
 
   border-radius: 50%;
-  box-shadow: var(--shadow);
+  background: #ffffff;
+
+  color: #03045e;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.user-avatar:hover {
+  background: #00b4d8;
+  color: #ffffff;
 }
 
 
-/* ==================================================
+/* ============================
    Subjects Heading
-================================================== */
+===============================*/
 
 .subjects-header {
   display: flex;

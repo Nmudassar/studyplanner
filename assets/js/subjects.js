@@ -25,6 +25,17 @@ function initialiseSubjectsPage() {
   connectAddStudyPlanButton();
 }
 
+/*==========
+Login Avatar
+==========*/
+const loginAvatar = document.getElementById(loginAvatar);
+
+if (loginAvatar) {
+  loginAvatar.addEventListener("click", function () {
+    window.location.href = "01-login.html";
+  });
+}
+
 /* ==================================================
    Add Study Plan Button
 ================================================== */
@@ -443,9 +454,9 @@ function connectStudyPlanForm() {
   studyPlanForm.addEventListener("submit", generateStudyPlan);
 }
 
-/* ==================================================
+/* =======================
    Generate Study Plan
-================================================== */
+========================== */
 
 function generateStudyPlan(event) {
   event.preventDefault();
