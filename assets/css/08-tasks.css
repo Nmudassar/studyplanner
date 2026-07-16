@@ -1,0 +1,29 @@
+.sidebar-progress-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+.progress-track {
+  height: 9px;
+  background: #e3edf5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-fill {
+  height: 100%;
+  background:  #03045E;
+}
