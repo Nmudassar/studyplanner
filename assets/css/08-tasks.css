@@ -1,3 +1,19 @@
+/* ==================================================
+   TASKS PAGE LAYOUT
+================================================== */
+
+.layout {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  min-height: 100vh;
+  background: #90E0EF;
+}
+
+.main-content {
+  min-width: 0;
+  padding: 0 34px 50px;
+}
+
 .sidebar-progress-heading {
   display: flex;
   align-items: center;
@@ -26,4 +42,21 @@
 .progress-fill {
   height: 100%;
   background:  #03045E;
+}
+
+.main-content {
+    padding: 40px;
+    flex: 1;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-search{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
