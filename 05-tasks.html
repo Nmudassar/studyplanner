@@ -4,6 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasks</title>
+    <script
+      src="https://kit.fontawesome.com/62d2ea7a17.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="layout">
+      <!-- ================= Sidebar ================= -->
+      <aside class="sidebar">
+        <div class="logo-details">
+          <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div class="logo-name">Study<span>Smart</span></div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="02-dashboard.html"> Dashboard </a>
+
+          <a href="03-subjects.html" class="active"> Subjects </a>
+
+          <a href="07-calendar.html"> Calendar </a>
+
+          <a href="11-pomodoro-settings.html"> Focus Timer </a>
+        </nav>
+      </aside>
+
+      <!-- ================= Main Content ================= -->
+      <main class="main-content">
+        <!-- ================= Top Bar ================= -->
+         <main class="main-content">
+        <!-- ================= Top Bar ================= -->
+        <header class="top-bar">
+          <input
+            type="text"
+            id="subjectSearch"
+            placeholder="Search subject..."
+          />
+
+          <div class="user">
+            <div class="user-avatar" id="loginAvatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+        </header>
+
+ <!--main contenet--->
+    <section class="sidebar-progress">
+        <div class="sidebar-progress-heading"> 
+            <div class="progress-icon"> <!----this is first conatiner -->
+                 <i class="fa-solid fa-bullseye"></i>
+            </div>
+        
+           <!---This is 2nd container of thr progress bar--> 
+            <div class="div">
+                <h3>Keep going!</h3>
+                    <p>You’ve got this.</p>
+            </div>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="weeklyProgressBar">
+            </div>
+        </div>
+
+        <div class-progress-details>
+            <span>Progress this week</span>
+            <strong id="weeklyProgressPercentage">0%</strong>
+
+        </div>
+
+    </section>      
+    
+  </body>
 </html>
