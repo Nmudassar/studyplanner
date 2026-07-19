@@ -67,7 +67,7 @@
             >
               <i class="fa-regular fa-bell"></i>
 
-              <span class="notification-badge">3</span>
+              <span class="notification-badge"> 3 </span>
             </button>
 
             <a
@@ -79,6 +79,7 @@
             </a>
           </div>
         </header>
+
         <!-- ================= Tasks Header ================= -->
         <section class="tasks-header">
           <div class="tasks-title">
@@ -93,72 +94,42 @@
 
           <button type="button" class="add-task-button" id="addTaskButton">
             <i class="fa-solid fa-plus"></i>
-
             Add Task
           </button>
         </section>
+
         <!-- ================= Task Filters ================= -->
         <section class="task-filters">
-          <button class="filter-button active" data-filter="all">All</button>
+          <button type="button" class="filter-button active" data-filter="all">
+            All
+          </button>
 
-          <button class="filter-button" data-filter="pending">Pending</button>
+          <button type="button" class="filter-button" data-filter="pending">
+            Pending
+          </button>
 
-          <button class="filter-button" data-filter="completed">
+          <button type="button" class="filter-button" data-filter="completed">
             Completed
           </button>
-         <!-- ================= Task List ================= -->
+        </section>
+
+        <!-- ================= Task List ================= -->
         <section class="task-list-section">
+          <div class="task-list" id="taskList">
+            <!-- Task cards will be created here by JavaScript -->
+          </div>
 
-          <!-- Task cards will be added here by JavaScript -->
-          <div
-            class="task-list"
-            id="taskList"
-          ></div>
-
-          <!-- Empty state -->
-          <div
-            class="empty-state"
-            id="emptyTaskState"
-          >
+          <div class="empty-state" id="emptyTaskState">
             <i class="fa-solid fa-clipboard-list"></i>
 
             <h2>No tasks yet</h2>
 
-            <p>
-              Add a task or generate a study plan to see your tasks here.
-            </p>
+            <p>Add a task or generate a study plan to see your tasks here.</p>
           </div>
-
-        </section>
-              <!-- Task cards will be added here with JavaScript -->
-              <!-- ================= Task Card ================= -->
-              <article class="task-card">
-                <div class="task-card-left">
-                  <span class="task-subject biology"> Subject</span>
-
-                  <h3>Task Title</h3>
-
-                  <p class="task-topic">Topic: Topic Name</p>
-                </div>
-
-                <div class="task-card-right">
-                  <p class="task-date">Due Date</p>
-
-                  <span class="task-status pending"> Pending </span>
-                </div>
-              </article>
-            </div>
-
-            <div class="empty-state" id="emptyTaskState">
-              <i class="fa-solid fa-clipboard-list"></i>
-
-              <h2>No tasks yet</h2>
-
-              <p>Add a task or generate a study plan to see your tasks here.</p>
-            </div>
-          </section>
         </section>
       </main>
     </div>
+
+    <script src="assets/js/task.js"></script>
   </body>
 </html>
