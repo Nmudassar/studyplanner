@@ -79,6 +79,64 @@
             </a>
           </div>
         </header>
+        <!-- ================= Tasks Header ================= -->
+        <section class="tasks-header">
+          <div class="tasks-title">
+            <p class="page-tag">Study Planner</p>
+
+            <h1>My Tasks</h1>
+
+            <p class="tasks-description">
+              Manage your study sessions and keep track of your progress.
+            </p>
+          </div>
+
+          <button type="button" class="add-task-button" id="addTaskButton">
+            <i class="fa-solid fa-plus"></i>
+
+            Add Task
+          </button>
+        </section>
+        <!-- ================= Task Filters ================= -->
+        <section class="task-filters">
+          <button class="filter-button active" data-filter="all">All</button>
+
+          <button class="filter-button" data-filter="pending">Pending</button>
+
+          <button class="filter-button" data-filter="completed">
+            Completed
+          </button>
+          <!-- ================= Task List ================= -->
+          <section class="task-list-section">
+            <div class="task-list" id="taskList">
+              <!-- Task cards will be added here with JavaScript -->
+              <!-- ================= Task Card ================= -->
+              <article class="task-card">
+                <div class="task-card-left">
+                  <span class="task-subject biology"> Subject</span>
+
+                  <h3>Task Title</h3>
+
+                  <p class="task-topic">Topic: Topic Name</p>
+                </div>
+
+                <div class="task-card-right">
+                  <p class="task-date">Due Date</p>
+
+                  <span class="task-status pending"> Pending </span>
+                </div>
+              </article>
+            </div>
+
+            <div class="empty-state" id="emptyTaskState">
+              <i class="fa-solid fa-clipboard-list"></i>
+
+              <h2>No tasks yet</h2>
+
+              <p>Add a task or generate a study plan to see your tasks here.</p>
+            </div>
+          </section>
+        </section>
       </main>
     </div>
   </body>
