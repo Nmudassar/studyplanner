@@ -106,9 +106,30 @@
           <button class="filter-button" data-filter="completed">
             Completed
           </button>
-          <!-- ================= Task List ================= -->
-          <section class="task-list-section">
-            <div class="task-list" id="taskList">
+         <!-- ================= Task List ================= -->
+        <section class="task-list-section">
+
+          <!-- Task cards will be added here by JavaScript -->
+          <div
+            class="task-list"
+            id="taskList"
+          ></div>
+
+          <!-- Empty state -->
+          <div
+            class="empty-state"
+            id="emptyTaskState"
+          >
+            <i class="fa-solid fa-clipboard-list"></i>
+
+            <h2>No tasks yet</h2>
+
+            <p>
+              Add a task or generate a study plan to see your tasks here.
+            </p>
+          </div>
+
+        </section>
               <!-- Task cards will be added here with JavaScript -->
               <!-- ================= Task Card ================= -->
               <article class="task-card">
