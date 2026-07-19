@@ -2,20 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/01-global.css">
-    <link rel="stylesheet" href="assets/css/03-responsive.css">
-    <link rel="stylesheet" href="assets/css/08-tasks.css">
 
-
-    
     <title>Tasks</title>
+
+    <link rel="stylesheet" href="assets/css/01-global.css" />
+
+    <link rel="stylesheet" href="assets/css/03-responsive.css" />
+
+    <link rel="stylesheet" href="assets/css/08-tasks.css" />
 
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="layout">
       <!-- ================= Sidebar ================= -->
@@ -31,7 +34,9 @@
         <nav>
           <a href="02-dashboard.html"> Dashboard </a>
 
-          <a href="03-subjects.html" class="active"> Subjects </a>
+          <a href="03-subjects.html"> Subjects </a>
+
+          <a href="05-tasks.html" class="active"> Tasks </a>
 
           <a href="07-calendar.html"> Calendar </a>
 
@@ -42,63 +47,39 @@
       <!-- ================= Main Content ================= -->
       <main class="main-content">
         <!-- ================= Top Bar ================= -->
-         <main class="main-content">
-        <!-- ================= Top Bar ================= -->
         <header class="top-bar">
-          <input
-            type="text"
-            id="subjectSearch"
-            placeholder="Search subject..."
-          />
+          <div class="task-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-          <div class="user">
-            <div class="user-avatar" id="loginAvatar">
+            <input
+              type="search"
+              id="taskSearch"
+              placeholder="Search tasks..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="user-actions">
+            <button
+              type="button"
+              class="notification-button"
+              aria-label="View notifications"
+            >
+              <i class="fa-regular fa-bell"></i>
+
+              <span class="notification-badge">3</span>
+            </button>
+
+            <a
+              href="01-login.html"
+              class="user-avatar"
+              aria-label="Go to login page"
+            >
               <i class="fa-solid fa-user"></i>
-            </div>
+            </a>
           </div>
         </header>
-
- <!--main contenet--->
-    <section class="sidebar-progress">
-        <!--------------->
-        <div class="sidebar-progress-heading"> 
-            <div class="progress-icon"> <!----this is first conatiner -->
-                 <i class="fa-solid fa-bullseye"></i>
-            </div>
-        
-           <!---This is 2nd container of thr progress bar--> 
-            <div class="div">
-                <h3>Keep going!</h3>
-                    <p>You’ve got this.</p>
-            </div>
-        </div>
-        <!------------>
-        <div class="progress-track">
-            <div class="progress-fill" id="weeklyProgressBar">
-            </div>
-        </div>
-        <!------------>
-        <div class-progress-details>
-            <span>Progress this week</span>
-            <strong id="weeklyProgressPercentage">0%</strong>
-        </div>
-    </section>  
-    
-    <!------main content-->
-    <main class="main-content">
-            <!-- Top Bar -->
-        <header class="top-bar">
-            <div class="task-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" id="taskSearch"
-                placeholder="Search tasks..." 
-                autocomplete="off"
-                />
-
-            </div>
-
-        </header>
-    </main>
-    
+      </main>
+    </div>
   </body>
 </html>
