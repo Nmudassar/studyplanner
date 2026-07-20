@@ -28,7 +28,7 @@ function initialiseSubjectsPage() {
 /*==========
 Login Avatar
 ==========*/
-const loginAvatar = document.getElementById(loginAvatar);
+const loginAvatar = document.getElementById("loginAvatar");
 
 if (loginAvatar) {
   loginAvatar.addEventListener("click", function () {
@@ -95,7 +95,7 @@ function closeLevelBox() {
   hidePopup("levelPopup");
 }
 
-f; /* ==================================================
+/* ==================================================
    Select GCSE or A-Level
 ================================================== */
 
@@ -488,10 +488,15 @@ function generateStudyPlan(event) {
     startDateValue,
   });
 
+  if (sessions.length === 0) {
+    showPlannerMessage("No study sessions could be created.", "error");
+    return;
+  }
+
   saveStudySessions(sessions);
 
   showPlannerMessage(
-    `${sessions.length} study sessions were added to your calendar.`,
+    `${sessions.length} study sessions were added to your calendar and tasks.`,
     "success",
   );
 
@@ -583,16 +588,21 @@ function saveStudySessions(newSessions) {
   let existingSessions = [];
 
   try {
-    existingSessions = JSON.parse(localStorage.getItem("studySessions")) || [];
+    const savedSessions = JSON.parse(localStorage.getItem("studySessions"));
+
+    if (Array.isArray(savedSessions)) {
+      existingSessions = savedSessions;
+    }
   } catch (error) {
     console.error("Could not read saved study sessions:", error);
   }
 
-  const allSessions = [...existingSessions, ...newSessions];
+  const sessionsToAdd = Array.isArray(newSessions) ? newSessions : [];
+
+  const allSessions = [...existingSessions, ...sessionsToAdd];
 
   localStorage.setItem("studySessions", JSON.stringify(allSessions));
 }
-
 /* ==================================================
    Planner Status Message
 ================================================== */

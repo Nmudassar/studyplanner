@@ -441,3 +441,18 @@ function isToday(date) {
     date.getDate() === today.getDate()
   );
 }
+const clearAllPlansButton = document.getElementById("clearAllPlansButton");
+
+if (clearAllPlansButton) {
+  clearAllPlansButton.addEventListener("click", function () {
+    const shouldClear = window.confirm("Delete all saved study plans?");
+
+    if (!shouldClear) {
+      return;
+    }
+
+    localStorage.removeItem("studySessions");
+
+    displayCalendarWeek();
+  });
+}

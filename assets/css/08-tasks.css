@@ -326,3 +326,68 @@
   font-size: 17px;
   line-height: 1.6;
 }
+
+/* ==================================================
+   TASK CARD
+================================================== */
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 24px;
+  margin-bottom: 18px;
+
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.task-card-left h3 {
+  margin: 10px 0;
+  color: #101565;
+}
+
+.task-topic {
+  color: #667085;
+}
+
+.task-card-right {
+  text-align: right;
+}
+
+.task-date {
+  margin-bottom: 10px;
+  color: #667085;
+}
+
+.task-status {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.task-subject {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.biology {
+  background: #caf0f8;
+  color: #0077b6;
+}
