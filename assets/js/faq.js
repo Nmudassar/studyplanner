@@ -57,3 +57,28 @@ function closeAllFaqItems() {
     }
   });
 }
+/* ==================================================
+   Search FAQ Questions and Answers
+================================================== */
+
+function filterFaqItems() {
+  const searchText = faqSearch ? faqSearch.value.trim().toLowerCase() : "";
+
+  let visibleItems = 0;
+
+  faqItems.forEach(function (faqItem) {
+    const itemText = faqItem.textContent.toLowerCase();
+
+    const matchesSearch = itemText.includes(searchText);
+
+    faqItem.style.display = matchesSearch ? "" : "none";
+
+    if (matchesSearch) {
+      visibleItems += 1;
+    }
+  });
+
+  if (faqEmptyState) {
+    faqEmptyState.hidden = visibleItems !== 0;
+  }
+}
