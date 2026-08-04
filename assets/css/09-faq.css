@@ -3,192 +3,280 @@
 ========================================== */
 
 .faq-page {
-  width: 100%;
-  padding-bottom: 40px;
+    width: 100%;
+    padding-bottom: 40px;
 }
+
 
 /* ==========================================
    FAQ Header
 ========================================== */
 
 .faq-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  padding: 30px;
+    display: flex;
 
-  background: white;
+    justify-content: space-between;
 
-  border-radius: 15px;
+    align-items: center;
 
-  box-shadow: var(--shadow);
+    padding: 30px;
 
-  margin-bottom: 30px;
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 30px;
 }
 
-.faq-title h1 {
-  margin-bottom: 10px;
 
-  color: var(--primary-color);
+.faq-header h1 {
+
+    margin-bottom: 10px;
+
+    color: var(--primary-color);
+
 }
 
-.faq-tag {
-  color: var(--secondary-color);
 
-  font-weight: bold;
+.faq-label {
 
-  margin-bottom: 8px;
+    color: var(--secondary-color);
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
 }
 
-.faq-description {
-  color: #666;
 
-  line-height: 1.6;
+.faq-header p {
+
+    color: #666;
+
+    line-height: 1.6;
+
 }
 
-.faq-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  width: 80px;
-  height: 80px;
+.faq-header-icon {
 
-  background: #eef8fb;
+    display: flex;
 
-  border-radius: 50%;
+    justify-content: center;
+
+    align-items: center;
+
+    width: 80px;
+
+    height: 80px;
+
+    background: #eef8fb;
+
+    border-radius: 50%;
+
 }
 
-.faq-icon i {
-  font-size: 40px;
 
-  color: var(--primary-color);
+.faq-header-icon i {
+
+    font-size: 40px;
+
+    color: var(--primary-color);
+
 }
+
 
 /* ==========================================
    Search Section
 ========================================== */
 
 .faq-search-section {
-  margin-bottom: 30px;
+
+    margin-bottom: 30px;
+
 }
+
 
 .faq-search-section label {
-  display: block;
 
-  margin-bottom: 10px;
+    display: block;
 
-  font-weight: bold;
+    margin-bottom: 10px;
 
-  color: var(--primary-color);
+    font-weight: bold;
+
+    color: var(--primary-color);
+
 }
 
-.faq-search {
-  display: flex;
-  align-items: center;
 
-  gap: 12px;
+.faq-search-box {
 
-  background: white;
+    display: flex;
 
-  padding: 15px;
+    align-items: center;
 
-  border-radius: 12px;
+    gap: 12px;
 
-  box-shadow: var(--shadow);
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+
 }
 
-.faq-search i {
-  color: #666;
+
+.faq-search-box i {
+
+    color: #666;
+
 }
 
-.faq-search input {
-  width: 100%;
 
-  border: none;
+.faq-search-box input {
 
-  outline: none;
+    width: 100%;
 
-  font-size: 15px;
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+
 }
+
 
 /* ==========================================
    FAQ List
 ========================================== */
 
 .faq-list {
-  display: flex;
 
-  flex-direction: column;
+    display: flex;
 
-  gap: 18px;
+    flex-direction: column;
+
+    gap: 18px;
+
 }
+
 
 /* ==========================================
-   FAQ Box
+   FAQ Item
 ========================================== */
 
-.faq-box {
-  background: white;
+.faq-item {
 
-  border-radius: 12px;
+    background: white;
 
-  box-shadow: var(--shadow);
+    border-radius: 12px;
 
-  overflow: hidden;
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
 }
+
 
 /* ==========================================
    FAQ Question
 ========================================== */
 
 .faq-question {
-  display: flex;
 
-  justify-content: space-between;
+    width: 100%;
 
-  align-items: center;
+    display: flex;
 
-  padding: 20px;
+    justify-content: space-between;
 
-  cursor: pointer;
+    align-items: center;
+
+    padding: 20px;
+
+    border: none;
+
+    background: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
 }
 
-.faq-question h3 {
-  color: var(--primary-color);
 
-  font-size: 18px;
+.faq-question span {
+
+    color: var(--primary-color);
+
+    font-size: 18px;
+
+    font-weight: 600;
+
 }
+
 
 .faq-question i {
-  color: var(--secondary-color);
 
-  font-size: 18px;
+    color: var(--secondary-color);
+
+    font-size: 18px;
+
 }
+
 
 /* ==========================================
    FAQ Answer
 ========================================== */
 
-.faq-answer {
-  display: none;
+/*
+Do NOT use display:none here.
+The HTML hidden attribute and JavaScript control opening/closing.
+*/
 
-  padding: 0 20px 20px;
+.faq-answer {
+
+    padding: 0 20px 20px;
+
 }
+
 
 .faq-answer p {
-  color: #666;
 
-  line-height: 1.7;
+    color: #666;
+
+    line-height: 1.7;
+
+    margin: 0;
+
 }
+
+
+/* ==========================================
+   Open Animation
+========================================== */
+
+.faq-item.open {
+
+    border-left: 4px solid var(--secondary-color);
+
+}
+
 
 /* ==========================================
    Hover Effect
 ========================================== */
 
-.faq-box:hover {
-  transform: translateY(-2px);
+.faq-item:hover {
 
-  transition: 0.3s;
+    transform: translateY(-2px);
+
+    transition: 0.3s;
+
 }
