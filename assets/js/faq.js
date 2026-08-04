@@ -36,3 +36,24 @@ faqItems.forEach(function (faqItem) {
     }
   });
 });
+/* ==================================================
+   Close All FAQ Items
+================================================== */
+
+function closeAllFaqItems() {
+  faqItems.forEach(function (faqItem) {
+    const questionButton = faqItem.querySelector(".faq-question");
+
+    const answer = faqItem.querySelector(".faq-answer");
+
+    faqItem.classList.remove("open");
+
+    if (questionButton) {
+      questionButton.setAttribute("aria-expanded", "false");
+    }
+
+    if (answer) {
+      answer.hidden = true;
+    }
+  });
+}
