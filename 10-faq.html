@@ -1,191 +1,350 @@
-<!-- ==========================================
-     FAQ Page
-========================================== -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<section class="faq-page">
-  <!-- ==========================================
-       FAQ Header
-  ========================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <header class="faq-header">
-    <!-- Left side -->
+    <title>FAQ | StudySmart</title>
 
-    <div class="faq-title">
-      <p class="faq-tag">Help Centre</p>
+    <link rel="stylesheet" href="assets/css/01-global.css" />
 
-      <h1>Frequently Asked Questions</h1>
+    <link rel="stylesheet" href="assets/css/09-faq.css" />
 
-      <p class="faq-description">
-        Find answers to common questions about StudySmart and learn how to use
-        the application.
-      </p>
+    <link rel="stylesheet" href="assets/css/03-responsive.css" />
+
+    <script
+      src="https://kit.fontawesome.com/62d2ea7a17.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="layout">
+      <!-- ==========================================
+           Sidebar
+      =========================================== -->
+
+      <aside class="sidebar">
+        <div class="logo-details">
+          <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div class="logo-name">Study<span>Smart</span></div>
+          </div>
+        </div>
+
+        <nav>
+          <ul class="nav-list">
+            <li>
+              <a href="02-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="03-subjects.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Subjects</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="05-tasks.html">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tasks</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="07-calendar.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Calendar</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="11-pomodoro-settings.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Focus Timer</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="08-faq.html" class="active">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ==========================================
+           Main Content
+      =========================================== -->
+
+      <main class="main-content">
+        <section class="faq-page">
+          <!-- Page heading -->
+
+          <header class="faq-header">
+            <div>
+              <p class="faq-label">Help Centre</p>
+
+              <h1>Frequently Asked Questions</h1>
+
+              <p>
+                Find answers about study plans, tasks, the calendar and the
+                focus timer.
+              </p>
+            </div>
+
+            <div class="faq-header-icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+          </header>
+
+          <!-- Search -->
+
+          <section class="faq-search-section">
+            <label for="faqSearch"> Search for help </label>
+
+            <div class="faq-search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="search"
+                id="faqSearch"
+                placeholder="Search questions..."
+                autocomplete="off"
+              />
+            </div>
+          </section>
+
+          <!-- FAQ accordion -->
+
+          <section
+            class="faq-list"
+            id="faqList"
+            aria-label="Frequently asked questions"
+          >
+            <!-- Question 1 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> How do I create a study plan? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open the Subjects page, select a subject card, choose GCSE or
+                  A-Level, and then select a topic. Choose the study duration,
+                  preferred day and start date before pressing Generate Plan.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 2 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> Where can I see my generated study plan? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Your generated study sessions appear automatically on both the
+                  Calendar page and the Tasks page.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 3 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> How are study sessions added to the calendar? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  StudySmart creates one weekly session for each subtopic. The
+                  sessions are scheduled using the day and start date selected
+                  when creating the study plan.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 4 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> How do I mark a session as completed? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open the Calendar or Tasks page and press the Mark Complete
+                  button on the study session. Its completed status will be
+                  saved automatically.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 5 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>
+                  What is the difference between scheduled, pending and
+                  completed tasks?
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Scheduled tasks have a future or current date. Pending tasks
+                  have passed their scheduled date but are not complete.
+                  Completed tasks have been marked as finished.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 6 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> How do I delete one study session? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open the Calendar page and press the red bin button on the
+                  session you want to remove. Confirm the message to delete it.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 7 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> How do I delete all study plans? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Press the Clear All Plans button at the top of the Calendar
+                  page. Confirm the message to remove all saved study sessions.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 8 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> Why are my old test plans still showing? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  StudySmart keeps plans saved in your browser. New plans are
+                  added to existing plans until you delete individual sessions
+                  or use Clear All Plans.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 9 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> Where is my study information saved? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Your study sessions are currently stored in your browser using
+                  localStorage. This means the information stays on the same
+                  browser and device.
+                </p>
+              </div>
+            </article>
+
+            <!-- Question 10 -->
+
+            <article class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span> What is the Focus Timer? </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  The Focus Timer uses the Pomodoro method. It separates study
+                  time into focus sessions and short breaks to help you manage
+                  your concentration.
+                </p>
+              </div>
+            </article>
+          </section>
+
+          <!-- No search results -->
+
+          <div id="faqEmptyState" class="faq-empty-state" hidden>
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h2>No questions found</h2>
+
+            <p>Try searching with a different word.</p>
+          </div>
+
+          <!-- Contact/help card -->
+
+          <section class="faq-help-card">
+            <div class="faq-help-icon">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+              <h2>Still need help?</h2>
+
+              <p>
+                Return to the dashboard or check your study plan settings before
+                generating a new plan.
+              </p>
+            </div>
+
+            <a href="02-dashboard.html" class="faq-help-button">
+              Go to Dashboard
+            </a>
+          </section>
+        </section>
+      </main>
     </div>
 
-    <!-- Right side -->
-
-    <div class="faq-icon">
-      <i class="fa-solid fa-circle-question"></i>
-    </div>
-  </header>
-
-  <!-- ==========================================
-       Search Bar
-  ========================================== -->
-
-  <section class="faq-search-section">
-    <label for="faqSearch"> Search Questions </label>
-
-    <div class="faq-search">
-      <i class="fa-solid fa-magnifying-glass"></i>
-
-      <input
-        type="search"
-        id="faqSearch"
-        placeholder="Search FAQ..."
-        autocomplete="off"
-      />
-    </div>
-  </section>
-
-  <!-- ==========================================
-       FAQ Questions
-  ========================================== -->
-
-  <section class="faq-list" id="faqList">
-    <!-- FAQ 1 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>How do I create a study plan?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Go to the Subjects page, choose a subject, select a topic, choose your
-          study time and click the Generate Plan button.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 2 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>Where can I see my study plan?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Your study plan is automatically displayed on both the Calendar page
-          and the Tasks page.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 3 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>How do I mark a task as completed?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Open the Tasks page and click the
-          <strong>Mark Complete</strong> button beside the task.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 4 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>Why can't I see my study sessions?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Make sure you have generated a study plan. The sessions are saved in
-          your browser and will appear in the Calendar and Tasks pages.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 5 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>How do I delete a study plan?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Open the Calendar page and click the Clear All Plans button to remove
-          all saved study sessions.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 6 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>What does the Focus Timer do?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          The Focus Timer helps you study using timed study sessions followed by
-          short breaks to improve concentration.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 7 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>Can I search for questions?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Yes. Use the search bar at the top of this page to quickly find a
-          question.
-        </p>
-      </div>
-    </div>
-
-    <!-- FAQ 8 -->
-
-    <div class="faq-box">
-      <div class="faq-question">
-        <h3>Where is my study information saved?</h3>
-
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <div class="faq-answer">
-        <p>
-          Your study sessions are saved in your browser using localStorage, so
-          they remain available when you revisit the application.
-        </p>
-      </div>
-    </div>
-  </section>
-</section>
+    <script src="assets/js/faq.js"></script>
+  </body>
+</html>
