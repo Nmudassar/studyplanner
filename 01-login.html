@@ -5,16 +5,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sign Up | StudySmart</title>
+    <title>Login or Sign Up | StudySmart</title>
 
     <!-- CSS Files -->
-
     <link rel="stylesheet" href="assets/css/01-global.css" />
-
     <link rel="stylesheet" href="assets/css/05-login.css" />
 
     <!-- Font Awesome -->
-
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -22,28 +19,27 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <main class="wrapper">
       <!-- Page Title -->
-
       <h1 id="title">Sign Up</h1>
 
-      <form>
-        <!-- First Name -->
-
-        <div class="signup-field">
+      <!-- Login and Sign Up Form -->
+      <form id="authForm" novalidate>
+        <!-- First Name: only shown during Sign Up -->
+        <div class="input-field signup-field">
           <i class="fa-solid fa-user"></i>
 
           <input
             type="text"
             name="firstname"
             id="firstname-input"
-            placeholder="Firstname"
+            placeholder="First name"
+            autocomplete="given-name"
           />
         </div>
 
-        <!-- Email -->
-
-        <div>
+        <!-- Email: shown for both Login and Sign Up -->
+        <div class="input-field">
           <i class="fa-solid fa-envelope"></i>
 
           <input
@@ -51,12 +47,13 @@
             name="email"
             id="email-input"
             placeholder="Email"
+            autocomplete="email"
+            required
           />
         </div>
 
-        <!-- Password -->
-
-        <div>
+        <!-- Password: shown for both Login and Sign Up -->
+        <div class="input-field">
           <i class="fa-solid fa-lock"></i>
 
           <input
@@ -64,24 +61,25 @@
             name="password"
             id="password-input"
             placeholder="Password"
+            autocomplete="current-password"
+            required
           />
         </div>
 
-        <!-- Repeat Password -->
-
-        <div class="signup-field">
+        <!-- Repeat Password: only shown during Sign Up -->
+        <div class="input-field signup-field">
           <i class="fa-solid fa-lock"></i>
 
           <input
             type="password"
             name="repeat-password"
             id="repeat-password-input"
-            placeholder="Repeat Password"
+            placeholder="Repeat password"
+            autocomplete="new-password"
           />
         </div>
 
-        <!-- Buttons -->
-
+        <!-- Form Buttons -->
         <div class="btn-field">
           <button type="button" id="signupBtn">Sign Up</button>
 
@@ -89,33 +87,49 @@
         </div>
       </form>
 
-      <!-- Reset Password Section -->
+      <!-- Lost Password Link -->
+      <p class="lost-password">
+        Lost password?
 
-      <dialog id="resetDialog">
+        <a href="#" id="resetPassword"> Click here </a>
+      </p>
+
+      <!-- Back to Home -->
+      <p class="back-home">
+        <a href="index.html">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to home
+        </a>
+      </p>
+    </main>
+
+    <!-- Reset Password Dialog -->
+    <dialog id="resetDialog">
+      <div class="dialog-content">
         <h2>Reset Password</h2>
 
         <p>Enter your registered email address.</p>
 
-        <input type="email" id="resetEmail" placeholder="Enter your email" />
+        <div class="input-field">
+          <i class="fa-solid fa-envelope"></i>
+
+          <input
+            type="email"
+            id="resetEmail"
+            placeholder="Enter your email"
+            autocomplete="email"
+          />
+        </div>
 
         <div class="dialog-buttons">
           <button type="button" id="sendResetBtn">Send Reset Email</button>
 
           <button type="button" id="closeResetBtn">Cancel</button>
         </div>
-      </dialog>
-
-      <!-- Lost Password Link -->
-
-      <p>
-        Lost password?
-
-        <a href="#" id="resetPassword"> Click here </a>
-      </p>
-    </div>
+      </div>
+    </dialog>
 
     <!-- JavaScript -->
-
     <script src="assets/js/login.js"></script>
   </body>
 </html>
