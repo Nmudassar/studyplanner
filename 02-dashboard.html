@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Study Planner Dashboard</title>
 
+    <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
     <link rel="stylesheet" href="assets/css/06-dashboard.css" />
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -17,20 +21,34 @@
 
   <body>
     <div class="dashboard-layout">
+      <!-- Sidebar -->
       <aside class="sidebar">
         <div class="logo-details">
           <div class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
+
             <div class="logo-name">Study<span>Smart</span></div>
           </div>
 
-          <i class="fa-solid fa-bars menu-btn"></i>
+          <button
+            type="button"
+            class="menu-btn"
+            aria-label="Open navigation menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
 
+        <!-- Navigation -->
         <ul class="nav-list">
           <li class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search..." />
+
+            <input
+              type="text"
+              placeholder="Search..."
+              aria-label="Search dashboard"
+            />
           </li>
 
           <li>
@@ -84,139 +102,170 @@
               <span>FAQ</span>
             </a>
           </li>
-
-          <li>
-            <a href="01-login.html">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <span>Logout</span>
-            </a>
-          </li>
         </ul>
       </aside>
-      <!------Main --->
+
+      <!-- Main Content -->
       <main class="main-content">
-        <section class="left-content">
-          <section class="hero-card">
-            <div class="hero-text">
-              <p>0 Tasks Due Today</p>
-              <h2>Focus</h2>
-            </div>
-            <!---Focus/Timer-->
-            <div class="focus-card">
-              <div class="timer-circle">
-                <h3>Focus</h3>
-                <span id="timer">25:00</span>
-              </div>
+        <!-- Top Header -->
+        <header class="dashboard-header">
+          <h1>Welcome to StudySmart</h1>
 
-              <div class="timer-buttons">
-                <button id="settingsBtn" class="timer-setting-btn">
-                  <i class="fa-solid fa-gear"></i>
-                </button>
-
-                <button class="play" id="startBtn">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-
-                <button id="resetBtn">
-                  <i class="fa-solid fa-rotate-right"></i>
-                </button>
-              </div>
-            </div>
-          </section>
-          <!---- Task Cards-->
-          <section class="stats-grid">
-            <div class="stat-card">
-              <h3>👀 Scheduled Sessions</h3>
-              <h2 id="scheduledSessionCount">0</h2>
-              <p>All study session</p>
-            </div>
-
-            <div class="stat-card">
-              <h3>⚠ Upcoming Sessions</h3>
-              <h2 id="upcomingSessionCount">0</h2>
-              <p>Session still to complete</p>
-            </div>
-
-            <div class="stat-card">
-              <h3>👍 Tasks Completed</h3>
-              <h2 id="completedSession">0</h2>
-              <p>Finished study sessions</p>
-            </div>
-          </section>
-        </section>
-        <!-- ======================
-     Dashboard Study Calendar
-==================================-->
-        <aside class="dashboard-calendar-card">
-          <!-- Calendar Header -->
-          <header class="dashboard-calendar-header">
-            <div>
-              <span class="dashboard-calendar-label"> Weekly plan </span>
-
-              <h2>Study Calendar</h2>
-
-              <p id="dashboardCalendarRange">
-                Your study sessions for this week.
-              </p>
-            </div>
-
-            <a href="07-calendar.html" class="dashboard-calendar-link">
-              View full calendar
-
-              <i class="fa-solid fa-arrow-right"></i>
+          <div class="header-buttons">
+            <a href="01-login.html" class="signin-btn">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <span>Sign In</span>
             </a>
-          </header>
 
-          <!-- Calendar Navigation -->
-          <div class="dashboard-calendar-controls">
-            <button
-              type="button"
-              id="dashboardPreviousWeek"
-              aria-label="Show previous week"
-            >
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <strong id="dashboardCalendarMonth"> July 2026 </strong>
-
-            <button
-              type="button"
-              id="dashboardNextWeek"
-              aria-label="Show next week"
-            >
-              <i class="fa-solid fa-chevron-right"></i>
+            <button type="button" class="logout-btn" id="logoutButton">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Logout</span>
             </button>
           </div>
+        </header>
 
-          <!-- JavaScript creates the week here -->
-          <div class="dashboard-week-calendar" id="dashboardWeekCalendar"></div>
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Left Content -->
+          <section class="left-content">
+            <!-- Hero Card -->
+            <section class="hero-card">
+              <div class="hero-text">
+                <p>0 Tasks Due Today</p>
+                <h2>Focus</h2>
+              </div>
 
-          <!-- Empty Week Message -->
-          <div
-            class="dashboard-calendar-empty"
-            id="dashboardCalendarEmpty"
-            hidden
-          >
-            <i class="fa-regular fa-calendar"></i>
+              <!-- Focus Timer -->
+              <div class="focus-card">
+                <div class="timer-circle">
+                  <h3>Focus</h3>
+                  <span id="timer">25:00</span>
+                </div>
 
-            <p>No study sessions this week.</p>
+                <div class="timer-buttons">
+                  <button
+                    type="button"
+                    id="settingsBtn"
+                    class="timer-setting-btn"
+                    aria-label="Open timer settings"
+                  >
+                    <i class="fa-solid fa-gear"></i>
+                  </button>
 
-            <a href="03-subjects.html" class="btn"> Add Study Plan </a>
-          </div>
-        </aside>
+                  <button
+                    type="button"
+                    class="play"
+                    id="startBtn"
+                    aria-label="Start timer"
+                  >
+                    <i class="fa-solid fa-play"></i>
+                  </button>
+
+                  <button type="button" id="resetBtn" aria-label="Reset timer">
+                    <i class="fa-solid fa-rotate-right"></i>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+              <article class="stat-card">
+                <h3>👀 Scheduled Sessions</h3>
+                <h2 id="scheduledSessionCount">0</h2>
+                <p>All study sessions</p>
+              </article>
+
+              <article class="stat-card">
+                <h3>⚠ Upcoming Sessions</h3>
+                <h2 id="upcomingSessionCount">0</h2>
+                <p>Sessions still to complete</p>
+              </article>
+
+              <article class="stat-card">
+                <h3>👍 Tasks Completed</h3>
+                <h2 id="completedSession">0</h2>
+                <p>Finished study sessions</p>
+              </article>
+            </section>
+          </section>
+
+          <!-- Dashboard Study Calendar -->
+          <aside class="dashboard-calendar-card">
+            <header class="dashboard-calendar-header">
+              <div>
+                <span class="dashboard-calendar-label"> Weekly plan </span>
+
+                <h2>Study Calendar</h2>
+
+                <p id="dashboardCalendarRange">
+                  Your study sessions for this week.
+                </p>
+              </div>
+
+              <a href="07-calendar.html" class="dashboard-calendar-link">
+                View full calendar
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </header>
+
+            <!-- Calendar Controls -->
+            <div class="dashboard-calendar-controls">
+              <button
+                type="button"
+                id="dashboardPreviousWeek"
+                aria-label="Show previous week"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <strong id="dashboardCalendarMonth"> July 2026 </strong>
+
+              <button
+                type="button"
+                id="dashboardNextWeek"
+                aria-label="Show next week"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <!-- JavaScript creates the week here -->
+            <div
+              class="dashboard-week-calendar"
+              id="dashboardWeekCalendar"
+            ></div>
+
+            <!-- Empty Week Message -->
+            <div
+              class="dashboard-calendar-empty"
+              id="dashboardCalendarEmpty"
+              hidden
+            >
+              <i class="fa-regular fa-calendar"></i>
+
+              <p>No study sessions this week.</p>
+
+              <a href="03-subjects.html" class="btn"> Add Study Plan </a>
+            </div>
+          </aside>
+        </div>
       </main>
     </div>
 
+    <!-- Footer -->
     <footer>
       <p class="footer-bottom">
         &copy; 2026 My Study Planner. All Rights Reserved.
       </p>
     </footer>
 
+    <!-- JavaScript Files -->
     <script src="assets/js/storage.js"></script>
     <script src="assets/js/tasks.js"></script>
     <script src="assets/js/timer.js"></script>
     <script src="assets/js/dashboard-calendar.js"></script>
     <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/logout.js"></script>
   </body>
 </html>

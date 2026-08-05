@@ -1,0 +1,36 @@
+.logout-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logout-container {
+    text-align: center;
+    padding: 40px;
+}
+
+
+.logout-container h1 {
+    margin-bottom: 15px;
+}
+
+
+.logout-container p {
+    margin-bottom: 25px;
+}
+
+
+.logout-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.logout-buttons a {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+}
