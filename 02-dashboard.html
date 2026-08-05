@@ -7,9 +7,13 @@
 
     <title>Study Planner Dashboard</title>
 
-    <!-- CSS Files -->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
+
+    <!-- Dashboard CSS -->
     <link rel="stylesheet" href="assets/css/06-dashboard.css" />
+
+    <!-- Shared Responsive CSS -->
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
     <!-- Font Awesome -->
@@ -21,7 +25,10 @@
 
   <body>
     <div class="dashboard-layout">
-      <!-- Sidebar -->
+      <!-- =====================================
+           Sidebar
+      ====================================== -->
+
       <aside class="sidebar">
         <div class="logo-details">
           <div class="logo">
@@ -39,8 +46,9 @@
           </button>
         </div>
 
-        <!-- Navigation -->
+        <!-- Sidebar Navigation -->
         <ul class="nav-list">
+          <!-- Search -->
           <li class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
 
@@ -51,24 +59,31 @@
             />
           </li>
 
+          <!-- Dashboard -->
           <li>
             <a href="02-dashboard.html">
               <i class="fa-solid fa-house"></i>
+
               <span>Dashboard</span>
             </a>
           </li>
 
+          <!-- Calendar -->
           <li>
             <a href="07-calendar.html">
               <i class="fa-regular fa-calendar"></i>
+
               <span>Calendar</span>
             </a>
           </li>
 
+          <!-- Activities Dropdown -->
           <li class="nav-dropdown">
             <a href="#" onclick="toggleActivities(event)">
               <i class="fa-solid fa-chart-line"></i>
+
               <span>Activities</span>
+
               <i class="fa-solid fa-chevron-down arrow"></i>
             </a>
 
@@ -76,6 +91,7 @@
               <li>
                 <a href="03-subjects.html">
                   <i class="fa-solid fa-book"></i>
+
                   <span>Subjects</span>
                 </a>
               </li>
@@ -83,55 +99,70 @@
               <li>
                 <a href="05-tasks.html">
                   <i class="fa-solid fa-list-check"></i>
+
                   <span>Tasks</span>
                 </a>
               </li>
             </ul>
           </li>
 
+          <!-- Focus Timer -->
           <li>
             <a href="11-pomodoro-settings.html">
               <i class="fa-solid fa-hourglass-half"></i>
+
               <span>Focus Timer</span>
             </a>
           </li>
 
+          <!-- FAQ -->
           <li>
             <a href="10-faq.html">
               <i class="fa-solid fa-circle-question"></i>
+
               <span>FAQ</span>
             </a>
           </li>
         </ul>
       </aside>
 
-      <!-- Main Content -->
+      <!-- =====================================
+           Main Dashboard Content
+      ====================================== -->
+
       <main class="main-content">
         <!-- Top Header -->
         <header class="dashboard-header">
           <h1>Welcome to StudySmart</h1>
 
           <div class="header-buttons">
+            <!-- Sign In -->
             <a href="01-login.html" class="signin-btn">
               <i class="fa-solid fa-right-to-bracket"></i>
+
               <span>Sign In</span>
             </a>
 
+            <!-- Logout -->
             <button type="button" class="logout-btn" id="logoutButton">
               <i class="fa-solid fa-right-from-bracket"></i>
+
               <span>Logout</span>
             </button>
           </div>
         </header>
 
-        <!-- Dashboard Content -->
+        <!-- =====================================
+             Focus Card and Calendar Row
+        ====================================== -->
+
         <div class="dashboard-content">
-          <!-- Left Content -->
+          <!-- Left Side: Focus Card -->
           <section class="left-content">
-            <!-- Hero Card -->
             <section class="hero-card">
               <div class="hero-text">
                 <p>0 Tasks Due Today</p>
+
                 <h2>Focus</h2>
               </div>
 
@@ -139,10 +170,12 @@
               <div class="focus-card">
                 <div class="timer-circle">
                   <h3>Focus</h3>
+
                   <span id="timer">25:00</span>
                 </div>
 
                 <div class="timer-buttons">
+                  <!-- Settings -->
                   <button
                     type="button"
                     id="settingsBtn"
@@ -152,46 +185,28 @@
                     <i class="fa-solid fa-gear"></i>
                   </button>
 
+                  <!-- Start -->
                   <button
                     type="button"
-                    class="play"
                     id="startBtn"
+                    class="play"
                     aria-label="Start timer"
                   >
                     <i class="fa-solid fa-play"></i>
                   </button>
 
+                  <!-- Reset -->
                   <button type="button" id="resetBtn" aria-label="Reset timer">
                     <i class="fa-solid fa-rotate-right"></i>
                   </button>
                 </div>
               </div>
             </section>
-
-            <!-- Statistics Cards -->
-            <section class="stats-grid">
-              <article class="stat-card">
-                <h3>👀 Scheduled Sessions</h3>
-                <h2 id="scheduledSessionCount">0</h2>
-                <p>All study sessions</p>
-              </article>
-
-              <article class="stat-card">
-                <h3>⚠ Upcoming Sessions</h3>
-                <h2 id="upcomingSessionCount">0</h2>
-                <p>Sessions still to complete</p>
-              </article>
-
-              <article class="stat-card">
-                <h3>👍 Tasks Completed</h3>
-                <h2 id="completedSession">0</h2>
-                <p>Finished study sessions</p>
-              </article>
-            </section>
           </section>
 
-          <!-- Dashboard Study Calendar -->
+          <!-- Right Side: Calendar -->
           <aside class="dashboard-calendar-card">
+            <!-- Calendar Header -->
             <header class="dashboard-calendar-header">
               <div>
                 <span class="dashboard-calendar-label"> Weekly plan </span>
@@ -205,11 +220,12 @@
 
               <a href="07-calendar.html" class="dashboard-calendar-link">
                 View full calendar
+
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </header>
 
-            <!-- Calendar Controls -->
+            <!-- Calendar Navigation -->
             <div class="dashboard-calendar-controls">
               <button
                 type="button"
@@ -219,7 +235,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
               </button>
 
-              <strong id="dashboardCalendarMonth"> July 2026 </strong>
+              <strong id="dashboardCalendarMonth"> August 2026 </strong>
 
               <button
                 type="button"
@@ -230,13 +246,13 @@
               </button>
             </div>
 
-            <!-- JavaScript creates the week here -->
+            <!-- JavaScript Creates Calendar -->
             <div
               class="dashboard-week-calendar"
               id="dashboardWeekCalendar"
             ></div>
 
-            <!-- Empty Week Message -->
+            <!-- Empty Calendar Message -->
             <div
               class="dashboard-calendar-empty"
               id="dashboardCalendarEmpty"
@@ -250,22 +266,96 @@
             </div>
           </aside>
         </div>
+
+        <!-- =====================================
+             Statistics Cards Below
+        ====================================== -->
+
+        <section class="stats-grid">
+          <!-- Scheduled Sessions -->
+          <a href="03-subjects.html" class="stat-card stat-card-link">
+            <h3>
+              <i class="fa-solid fa-book-open"></i>
+
+              Scheduled Sessions
+            </h3>
+
+            <h2 id="scheduledSessionCount">0</h2>
+
+            <p id="scheduledSessionText">No study sessions created</p>
+
+            <span class="stat-card-action">
+              View subjects
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <!-- Upcoming Sessions -->
+          <a href="07-calendar.html" class="stat-card stat-card-link">
+            <h3>
+              <i class="fa-regular fa-calendar-check"></i>
+
+              Upcoming Sessions
+            </h3>
+
+            <h2 id="upcomingSessionCount">0</h2>
+
+            <p id="upcomingSessionText">No upcoming study sessions</p>
+
+            <span class="stat-card-action">
+              View calendar
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <!-- Completed Tasks -->
+          <a href="05-tasks.html" class="stat-card stat-card-link">
+            <h3>
+              <i class="fa-solid fa-circle-check"></i>
+
+              Tasks Completed
+            </h3>
+
+            <h2 id="completedSessionCount">0</h2>
+
+            <p id="completedSessionText">No completed study sessions</p>
+
+            <span class="stat-card-action">
+              View tasks
+
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+        </section>
       </main>
     </div>
 
-    <!-- Footer -->
+    <!-- =====================================
+         Footer
+    ====================================== -->
+
     <footer>
       <p class="footer-bottom">
         &copy; 2026 My Study Planner. All Rights Reserved.
       </p>
     </footer>
 
-    <!-- JavaScript Files -->
+    <!-- =====================================
+         JavaScript Files
+    ====================================== -->
+
     <script src="assets/js/storage.js"></script>
+
     <script src="assets/js/tasks.js"></script>
+
     <script src="assets/js/timer.js"></script>
+
     <script src="assets/js/dashboard-calendar.js"></script>
+
     <script src="assets/js/dashboard.js"></script>
+
     <script src="assets/js/logout.js"></script>
   </body>
 </html>
