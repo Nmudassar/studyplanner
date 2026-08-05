@@ -137,3 +137,14 @@ FEATURE
     line-height: 1.5;
     font-weight: 500px;
 }
+
+.social-icons a {
+    color: #333;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #4f46e5;
+}
