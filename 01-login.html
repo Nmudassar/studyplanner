@@ -8,11 +8,13 @@
     <title>Sign Up | StudySmart</title>
 
     <!-- CSS Files -->
+
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
     <link rel="stylesheet" href="assets/css/05-login.css" />
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
+
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -33,7 +35,7 @@
 
           <input
             type="text"
-            name="Firstname"
+            name="firstname"
             id="firstname-input"
             placeholder="Firstname"
           />
@@ -46,7 +48,7 @@
 
           <input
             type="email"
-            name="Email"
+            name="email"
             id="email-input"
             placeholder="Email"
           />
@@ -87,10 +89,27 @@
         </div>
       </form>
 
-      <!-- Reset Password -->
+      <!-- Reset Password Section -->
+
+      <dialog id="resetDialog">
+        <h2>Reset Password</h2>
+
+        <p>Enter your registered email address.</p>
+
+        <input type="email" id="resetEmail" placeholder="Enter your email" />
+
+        <div class="dialog-buttons">
+          <button type="button" id="sendResetBtn">Send Reset Email</button>
+
+          <button type="button" id="closeResetBtn">Cancel</button>
+        </div>
+      </dialog>
+
+      <!-- Lost Password Link -->
 
       <p>
         Lost password?
+
         <a href="#" id="resetPassword"> Click here </a>
       </p>
     </div>

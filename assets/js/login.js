@@ -1,36 +1,62 @@
 "use strict";
 
 /* ==================================================
-   Get HTML Elements
+   Find Page Elements
 ================================================== */
 
 const signupBtn = document.getElementById("signupBtn");
-
 const loginBtn = document.getElementById("loginBtn");
-
-const resetPassword = document.getElementById("resetPassword");
+const title = document.getElementById("title");
 
 const firstnameInput = document.getElementById("firstname-input");
-
 const emailInput = document.getElementById("email-input");
-
 const passwordInput = document.getElementById("password-input");
-
 const repeatPasswordInput = document.getElementById("repeat-password-input");
+
+const signupFields = document.querySelectorAll(".signup-field");
+
 /* ==================================================
-   Register New User
+   Reset Password Elements
+================================================== */
+
+const resetPassword = document.getElementById("resetPassword");
+const resetDialog = document.getElementById("resetDialog");
+const resetEmail = document.getElementById("resetEmail");
+const sendResetBtn = document.getElementById("sendResetBtn");
+const closeResetBtn = document.getElementById("closeResetBtn");
+
+/* ==================================================
+   Current Form Mode
+================================================== */
+
+let loginMode = false;
+
+/* ==================================================
+   Sign Up
 ================================================== */
 
 signupBtn.addEventListener("click", function () {
+  if (loginMode) {
+    loginMode = false;
+
+    signupFields.forEach(function (field) {
+      field.style.display = "flex";
+    });
+
+    title.textContent = "Sign Up";
+
+    signupBtn.classList.remove("disable");
+    loginBtn.classList.add("disable");
+
+    clearInputs();
+
+    return;
+  }
+
   const firstname = firstnameInput.value.trim();
-
   const email = emailInput.value.trim();
-
   const password = passwordInput.value.trim();
-
   const repeatPassword = repeatPasswordInput.value.trim();
-
-  // Check empty fields
 
   if (
     firstname === "" ||
@@ -38,50 +64,58 @@ signupBtn.addEventListener("click", function () {
     password === "" ||
     repeatPassword === ""
   ) {
-    alert("Please complete all fields");
-
+    alert("Please complete all fields.");
     return;
   }
 
-  // Check password match
-
   if (password !== repeatPassword) {
-    alert("Passwords do not match");
-
+    alert("Passwords do not match.");
     return;
   }
 
   const user = {
     firstname: firstname,
-
     email: email,
-
     password: password,
   };
 
   localStorage.setItem("studySmartUser", JSON.stringify(user));
 
-  alert("Account created successfully");
+  alert("Account created successfully.");
+
+  clearInputs();
 });
 
 /* ==================================================
-   User Login
+   Login
 ================================================== */
 
 loginBtn.addEventListener("click", function () {
-  const email = emailInput.value.trim();
+  if (!loginMode) {
+    loginMode = true;
 
-  const password = passwordInput.value.trim();
+    signupFields.forEach(function (field) {
+      field.style.display = "none";
+    });
 
-  // Check empty fields
+    title.textContent = "Login";
 
-  if (email === "" || password === "") {
-    alert("Please enter email and password");
+    loginBtn.classList.remove("disable");
+    signupBtn.classList.add("disable");
+
+    clearInputs();
 
     return;
   }
 
-  // Get saved user
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (email === "" || password === "") {
+    alert("Please enter your email and password.");
+
+    return;
+  }
 
   const savedUser = localStorage.getItem("studySmartUser");
 
@@ -91,66 +125,78 @@ loginBtn.addEventListener("click", function () {
     return;
   }
 
-  // Convert saved data
-
   const user = JSON.parse(savedUser);
 
-  // Check login details
-
   if (email === user.email && password === user.password) {
-    alert("Welcome back " + user.firstname);
-
-    // Save login status
+    alert("Welcome " + user.firstname + "!");
 
     localStorage.setItem("loggedIn", "true");
 
-    // Redirect to dashboard
-
     window.location.href = "02-dashboard.html";
   } else {
-    alert("Incorrect email or password");
+    alert("Incorrect email or password.");
   }
 });
+
 /* ==================================================
-   Switch Between Sign Up and Login Forms
+   Open Reset Password Dialog
 ================================================== */
 
-const signupFields = document.querySelectorAll(".signup-field");
+resetPassword.addEventListener("click", function (event) {
+  event.preventDefault();
 
-const title = document.getElementById("title");
+  resetEmail.value = "";
 
-loginBtn.addEventListener("click", function () {
-  // Hide signup-only fields
-
-  signupFields.forEach(function (field) {
-    field.style.display = "none";
-  });
-
-  // Change heading
-
-  title.textContent = "Login";
-
-  // Change button style
-
-  loginBtn.classList.remove("disable");
-
-  signupBtn.classList.add("disable");
+  resetDialog.showModal();
 });
 
-signupBtn.addEventListener("click", function () {
-  // Show signup fields
+/* ==================================================
+   Close Dialog
+================================================== */
 
-  signupFields.forEach(function (field) {
-    field.style.display = "flex";
-  });
-
-  // Change heading
-
-  title.textContent = "Sign Up";
-
-  // Change button style
-
-  signupBtn.classList.remove("disable");
-
-  loginBtn.classList.add("disable");
+closeResetBtn.addEventListener("click", function () {
+  resetDialog.close();
 });
+
+/* ==================================================
+   Reset Password
+================================================== */
+
+sendResetBtn.addEventListener("click", function () {
+  const email = resetEmail.value.trim();
+
+  if (email === "") {
+    alert("Please enter your email.");
+
+    return;
+  }
+
+  const savedUser = localStorage.getItem("studySmartUser");
+
+  if (!savedUser) {
+    alert("No account found.");
+
+    return;
+  }
+
+  const user = JSON.parse(savedUser);
+
+  if (email === user.email) {
+    alert("Password reset email would be sent to:\n\n" + email);
+
+    resetDialog.close();
+  } else {
+    alert("Email address not registered.");
+  }
+});
+
+/* ==================================================
+   Clear Inputs
+================================================== */
+
+function clearInputs() {
+  firstnameInput.value = "";
+  emailInput.value = "";
+  passwordInput.value = "";
+  repeatPasswordInput.value = "";
+}

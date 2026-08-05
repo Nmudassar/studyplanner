@@ -47,8 +47,65 @@ body {
     isolation: isolate;
 
 }
+/* ==========================================
+   Reset Password Dialog
+========================================== */
 
+dialog {
 
+    width: 400px;
+
+    padding: 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+}
+
+dialog::backdrop {
+
+    background: rgba(0,0,0,0.5);
+
+}
+
+dialog input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 20px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+}
+
+.dialog-buttons {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+.dialog-buttons button {
+
+    width: 48%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+}
 /* ==========================
    Animated Border Property
 ========================== */
