@@ -2,22 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign up</title>
+
+    <title>Sign Up | StudySmart</title>
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
+
     <link rel="stylesheet" href="assets/css/05-login.css" />
+
+    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="wrapper">
-      <h1 id="title">Sign Up / Login</h1>
+      <!-- Page Title -->
+
+      <h1 id="title">Sign Up</h1>
+
       <form>
-        <div>
-          <!---this conatiner is position each icon will next to it ----->
+        <!-- First Name -->
+
+        <div class="signup-field">
           <i class="fa-solid fa-user"></i>
+
           <input
             type="text"
             name="Firstname"
@@ -25,8 +38,12 @@
             placeholder="Firstname"
           />
         </div>
+
+        <!-- Email -->
+
         <div>
           <i class="fa-solid fa-envelope"></i>
+
           <input
             type="email"
             name="Email"
@@ -34,31 +51,51 @@
             placeholder="Email"
           />
         </div>
+
+        <!-- Password -->
+
         <div>
           <i class="fa-solid fa-lock"></i>
+
           <input
             type="password"
-            name="passsword"
+            name="password"
             id="password-input"
             placeholder="Password"
           />
         </div>
-        <div>
+
+        <!-- Repeat Password -->
+
+        <div class="signup-field">
           <i class="fa-solid fa-lock"></i>
+
           <input
             type="password"
-            name="repeat-passsword"
+            name="repeat-password"
             id="repeat-password-input"
-            placeholder="Password"
+            placeholder="Repeat Password"
           />
         </div>
+
+        <!-- Buttons -->
+
         <div class="btn-field">
           <button type="button" id="signupBtn">Sign Up</button>
-          <button type="button" id="loginBtn" class="disable">LogIn</button>
+
+          <button type="button" id="loginBtn" class="disable">Login</button>
         </div>
       </form>
-      <p>Lost password? <a href="#">Click here</a></p>
+
+      <!-- Reset Password -->
+
+      <p>
+        Lost password?
+        <a href="#" id="resetPassword"> Click here </a>
+      </p>
     </div>
+
+    <!-- JavaScript -->
 
     <script src="assets/js/login.js"></script>
   </body>
