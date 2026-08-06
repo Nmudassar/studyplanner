@@ -10,8 +10,10 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
     <link rel="stylesheet" href="assets/css/02-component.css" />
-    <link rel="stylesheet" href="assets/css/03-responsive.css" />
     <link rel="stylesheet" href="assets/css/04-home.css" />
+
+    <!-- Responsive CSS must load last -->
+    <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
     <!-- Font Awesome Icons -->
     <script
@@ -25,35 +27,50 @@
          Header
     =========================================== -->
 
-    <header>
+    <header class="site-header">
       <!-- Logo -->
 
-      <div class="logo-container">
-        <h1 class="logo">Study Smart</h1>
+      <div class="site-header-logo">
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+
+          <span class="logo-text"> Study<span>Smart</span> </span>
+        </a>
 
         <p class="subtitle">Plan Smart. Study Better.</p>
       </div>
 
+      <!-- Mobile Hamburger Button -->
+
+      <button
+        type="button"
+        class="home-menu-btn"
+        id="homeMenuBtn"
+        aria-label="Open navigation menu"
+        aria-controls="homeNavbar"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
       <!-- Navigation -->
 
-      <nav class="navbar" aria-label="Main navigation">
-        <a href="02-dashboard.html">Home</a>
+      <nav class="navbar" id="homeNavbar" aria-label="Main navigation">
+        <a href="index.html">Home</a>
 
         <a href="08-about.html">About Us</a>
 
         <a href="#features">Features</a>
+
+        <a href="10-faq.html">FAQ</a>
       </nav>
 
       <!-- Login and Sign Up Buttons -->
 
       <div class="header-buttons">
-        <a href="01-login.html?mode=login" class="login-btn">
-          Login
-        </a>
+        <a href="01-login.html?mode=login" class="login-btn"> Login </a>
 
-        <a href="01-login.html?mode=signup" class="signup-btn">
-          Sign Up
-        </a>
+        <a href="01-login.html?mode=signup" class="signup-btn"> Sign Up </a>
       </div>
     </header>
 
@@ -70,11 +87,9 @@
         <!-- Hero Text -->
 
         <div class="hero-content">
-          <span class="hero-badge">
-            ⭐ Trusted by 10,000+ Students
-          </span>
+          <span class="hero-badge"> ⭐ Trusted by 10,000+ Students </span>
 
-          <h2>The Ultimate Student Productivity Tool</h2>
+          <h1>The Ultimate Student Productivity Tool</h1>
 
           <p>
             Many students struggle with procrastination, missed deadlines and
@@ -109,59 +124,43 @@
         id="features"
         aria-label="StudySmart features"
       >
-        <!-- Feature 1 -->
-
         <article class="feature-item">
           <i class="fa-solid fa-clipboard-list"></i>
 
           <div>
-            <h3>Plan Smart</h3>
+            <h2>Plan Smart</h2>
 
-            <p>
-              Organise your tasks, classes and deadlines in one place.
-            </p>
+            <p>Organise your tasks, classes and deadlines in one place.</p>
           </div>
         </article>
-
-        <!-- Feature 2 -->
 
         <article class="feature-item">
           <i class="fa-solid fa-bullseye"></i>
 
           <div>
-            <h3>Stay Focused</h3>
+            <h2>Stay Focused</h2>
 
-            <p>
-              Built-in focus tools help you reduce distractions.
-            </p>
+            <p>Built-in focus tools help you reduce distractions.</p>
           </div>
         </article>
-
-        <!-- Feature 3 -->
 
         <article class="feature-item">
           <i class="fa-solid fa-chart-line"></i>
 
           <div>
-            <h3>Track Progress</h3>
+            <h2>Track Progress</h2>
 
-            <p>
-              Visualise your progress and work towards your goals.
-            </p>
+            <p>Visualise your progress and work towards your goals.</p>
           </div>
         </article>
-
-        <!-- Feature 4 -->
 
         <article class="feature-item">
           <i class="fa-solid fa-bell"></i>
 
           <div>
-            <h3>Never Miss</h3>
+            <h2>Never Miss</h2>
 
-            <p>
-              Smart reminders help you stay on track and reduce stress.
-            </p>
+            <p>Smart reminders help you stay on track and reduce stress.</p>
           </div>
         </article>
       </section>
@@ -176,11 +175,17 @@
         <!-- Contact Information -->
 
         <div class="footer-section">
-          <h3>Contact Us</h3>
+          <h2>Contact Us</h2>
 
-          <p>Email: info@studysmart.com</p>
+          <p>
+            Email:
+            <a href="mailto:info@studysmart.com"> info@studysmart.com </a>
+          </p>
 
-          <p>Phone: +44 7721 750024</p>
+          <p>
+            Phone:
+            <a href="tel:+447721750024"> +44 7721 750024 </a>
+          </p>
 
           <p>London, United Kingdom</p>
         </div>
@@ -188,11 +193,11 @@
         <!-- Quick Links -->
 
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h2>Quick Links</h2>
 
           <ul class="list">
             <li>
-              <a href="02-dashboard.html">Home</a>
+              <a href="index.html">Home</a>
             </li>
 
             <li>
@@ -212,7 +217,7 @@
         <!-- Social Media -->
 
         <div class="footer-section">
-          <h3>Follow Us</h3>
+          <h2>Follow Us</h2>
 
           <ul class="social-icons">
             <li>
@@ -262,12 +267,13 @@
         </div>
       </div>
 
-      <p class="footer-bottom">
-        &copy; 2026 StudySmart. All rights reserved.
-      </p>
+      <p class="footer-bottom">&copy; 2026 StudySmart. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- ==========================================
+         JavaScript
+    =========================================== -->
+
     <script src="assets/js/login.js"></script>
   </body>
 </html>
