@@ -19,15 +19,10 @@ The application was created for students studying GCSE and A-Level subjects who 
 # Live Website
 
 **Live Project**
-
-https://YOUR-GITHUB-PAGES-LINK
-
+https://nmudassar.github.io/studyplanner/
 ---
-
 # GitHub Repository
-
-https://github.com/YOUR-USERNAME/mystudyplanner-project
-
+https://github.com/Nmudassar/studyplanner
 ---
 
 # Table of Contents
