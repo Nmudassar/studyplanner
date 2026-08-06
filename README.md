@@ -1979,6 +1979,278 @@ By combining responsive layouts, Local Storage and interactive JavaScript functi
 
 ---
 
+# Troubleshooting and Challenges
+
+During the development of StudySmart Planner, several technical challenges were encountered. Each issue was investigated, tested and resolved to improve the functionality and user experience of the application.
+
+---
+
+## 1. Login Form Display
+
+### Problem
+
+When switching from the Sign Up form to the Login form, the First Name and Repeat Password fields were still visible.
+
+### Cause
+
+The JavaScript code was not hiding the `.signup-field` elements when Login mode was selected.
+
+### Solution
+
+A JavaScript function was created to toggle between Sign Up and Login modes by hiding the unnecessary input fields.
+
+### Result
+
+Only the Email and Password fields are displayed when users choose to log in.
+
+---
+
+## 2. Forgot Password Dialog
+
+### Problem
+
+The Reset Password section appeared directly underneath the login form instead of opening as a popup.
+
+### Cause
+
+The reset form was created as a normal `<div>` element rather than using a dialog window.
+
+### Solution
+
+The section was replaced with the HTML `<dialog>` element and JavaScript was updated to use:
+
+```javascript
+dialog.showModal();
+dialog.close();
+```
+
+### Result
+
+The Forgot Password feature now opens as a popup dialog, providing a cleaner user experience.
+
+---
+
+## 3. Password Reset Email
+
+### Problem
+
+Initially, the project was expected to send a real password reset email.
+
+### Cause
+
+The project is a front-end application only and does not include a backend server or email service.
+
+### Solution
+
+The feature was redesigned to validate the user's email against Local Storage and demonstrate the reset process using a confirmation message.
+
+### Future Improvement
+
+A real implementation could use:
+
+- Firebase Authentication
+- EmailJS
+- Node.js backend
+
+---
+
+## 4. FAQ Accordion
+
+### Problem
+
+Clicking on FAQ questions did not display the answers.
+
+### Cause
+
+The JavaScript file was not correctly selecting the FAQ elements, and the CSS classes did not match the HTML structure.
+
+### Solution
+
+The FAQ JavaScript was rewritten using event listeners to correctly expand and collapse answers.
+
+### Result
+
+Only one answer is displayed at a time, creating a clean accordion interface.
+
+---
+
+## 5. Sidebar Navigation
+
+### Problem
+
+The sidebar was difficult to use on smaller screens because it remained fixed and occupied too much space.
+
+### Cause
+
+The original sidebar design was created only for desktop devices.
+
+### Solution
+
+A responsive sidebar with a hamburger menu was implemented using CSS media queries and JavaScript.
+
+### Result
+
+The navigation now works effectively on desktop, tablet and mobile devices.
+
+---
+
+## 6. Activities Dropdown
+
+### Problem
+
+The Activities submenu did not expand or collapse correctly.
+
+### Cause
+
+The dropdown relied on inline JavaScript, making it difficult to maintain.
+
+### Solution
+
+The inline event was replaced with JavaScript event listeners that toggle CSS classes.
+
+### Result
+
+The dropdown now opens and closes smoothly.
+
+---
+
+## 7. About Page Layout
+
+### Problem
+
+The Mission, Vision and Who It's For sections appeared on separate rows instead of displaying side by side.
+
+### Cause
+
+The CSS Grid layout had not been configured correctly.
+
+### Solution
+
+The section was redesigned using CSS Grid with responsive columns.
+
+### Result
+
+The cards now display correctly on desktop while automatically stacking on smaller screens.
+
+---
+
+## 8. Hero Image Not Displaying
+
+### Problem
+
+The About page displayed the image alternative text instead of the actual image.
+
+### Cause
+
+The image path was incorrect.
+
+### Solution
+
+The image was moved to the correct `assets/images` directory and the HTML path was updated.
+
+### Result
+
+The hero image displays correctly across all devices.
+
+---
+
+## 9. Calendar Sessions
+
+### Problem
+
+Study sessions were duplicated after generating multiple study plans.
+
+### Cause
+
+Previous sessions were not cleared before new sessions were created.
+
+### Solution
+
+JavaScript was updated to check Local Storage and prevent duplicate sessions.
+
+### Result
+
+The Calendar now displays only the correct study sessions.
+
+---
+
+## 10. Task Progress Bar
+
+### Problem
+
+The weekly progress bar did not update after tasks were completed.
+
+### Cause
+
+The progress calculation function was not being called after task updates.
+
+### Solution
+
+The progress bar is now recalculated whenever a task is added, edited or marked as complete.
+
+### Result
+
+The progress percentage updates automatically.
+
+---
+
+## 11. Responsive Navigation
+
+### Problem
+
+Navigation links overlapped on smaller screen sizes.
+
+### Cause
+
+The original layout used fixed widths.
+
+### Solution
+
+CSS Flexbox and media queries were implemented to create a fully responsive navigation layout.
+
+### Result
+
+The navigation adapts correctly to desktop, tablet and mobile devices.
+
+---
+
+## 12. Local Storage Management
+
+### Problem
+
+Incorrect or outdated data remained in Local Storage after testing.
+
+### Cause
+
+Temporary testing data was not removed between development sessions.
+
+### Solution
+
+Functions were added to clear and update Local Storage when necessary.
+
+### Result
+
+Only valid user and study data are retained.
+
+---
+
+# Lessons Learned
+
+Developing StudySmart Planner helped improve my understanding of:
+
+- Responsive web design.
+- JavaScript DOM manipulation.
+- Event listeners.
+- Form validation.
+- CSS Grid and Flexbox.
+- Local Storage.
+- Debugging JavaScript.
+- Creating reusable functions.
+- Organising project files.
+- Writing maintainable code.
+
+Each challenge provided an opportunity to improve both my technical skills and my problem-solving approach.
+
 # License
 
 This project has been developed for educational purposes as part of the Gateway Qualifications Level 5 Interactive Front-End Development module.
