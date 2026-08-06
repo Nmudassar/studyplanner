@@ -5,12 +5,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>StudySmart Planner - Subjects</title>
+    <title>Subjects | StudySmart</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
+    <!-- Shared sidebar and components -->
+    <link rel="stylesheet" href="assets/css/02-component.css" />
+
+    <!-- Subjects page CSS -->
     <link rel="stylesheet" href="assets/css/07-subject.css" />
 
+    <!-- Responsive CSS must load last -->
+    <link rel="stylesheet" href="assets/css/03-responsive.css" />
+
+    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -18,48 +27,201 @@
   </head>
 
   <body>
+    <!-- ==================================================
+         Mobile Hamburger Button
+    =================================================== -->
+
+    <button
+      type="button"
+      class="mobile-menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-controls="sidebar"
+      aria-expanded="false"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- ==================================================
+         Mobile Sidebar Overlay
+    =================================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         Page Layout
+    =================================================== -->
+
     <div class="layout">
-      <!-- ================= Sidebar ================= -->
-      <aside class="sidebar">
+      <!-- ==================================================
+           Shared Sidebar
+      =================================================== -->
+
+      <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Logo -->
+
         <div class="logo-details">
-          <div class="logo">
+          <a href="02-dashboard.html" class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
 
             <div class="logo-name">Study<span>Smart</span></div>
-          </div>
+          </a>
+
+          <!-- Mobile Close Button -->
+
+          <button
+            type="button"
+            class="sidebar-close-btn"
+            id="sidebarCloseBtn"
+            aria-label="Close navigation menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <nav>
-          <a href="02-dashboard.html"> Dashboard </a>
+        <!-- Sidebar Navigation -->
 
-          <a href="03-subjects.html" class="active"> Subjects </a>
+        <nav aria-label="Subjects navigation">
+          <ul class="nav-list">
+            <!-- Search -->
 
-          <a href="05-tasks.html"> Tasks </a>
+            <li class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
 
-          <a href="07-calendar.html"> Calendar </a>
+              <input
+                type="search"
+                id="sidebarSearch"
+                placeholder="Search..."
+                aria-label="Search navigation"
+                autocomplete="off"
+              />
+            </li>
 
-          <a href="11-pomodoro-settings.html"> Focus Timer </a>
+            <!-- Dashboard -->
+
+            <li class="nav-item">
+              <a href="02-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <!-- Calendar -->
+
+            <li class="nav-item">
+              <a href="07-calendar.html">
+                <i class="fa-regular fa-calendar"></i>
+
+                <span>Calendar</span>
+              </a>
+            </li>
+
+            <!-- Activities Dropdown -->
+
+            <li class="nav-dropdown">
+              <button
+                type="button"
+                class="dropdown-btn open"
+                id="activitiesBtn"
+                aria-expanded="true"
+                aria-controls="activitiesMenu"
+              >
+                <span class="dropdown-left">
+                  <i class="fa-solid fa-chart-line"></i>
+
+                  <span>Activities</span>
+                </span>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+              </button>
+
+              <ul class="submenu open" id="activitiesMenu">
+                <li>
+                  <a href="03-subjects.html" class="active" aria-current="page">
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="05-tasks.html">
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <span>Tasks</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Focus Timer -->
+
+            <li class="nav-item">
+              <a href="11-pomodoro-settings.html">
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <span>Focus Timer</span>
+              </a>
+            </li>
+
+            <!-- FAQ -->
+
+            <li class="nav-item">
+              <a href="10-faq.html">
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>FAQ</span>
+              </a>
+            </li>
+
+            <!-- About Us -->
+
+            <li class="nav-item">
+              <a href="08-about.html">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About Us</span>
+              </a>
+            </li>
+          </ul>
         </nav>
       </aside>
 
-      <!-- ================= Main Content ================= -->
+      <!-- ==================================================
+           Main Subjects Content
+      =================================================== -->
+
       <main class="main-content">
-        <!-- ================= Top Bar ================= -->
+        <!-- Top Bar -->
+
         <header class="top-bar">
-          <input
-            type="text"
-            id="subjectSearch"
-            placeholder="Search subject..."
-          />
+          <div class="subject-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="subjectSearch"
+              placeholder="Search subject..."
+              aria-label="Search subjects"
+              autocomplete="off"
+            />
+          </div>
 
           <div class="user">
-            <div class="user-avatar" id="loginAvatar">
+            <a
+              href="01-login.html?mode=login"
+              class="user-avatar"
+              id="loginAvatar"
+              aria-label="Go to login page"
+            >
               <i class="fa-solid fa-user"></i>
-            </div>
+            </a>
           </div>
         </header>
 
-        <!-- ================= Subjects Heading ================= -->
+        <!-- Subjects Heading -->
+
         <section class="subjects-header">
           <div class="subjects-header-text">
             <h1>Subjects</h1>
@@ -70,18 +232,20 @@
           <button type="button" class="btn" id="openStudyPlanPopup">
             <i class="fa-solid fa-calendar-plus"></i>
 
-            Create Study Plan
+            <span>Create Study Plan</span>
           </button>
         </section>
 
-        <!-- ================= Subject Cards ================= -->
+        <!-- Subject Cards -->
+
         <section
           class="subjects-grid"
           id="subjectGrid"
-          aria-label="Available Subjects"
+          aria-label="Available subjects"
         >
           <!-- Biology -->
-          <div class="subject-card" onclick="openLevelBox('biology')">
+
+          <article class="subject-card">
             <h2>🧬 Biology</h2>
 
             <p>
@@ -89,11 +253,14 @@
               Ecology and Homeostasis.
             </p>
 
-            <button type="button">Choose Subject</button>
-          </div>
+            <button type="button" onclick="openLevelBox('biology')">
+              Choose Subject
+            </button>
+          </article>
 
           <!-- Mathematics -->
-          <div class="subject-card" onclick="openLevelBox('mathematics')">
+
+          <article class="subject-card">
             <h2>📘 Mathematics</h2>
 
             <p>
@@ -101,11 +268,14 @@
               Probability and Statistics.
             </p>
 
-            <button type="button">Choose Subject</button>
-          </div>
+            <button type="button" onclick="openLevelBox('mathematics')">
+              Choose Subject
+            </button>
+          </article>
 
           <!-- Chemistry -->
-          <div class="subject-card" onclick="openLevelBox('chemistry')">
+
+          <article class="subject-card">
             <h2>⚗️ Chemistry</h2>
 
             <p>
@@ -113,11 +283,14 @@
               Energy and Chemical Analysis.
             </p>
 
-            <button type="button">Choose Subject</button>
-          </div>
+            <button type="button" onclick="openLevelBox('chemistry')">
+              Choose Subject
+            </button>
+          </article>
 
           <!-- Physics -->
-          <div class="subject-card" onclick="openLevelBox('physics')">
+
+          <article class="subject-card">
             <h2>⚡ Physics</h2>
 
             <p>
@@ -125,13 +298,18 @@
               Electricity and Magnetism.
             </p>
 
-            <button type="button">Choose Subject</button>
-          </div>
+            <button type="button" onclick="openLevelBox('physics')">
+              Choose Subject
+            </button>
+          </article>
         </section>
       </main>
     </div>
 
-    <!-- ================= Level Popup ================= -->
+    <!-- ==================================================
+         Level Selection Popup
+    =================================================== -->
+
     <div class="level-popup" id="levelPopup">
       <div class="popup-content">
         <button
@@ -166,11 +344,13 @@
     </div>
 
     <!-- ==================================================
-     Topic Planner Popup
-================================================== -->
+         Topic Planner Popup
+    =================================================== -->
+
     <div class="topic-popup" id="topicPopup">
       <div class="topic-popup-content">
         <!-- Close Button -->
+
         <button
           type="button"
           class="close-btn"
@@ -181,6 +361,7 @@
         </button>
 
         <!-- Popup Heading -->
+
         <div class="topic-popup-heading">
           <div class="topic-popup-icon">
             <i class="fa-solid fa-calendar-plus"></i>
@@ -194,25 +375,28 @@
         </div>
 
         <!-- Selected Subject and Level -->
+
         <div class="selected-plan-summary">
           <div class="selected-plan-item">
-            <span> Subject </span>
+            <span>Subject</span>
 
             <strong id="selectedSubjectDisplay"> Biology </strong>
           </div>
 
-          <span class="summary-divider"> • </span>
+          <span class="summary-divider">•</span>
 
           <div class="selected-plan-item">
-            <span> Level </span>
+            <span>Level</span>
 
             <strong id="selectedLevelDisplay"> GCSE </strong>
           </div>
         </div>
 
-        <!-- ================= Study Plan Form ================= -->
+        <!-- Study Plan Form -->
+
         <form id="studyPlanForm">
           <!-- Topic Selection -->
+
           <div class="form-group">
             <label for="topicSelect"> Choose a topic </label>
 
@@ -225,9 +409,11 @@
             </select>
           </div>
 
-          <!-- Hidden until the student chooses a topic -->
+          <!-- Study Plan Settings -->
+
           <div id="studyPlanSettings" hidden>
             <!-- Weekly Study Time -->
+
             <div class="form-group">
               <label for="weeklyMinutes"> Study time per week </label>
 
@@ -238,7 +424,7 @@
               >
                 <option value="">Choose study time</option>
 
-                <option value="125">25 minutes per week</option>
+                <option value="25">25 minutes per week</option>
 
                 <option value="30">30 minutes per week</option>
 
@@ -249,6 +435,7 @@
             </div>
 
             <!-- Preferred Study Day -->
+
             <div class="form-group">
               <label for="preferredDay"> Preferred study day </label>
 
@@ -256,22 +443,17 @@
                 <option value="">Choose a day</option>
 
                 <option value="1">Monday</option>
-
                 <option value="2">Tuesday</option>
-
                 <option value="3">Wednesday</option>
-
                 <option value="4">Thursday</option>
-
                 <option value="5">Friday</option>
-
                 <option value="6">Saturday</option>
-
                 <option value="0">Sunday</option>
               </select>
             </div>
 
             <!-- Start Date -->
+
             <div class="form-group">
               <label for="planStartDate"> Start date </label>
 
@@ -284,6 +466,7 @@
             </div>
 
             <!-- Subtopic Preview -->
+
             <div class="subtopics-preview" id="subtopicsPreview">
               <div class="subtopics-preview-heading">
                 <div>
@@ -298,15 +481,17 @@
               </div>
 
               <ul id="subtopicsList">
-                <!-- JavaScript creates the subtopic list here -->
+                <!-- JavaScript creates the subtopic list -->
               </ul>
             </div>
           </div>
 
           <!-- Status Message -->
+
           <p class="planner-message" id="plannerMessage" aria-live="polite"></p>
 
-          <!-- Action Buttons -->
+          <!-- Popup Buttons -->
+
           <div class="popup-buttons">
             <button
               type="button"
@@ -314,24 +499,36 @@
               onclick="backToLevelPopup()"
             >
               <i class="fa-solid fa-arrow-left"></i>
-              Back
+
+              <span>Back</span>
             </button>
 
             <button type="submit" class="btn" id="generatePlanButton" disabled>
               <i class="fa-regular fa-calendar-check"></i>
-              Generate Plan
+
+              <span>Generate Plan</span>
             </button>
           </div>
         </form>
       </div>
     </div>
+
+    <!-- ==================================================
+         Footer
+    =================================================== -->
+
     <footer>
-      <p class="footer-bottom">
-        &copy; 2026 My Study Planner. All Rights Reserved.
-      </p>
+      <p class="footer-bottom">&copy; 2026 StudySmart. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- ==================================================
+         JavaScript
+    =================================================== -->
+
+    <!-- Shared Sidebar JavaScript -->
+    <script src="assets/js/dashboard.js"></script>
+
+    <!-- Subjects JavaScript -->
     <script src="assets/js/subjects-data.js"></script>
     <script src="assets/js/subjects.js"></script>
   </body>
