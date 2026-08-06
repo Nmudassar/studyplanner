@@ -1,6 +1,16 @@
-/* =========================
-   Header / Navbar
-========================= */
+/* ==================================================
+   StudySmart Shared Components
+   File: assets/css/02-component.css
+
+   This file contains reusable components only.
+   Responsive movement is controlled by:
+   assets/css/03-responsive.css
+================================================== */
+
+
+/* ==================================================
+   1. Landing Page Header
+================================================== */
 
 .site-header {
   position: sticky;
@@ -22,17 +32,23 @@
   z-index: 1000;
 }
 
-/* =========================
-   Header Logo Area
-========================= */
+
+/* ==================================================
+   2. Header Logo
+================================================== */
 
 .site-header-logo {
   display: flex;
   flex-direction: column;
+
   flex-shrink: 0;
 }
 
 .site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   margin: 0;
 
   color: var(--white);
@@ -40,239 +56,29 @@
   font-size: 32px;
   font-weight: 800;
   line-height: 1.1;
+
+  text-decoration: none;
 }
 
-.subtitle {
+.site-header .logo i {
+  color: var(--light-blue);
+
+  font-size: 30px;
+}
+
+.site-header .subtitle {
   margin: 5px 0 0;
 
-  color: var(--dark-blue);
-
-  font-size: 16px;
-  font-weight: 600;
-}
-/* ==================================================
-   Sidebar Overlay
-================================================== */
-
-.sidebar-overlay {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.5);
-
-  z-index: 998;
-}
-
-.sidebar-overlay.show {
-  display: block;
-}
-
-/* ==================================================
-   Menu Button
-================================================== */
-
-.menu-btn {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  border-radius: 10px;
-
-  background: transparent;
-  color: var(--primary-color);
-
-  font-size: 20px;
-
-  cursor: pointer;
-}
-
-/* ==================================================
-   Activities Button
-================================================== */
-
-.dropdown-btn {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 14px 16px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: transparent;
-  color: var(--primary-color);
-
-  font: inherit;
-  font-weight: 600;
-
-  cursor: pointer;
-}
-
-.dropdown-left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.dropdown-btn .arrow {
-  transition: transform 0.3s ease;
-}
-
-.dropdown-btn.open .arrow {
-  transform: rotate(180deg);
-}
-
-/* ==================================================
-   Activities Submenu
-================================================== */
-
-.submenu {
-  max-height: 0;
-
-  padding: 0;
-  margin: 0 0 0 20px;
-
-  overflow: hidden;
-
-  list-style: none;
-
-  transition: max-height 0.3s ease;
-}
-
-.submenu.open {
-  max-height: 160px;
-}
-
-/* ==================================================
-   Responsive Sidebar
-================================================== */
-
-@media screen and (max-width: 900px) {
-  .sidebar {
-    transform: translateX(-100%);
-
-    transition: transform 0.3s ease;
-
-    z-index: 999;
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  .menu-btn {
-    position: fixed;
-    top: 18px;
-    left: 18px;
-
-    background: white;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
-
-    z-index: 1000;
-  }
-
-  .main-content {
-    margin-left: 0;
-
-    padding-top: 85px;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-}
-/* =========================
-   Dashboard Logo
-========================= */
-
-.logo-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-
-  margin-bottom: 35px;
-}
-
-.logo-details .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-details .logo i {
-  color: var(--secondary-color);
-
-  font-size: 32px;
-}
-
-.logo-name {
-  color: var(--primary-color);
-
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.logo-name span {
-  color: var(--secondary-color);
-}
-
-/* =========================
-   Hamburger Buttons
-========================= */
-
-.menu-btn,
-.home-menu-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-
-  background-color: var(--secondary-color);
   color: var(--white);
 
-  border: none;
-  border-radius: 10px;
-
-  font-size: 21px;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.menu-btn:hover,
-.home-menu-btn:hover {
-  background-color: var(--primary-color);
 
-  transform: scale(1.05);
-}
-
-/* Homepage hamburger is hidden on desktop */
-
-.home-menu-btn {
-  display: none;
-}
-
-/* =========================
-   Navigation Container
-========================= */
+/* ==================================================
+   3. Homepage Navigation
+================================================== */
 
 .navbar {
   display: flex;
@@ -286,32 +92,30 @@
   list-style: none;
 }
 
-/* Navigation Links */
-
 .navbar a {
   position: relative;
 
-  color: var(--dark-blue);
+  color: var(--white);
 
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-}
 
-/* Underline Hover Effect */
+  transition: color 0.3s ease;
+}
 
 .navbar a::after {
   content: "";
 
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -7px;
 
   width: 100%;
   height: 3px;
 
-  background: var(--dark-blue);
+  background: var(--light-blue);
 
   border-radius: 5px;
 
@@ -321,13 +125,20 @@
   transition: transform 0.3s ease;
 }
 
-.navbar a:hover::after {
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--light-blue);
+}
+
+.navbar a:hover::after,
+.navbar a:focus-visible::after {
   transform: scaleX(1);
 }
 
-/* =========================
-   Header Buttons
-========================= */
+
+/* ==================================================
+   4. Header Login and Sign-Up Buttons
+================================================== */
 
 .header-buttons {
   display: flex;
@@ -339,18 +150,278 @@
 
 .login-btn,
 .signup-btn {
+  min-height: 46px;
+  padding: 12px 28px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 12px 28px;
+  gap: 8px;
 
   border: none;
   border-radius: 30px;
 
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.login-btn {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+.signup-btn {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background: #0077b6;
+  color: var(--white);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(3, 4, 94, 0.25);
+}
+
+.login-btn:focus-visible,
+.signup-btn:focus-visible {
+  outline: 3px solid var(--light-blue);
+  outline-offset: 3px;
+}
+
+
+/* ==================================================
+   5. Homepage Hamburger Button
+================================================== */
+
+.home-menu-btn {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--primary-color);
+  color: var(--white);
+
+  border: none;
+  border-radius: 11px;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.home-menu-btn:hover {
+  background: #0077b6;
+
+  transform: scale(1.05);
+}
+
+
+/* ==================================================
+   6. Shared Internal Page Sidebar
+================================================== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+
+  padding: 26px 20px;
+
+  background: linear-gradient(
+    180deg,
+    #03045e 0%,
+    #0077b6 55%,
+    #00b4d8 100%
+  );
+
+  color: var(--white);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  box-shadow: 8px 0 28px rgba(3, 4, 94, 0.25);
+
+  z-index: 1200;
+}
+
+
+/* Custom sidebar scrollbar */
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+
+  border-radius: 10px;
+}
+
+
+/* ==================================================
+   7. Sidebar Logo
+================================================== */
+
+.sidebar .logo-details {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .logo {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: var(--white);
+
+  text-decoration: none;
+}
+
+.sidebar .logo i {
+  color: var(--light-blue);
+
+  font-size: 28px;
+
+  flex-shrink: 0;
+}
+
+.sidebar .logo-name {
+  color: var(--white);
+
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.sidebar .logo-name span {
+  color: var(--light-blue);
+}
+
+
+/* ==================================================
+   8. Mobile Hamburger Button
+================================================== */
+
+.mobile-menu-btn {
+  display: none;
+
+  position: fixed;
+  top: 16px;
+  left: 16px;
+
+  width: 48px;
+  height: 48px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    #0077b6
+  );
+
+  color: var(--white);
+
+  border: none;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 24px rgba(3, 4, 94, 0.3);
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transform: none;
+
+  z-index: 1400;
+
+  transition:
+    background 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #0077b6,
+    var(--secondary-color)
+  );
+
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   9. Sidebar Close Button
+================================================== */
+
+.sidebar-close-btn {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+
+  font-size: 19px;
 
   cursor: pointer;
 
@@ -360,31 +431,314 @@
     transform 0.3s ease;
 }
 
-.login-btn {
-  background: #ffffff;
+.sidebar-close-btn:hover {
+  background: var(--white);
   color: var(--primary-color);
+
+  transform: scale(1.05);
 }
 
-.signup-btn {
-  background: var(--primary-color);
-  color: #ffffff;
+
+/* ==================================================
+   10. Sidebar Overlay
+================================================== */
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(3, 4, 94, 0.65);
+
+  opacity: 0;
+  visibility: hidden;
+
+  backdrop-filter: blur(4px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  z-index: 1100;
 }
 
-.login-btn:hover,
-.signup-btn:hover {
-  background: #0077b6;
-  color: #ffffff;
-
-  transform: translateY(-2px);
+.sidebar-overlay.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* =========================
-   Feature Strip
-========================= */
+
+/* ==================================================
+   11. Sidebar Search
+================================================== */
+
+.sidebar .search-box {
+  position: relative;
+
+  width: 100%;
+  min-height: 48px;
+
+  margin-bottom: 18px;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidebar .search-box i {
+  position: static;
+
+  width: 18px;
+
+  color: var(--white);
+
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.sidebar .search-box input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 12px 0;
+
+  background: transparent;
+  color: var(--white);
+
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.sidebar .search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar .search-box:focus-within {
+  background: rgba(255, 255, 255, 0.2);
+
+  border-color: var(--light-blue);
+
+  box-shadow: 0 0 0 3px rgba(144, 224, 239, 0.2);
+}
+
+
+/* ==================================================
+   12. Sidebar Navigation
+================================================== */
+
+.sidebar nav {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .nav-list {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.sidebar .nav-list > li {
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 8px;
+}
+
+.sidebar .nav-list a,
+.sidebar .dropdown-btn {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 11px 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: transparent;
+  color: var(--white);
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidebar .nav-list a span,
+.sidebar .dropdown-btn span {
+  color: inherit;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar .nav-list a > i,
+.sidebar .dropdown-btn i {
+  width: 20px;
+
+  color: #caf0f8;
+
+  text-align: center;
+
+  opacity: 1;
+  visibility: visible;
+
+  flex-shrink: 0;
+}
+
+.sidebar .nav-list a:hover,
+.sidebar .dropdown-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+
+  transform: translateX(4px);
+}
+
+.sidebar .nav-list a.active {
+  background: var(--white);
+  color: var(--primary-color);
+
+  box-shadow: 0 8px 20px rgba(3, 4, 94, 0.22);
+}
+
+.sidebar .nav-list a.active i {
+  color: #0077b6;
+}
+
+
+/* ==================================================
+   13. Activities Dropdown Button
+================================================== */
+
+.sidebar .dropdown-btn {
+  justify-content: space-between;
+}
+
+.dropdown-left {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.dropdown-btn .arrow {
+  width: auto;
+
+  margin-left: auto;
+
+  color: var(--white);
+
+  font-size: 12px;
+
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.open .arrow {
+  transform: rotate(180deg);
+}
+
+
+/* ==================================================
+   14. Activities Submenu
+================================================== */
+
+.sidebar .submenu {
+  display: block;
+
+  width: calc(100% - 24px);
+  max-height: 0;
+
+  margin: 0 0 0 24px;
+  padding: 0 0 0 10px;
+
+  overflow: hidden;
+
+  list-style: none;
+
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+
+  transition:
+    max-height 0.3s ease,
+    padding-top 0.3s ease,
+    padding-bottom 0.3s ease;
+}
+
+.sidebar .submenu.open,
+.sidebar .submenu.show {
+  max-height: 240px;
+
+  padding-top: 7px;
+  padding-bottom: 4px;
+}
+
+.sidebar .submenu li {
+  width: 100%;
+
+  margin-bottom: 5px;
+}
+
+.sidebar .submenu a {
+  min-height: 42px;
+
+  padding: 9px 12px;
+
+  color: #e7f8fc;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar .submenu a:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* ==================================================
+   15. Feature Strip
+================================================== */
 
 .feature-strip {
   position: relative;
-  z-index: 10;
 
   width: 92%;
   max-width: 1200px;
@@ -393,10 +747,7 @@
   padding: 30px;
 
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  );
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 
   background: var(--white);
@@ -404,31 +755,96 @@
   border-radius: 24px;
 
   box-shadow: var(--shadow);
+
+  z-index: 10;
 }
 
 .feature-item {
+  width: 100%;
+  min-width: 0;
+  min-height: 180px;
+
+  padding: 24px 20px;
+
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 18px;
+
+  color: var(--white);
+
+  border-radius: 18px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-item:nth-child(1) {
+  background: #070775;
+}
+
+.feature-item:nth-child(2) {
+  background: var(--secondary-color);
+}
+
+.feature-item:nth-child(3) {
+  background: #f28700;
+}
+
+.feature-item:nth-child(4) {
+  background: #df0505;
+}
+
+.feature-item:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.17);
+}
+
+.feature-item > i {
+  width: 32px;
+
+  color: var(--white);
+
+  font-size: 22px;
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.feature-item div {
+  min-width: 0;
 }
 
 .feature-item h3 {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 
-  color: var(--dark-blue);
+  color: var(--white);
+
+  font-size: 20px;
+  line-height: 1.3;
 }
 
 .feature-item p {
-  color: var(--text-color);
+  margin: 0;
+
+  color: var(--white);
 
   font-size: 15px;
+  line-height: 1.6;
 }
 
-/* =========================
-   Footer
-========================= */
+
+/* ==================================================
+   16. Footer
+================================================== */
 
 footer {
+  width: 100%;
+
   padding: 40px 8% 20px;
 
   background: var(--main-gradient);
@@ -436,15 +852,24 @@ footer {
 }
 
 .footer-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   gap: 50px;
 }
 
-.footer-section h3 {
-  margin-bottom: 15px;
+.footer-section {
+  min-width: 0;
+}
 
-  color: var(--dark-blue);
+.footer-section h3 {
+  margin: 0 0 15px;
+
+  color: var(--white);
 }
 
 .footer-section p,
@@ -465,169 +890,56 @@ footer {
   color: inherit;
 
   text-decoration: none;
+
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
+  color: var(--light-blue);
+
   text-decoration: underline;
 }
 
 .social-icons {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
 .social-icons a {
+  width: 40px;
+  height: 40px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
+  background: rgba(255, 255, 255, 0.14);
   color: var(--white);
 
-  font-size: 22px;
+  border-radius: 50%;
+
+  font-size: 20px;
 
   transition:
+    background-color 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: var(--dark-blue);
+  background: var(--white);
+  color: var(--primary-color);
+
+  text-decoration: none;
 
   transform: translateY(-3px);
 }
 
 .footer-bottom {
-  margin-top: 25px;
+  margin: 25px 0 0;
+
+  color: var(--white);
 
   text-align: center;
-}
-
-/* =========================
-   Tablet Header
-========================= */
-
-@media screen and (max-width: 950px) {
-  .site-header {
-    flex-wrap: wrap;
-
-    padding: 18px 5%;
-  }
-
-  .home-menu-btn {
-    display: inline-flex;
-
-    margin-left: auto;
-  }
-
-  .navbar {
-    display: none;
-
-    order: 4;
-
-    width: 100%;
-    margin: 10px 0 0;
-    padding: 15px;
-
-    flex-direction: column;
-    align-items: stretch;
-    gap: 5px;
-
-    background-color: rgba(255, 255, 255, 0.97);
-
-    border-radius: 12px;
-
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
-  }
-
-  .navbar.active {
-    display: flex;
-  }
-
-  .navbar a {
-    display: block;
-
-    width: 100%;
-    padding: 12px;
-
-    color: var(--primary-color);
-
-    border-radius: 8px;
-
-    text-align: center;
-  }
-
-  .navbar a:hover {
-    background-color: #eef9fd;
-  }
-
-  .navbar a::after {
-    display: none;
-  }
-
-  .header-buttons {
-    order: 3;
-
-    margin-left: auto;
-  }
-
-  .footer-content {
-    flex-wrap: wrap;
-  }
-
-  .footer-section {
-    flex: 1 1 220px;
-  }
-}
-
-/* =========================
-   Mobile Header
-========================= */
-
-@media screen and (max-width: 650px) {
-  .site-header {
-    padding: 16px 20px;
-  }
-
-  .site-header .logo {
-    font-size: 25px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .header-buttons {
-    order: 4;
-
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .login-btn,
-  .signup-btn {
-    flex: 1;
-
-    padding: 11px 15px;
-  }
-
-  .navbar {
-    order: 5;
-  }
-
-  .feature-strip {
-    grid-template-columns: 1fr;
-
-    margin-top: -25px;
-    padding: 22px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
 }
