@@ -5,18 +5,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Study Planner Dashboard</title>
+    <title>Dashboard | StudySmart</title>
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
-    <!-- Dashboard CSS -->
+    <!-- Dashboard Page CSS -->
     <link rel="stylesheet" href="assets/css/06-dashboard.css" />
 
-    <!-- Shared Responsive CSS -->
+    <!-- Shared Component CSS -->
+    <link rel="stylesheet" href="assets/css/02-component.css" />
+
+    <!-- Responsive CSS must load last -->
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -24,136 +27,196 @@
   </head>
 
   <body>
+    <!-- ==================================================
+         Mobile Hamburger Button
+    =================================================== -->
+
+    <button
+      type="button"
+      class="mobile-menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-controls="sidebar"
+      aria-expanded="false"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- ==================================================
+         Mobile Sidebar Overlay
+    =================================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         Dashboard Layout
+    =================================================== -->
+
     <div class="dashboard-layout">
-      <!-- =====================================
+      <!-- ==================================================
            Sidebar
-      ====================================== -->
+      =================================================== -->
 
-      <!-- Mobile Overlay -->
-      <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-      <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
-        <!-- Logo and Menu Button -->
+        <!-- Sidebar Logo -->
+
         <div class="logo-details">
-          <div class="logo">
+          <a href="02-dashboard.html" class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
 
             <div class="logo-name">Study<span>Smart</span></div>
-          </div>
+          </a>
+
+          <!-- Mobile Close Button -->
 
           <button
             type="button"
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
+            class="sidebar-close-btn"
+            id="sidebarCloseBtn"
+            aria-label="Close navigation menu"
           >
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
         <!-- Sidebar Navigation -->
-        <ul class="nav-list">
-          <!-- Search -->
-          <li class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
 
-            <input
-              type="search"
-              id="sidebarSearch"
-              placeholder="Search..."
-              aria-label="Search dashboard navigation"
-              autocomplete="off"
-            />
-          </li>
+        <nav aria-label="Dashboard navigation">
+          <ul class="nav-list">
+            <!-- Sidebar Search -->
 
-          <!-- Dashboard -->
-          <li class="nav-item">
-            <a href="02-dashboard.html" class="active">
-              <i class="fa-solid fa-house"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
+            <li class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
 
-          <!-- Calendar -->
-          <li class="nav-item">
-            <a href="07-calendar.html">
-              <i class="fa-regular fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
+              <input
+                type="search"
+                id="sidebarSearch"
+                placeholder="Search..."
+                aria-label="Search dashboard navigation"
+                autocomplete="off"
+              />
+            </li>
 
-          <!-- Activities Dropdown -->
-          <li class="nav-dropdown">
-            <button
-              type="button"
-              class="dropdown-btn"
-              id="activitiesBtn"
-              aria-expanded="false"
-              aria-controls="activitiesMenu"
-            >
-              <span class="dropdown-left">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Activities</span>
-              </span>
+            <!-- Dashboard -->
 
-              <i class="fa-solid fa-chevron-down arrow"></i>
-            </button>
+            <li class="nav-item">
+              <a href="02-dashboard.html" class="active">
+                <i class="fa-solid fa-house"></i>
 
-            <ul class="submenu" id="activitiesMenu">
-              <li>
-                <a href="03-subjects.html">
-                  <i class="fa-solid fa-book"></i>
-                  <span>Subjects</span>
-                </a>
-              </li>
+                <span>Dashboard</span>
+              </a>
+            </li>
 
-              <li>
-                <a href="05-tasks.html">
-                  <i class="fa-solid fa-list-check"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-            </ul>
-          </li>
+            <!-- Calendar -->
 
-          <!-- Focus Timer -->
-          <li class="nav-item">
-            <a href="11-pomodoro-settings.html">
-              <i class="fa-solid fa-hourglass-half"></i>
-              <span>Focus Timer</span>
-            </a>
-          </li>
+            <li class="nav-item">
+              <a href="07-calendar.html">
+                <i class="fa-regular fa-calendar"></i>
 
-          <!-- FAQ -->
-          <li class="nav-item">
-            <a href="10-faq.html">
-              <i class="fa-solid fa-circle-question"></i>
-              <span>FAQ</span>
-            </a>
-          </li>
-        </ul>
+                <span>Calendar</span>
+              </a>
+            </li>
+
+            <!-- Activities Dropdown -->
+
+            <li class="nav-dropdown">
+              <button
+                type="button"
+                class="dropdown-btn"
+                id="activitiesBtn"
+                aria-expanded="false"
+                aria-controls="activitiesMenu"
+              >
+                <span class="dropdown-left">
+                  <i class="fa-solid fa-chart-line"></i>
+
+                  <span>Activities</span>
+                </span>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+              </button>
+
+              <ul class="submenu" id="activitiesMenu">
+                <li>
+                  <a href="03-subjects.html">
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="05-tasks.html">
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <span>Tasks</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="06-analytics.html">
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>Analytics</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Focus Timer -->
+
+            <li class="nav-item">
+              <a href="11-pomodoro-settings.html">
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <span>Focus Timer</span>
+              </a>
+            </li>
+
+            <!-- FAQ -->
+
+            <li class="nav-item">
+              <a href="10-faq.html">
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>FAQ</span>
+              </a>
+            </li>
+
+            <!-- About Us -->
+
+            <li class="nav-item">
+              <a href="08-about.html">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About Us</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </aside>
 
-      <!-- =====================================
+      <!-- ==================================================
            Main Dashboard Content
-      ====================================== -->
+      =================================================== -->
 
       <main class="main-content">
-        <!-- Top Header -->
+        <!-- Dashboard Header -->
+
         <header class="dashboard-header">
           <h1>Welcome to StudySmart</h1>
 
           <div class="header-buttons">
             <!-- Sign In -->
-            <a href="01-login.html" class="signin-btn">
+
+            <a href="01-login.html?mode=login" class="signin-btn">
               <i class="fa-solid fa-right-to-bracket"></i>
 
               <span>Sign In</span>
             </a>
 
             <!-- Logout -->
+
             <button type="button" class="logout-btn" id="logoutButton">
               <i class="fa-solid fa-right-from-bracket"></i>
 
@@ -162,21 +225,25 @@
           </div>
         </header>
 
-        <!-- =====================================
-             Focus Card and Calendar Row
-        ====================================== -->
+        <!-- ==================================================
+             Main Dashboard Columns
+        =================================================== -->
 
         <div class="dashboard-content">
-          <!-- Left Side: Focus Card -->
+          <!-- Left Dashboard Column -->
+
           <section class="left-content">
+            <!-- Focus Hero Card -->
+
             <section class="hero-card">
               <div class="hero-text">
-                <p>0 Tasks Due Today</p>
+                <p id="tasksDueToday">0 Tasks Due Today</p>
 
                 <h2>Focus</h2>
               </div>
 
-              <!-- Focus Timer -->
+              <!-- Focus Timer Card -->
+
               <div class="focus-card">
                 <div class="timer-circle">
                   <h3>Focus</h3>
@@ -185,7 +252,8 @@
                 </div>
 
                 <div class="timer-buttons">
-                  <!-- Settings -->
+                  <!-- Timer Settings -->
+
                   <button
                     type="button"
                     id="settingsBtn"
@@ -195,7 +263,8 @@
                     <i class="fa-solid fa-gear"></i>
                   </button>
 
-                  <!-- Start -->
+                  <!-- Start Timer -->
+
                   <button
                     type="button"
                     id="startBtn"
@@ -205,7 +274,8 @@
                     <i class="fa-solid fa-play"></i>
                   </button>
 
-                  <!-- Reset -->
+                  <!-- Reset Timer -->
+
                   <button type="button" id="resetBtn" aria-label="Reset timer">
                     <i class="fa-solid fa-rotate-right"></i>
                   </button>
@@ -214,12 +284,16 @@
             </section>
           </section>
 
-          <!-- Right Side: Calendar -->
+          <!-- ==================================================
+               Dashboard Calendar
+          =================================================== -->
+
           <aside class="dashboard-calendar-card">
             <!-- Calendar Header -->
+
             <header class="dashboard-calendar-header">
               <div>
-                <span class="dashboard-calendar-label"> Weekly plan </span>
+                <span class="dashboard-calendar-label"> Weekly Plan </span>
 
                 <h2>Study Calendar</h2>
 
@@ -235,7 +309,8 @@
               </a>
             </header>
 
-            <!-- Calendar Navigation -->
+            <!-- Calendar Controls -->
+
             <div class="dashboard-calendar-controls">
               <button
                 type="button"
@@ -256,13 +331,15 @@
               </button>
             </div>
 
-            <!-- JavaScript Creates Calendar -->
+            <!-- JavaScript creates the weekly calendar here -->
+
             <div
               class="dashboard-week-calendar"
               id="dashboardWeekCalendar"
             ></div>
 
             <!-- Empty Calendar Message -->
+
             <div
               class="dashboard-calendar-empty"
               id="dashboardCalendarEmpty"
@@ -277,12 +354,13 @@
           </aside>
         </div>
 
-        <!-- =====================================
-             Statistics Cards Below
-        ====================================== -->
+        <!-- ==================================================
+             Dashboard Statistics
+        =================================================== -->
 
-        <section class="stats-grid">
+        <section class="stats-grid" aria-label="Study statistics">
           <!-- Scheduled Sessions -->
+
           <a href="03-subjects.html" class="stat-card stat-card-link">
             <h3>
               <i class="fa-solid fa-book-open"></i>
@@ -302,6 +380,7 @@
           </a>
 
           <!-- Upcoming Sessions -->
+
           <a href="07-calendar.html" class="stat-card stat-card-link">
             <h3>
               <i class="fa-regular fa-calendar-check"></i>
@@ -321,6 +400,7 @@
           </a>
 
           <!-- Completed Tasks -->
+
           <a href="05-tasks.html" class="stat-card stat-card-link">
             <h3>
               <i class="fa-solid fa-circle-check"></i>
@@ -342,23 +422,21 @@
       </main>
     </div>
 
-    <!-- =====================================
+    <!-- ==================================================
          Footer
-    ====================================== -->
+    =================================================== -->
 
     <footer>
-      <p class="footer-bottom">
-        &copy; 2026 My Study Planner. All Rights Reserved.
-      </p>
+      <p class="footer-bottom">&copy; 2026 StudySmart. All rights reserved.</p>
     </footer>
 
-    <!-- =====================================
+    <!-- ==================================================
          JavaScript Files
-    ====================================== -->
+    =================================================== -->
 
     <script src="assets/js/storage.js"></script>
 
-    <script src="assets/js/tasks.js"></script>
+    <script src="assets/js/task.js"></script>
 
     <script src="assets/js/timer.js"></script>
 

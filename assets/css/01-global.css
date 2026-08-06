@@ -1,158 +1,191 @@
+/* ==================================================
+   StudySmart Global Styles
+   File: assets/css/01-global.css
+================================================== */
 
-/* =========================
-   1. CSS Variables
-========================= */
-
-:root{
-    /* Main brand colours */
-    --primary-color: #03045E;
-    --secondary-color: #00B4D8;
-    --light-yellow: #90E0EF;
-
-    /* Header gradient */
-    --main-gradient: linear-gradient(
-        135deg,
-        #03045E,
-        #00B4D8 50%,
-        #90E0EF 100%
-    );
-
-    /* Text colours */
-    --dark-blue: white;
-    --text-color: white;
-
-    /* Background colours */
-    --light-bg: #eef7ff;
-    --white: #ffffff;
-
-    /* Border and shadow */
-    --border-color: #e5e7eb;
-    --shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
 
 /* ==================================================
-   Global Responsive Reset
+   1. CSS Variables
+================================================== */
+
+:root {
+  /* Main brand colours */
+  --primary-color: #03045e;
+  --secondary-color: #00b4d8;
+  --light-blue: #90e0ef;
+
+  /* Main gradient */
+  --main-gradient: linear-gradient(
+    135deg,
+    #03045e 0%,
+    #00b4d8 50%,
+    #90e0ef 100%
+  );
+
+  /* Text colours */
+  --heading-color: #03045e;
+  --text-color: #333333;
+  --muted-text-color: #666666;
+  --white: #ffffff;
+
+  /* Background colours */
+  --light-background: #eef7ff;
+  --card-background: #ffffff;
+
+  /* Border and shadow */
+  --border-color: #e5e7eb;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --strong-shadow: 0 12px 30px rgba(3, 4, 94, 0.18);
+
+  /* Border radius */
+  --small-radius: 8px;
+  --medium-radius: 12px;
+  --large-radius: 20px;
+}
+
+
+/* ==================================================
+   2. Global Reset
 ================================================== */
 
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
+
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   width: 100%;
   max-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  background: var(--main-gradient);
+  color: var(--text-color);
+
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+
+/* ==================================================
+   3. Common Elements
+================================================== */
 
 img {
   display: block;
+
   max-width: 100%;
   height: auto;
 }
-/* =========================
-   2. Reset
-========================= */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+a {
+  color: inherit;
+
+  text-decoration: none;
 }
 
-/* =========================
-   3. Base Page Style
-========================= */
-
-html{
-    scroll-behavior: smooth;
+ul,
+ol {
+  list-style: none;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--main-gradient);
-    color: var(--text-color);
-    line-height: 1.6;
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
-/* =========================
-   4. Common Elements
-========================= */
-
-img{
-    max-width: 100%;
-    display: block;
+button {
+  cursor: pointer;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
-}
 
-ul{
-    list-style: none;
-}
-
-/* =========================
-   5. Headings
-========================= */
+/* ==================================================
+   4. Headings
+================================================== */
 
 h1,
 h2,
-h3{
-    color: var(--dark-blue);
-    font-weight: 800;
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+
+  font-weight: 800;
+  line-height: 1.2;
 }
 
-h1{
-    font-size: 40px;
-    line-height: 1.1;
+h1 {
+  font-size: 40px;
 }
 
-h2{
-    font-size: 30px;
+h2 {
+  font-size: 30px;
 }
 
-h3{
-    font-size: 20px;
+h3 {
+  font-size: 20px;
 }
 
-/* =========================
-   6. Reusable Container
-========================= */
-
-.container{
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+p {
+  color: var(--text-color);
 }
 
-/* ===========================
-   Global Button Styles
-=========================== */
+
+/* ==================================================
+   5. Reusable Container
+================================================== */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* ==================================================
+   6. Global Button Styles
+================================================== */
 
 .btn {
+  min-height: 44px;
+  padding: 12px 20px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
+  gap: 8px;
 
   background: var(--secondary-color);
   color: var(--white);
 
+  border: none;
+  border-radius: var(--medium-radius);
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 
   cursor: pointer;
+
   transition:
     background-color 0.3s ease,
+    color 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
@@ -160,7 +193,9 @@ h3{
 .btn:hover {
   background: var(--primary-color);
   color: var(--white);
+
   transform: translateY(-2px);
+
   box-shadow: 0 8px 18px rgba(3, 4, 94, 0.18);
 }
 
@@ -169,19 +204,24 @@ h3{
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--light-yellow);
+  outline: 3px solid var(--light-blue);
   outline-offset: 3px;
 }
 
+
 /* Full-width button */
+
 .btn-block {
   width: 100%;
 }
 
-/* Secondary/outline button */
+
+/* Outline button */
+
 .btn-outline {
   background: transparent;
   color: var(--primary-color);
+
   border: 2px solid var(--primary-color);
 }
 
@@ -189,196 +229,125 @@ h3{
   background: var(--primary-color);
   color: var(--white);
 }
-/* =========================
+
+
+/* ==================================================
+   7. Form Elements
+================================================== */
+
+input,
+select,
+textarea {
+  max-width: 100%;
+
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--small-radius);
+
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--secondary-color);
+
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+
+/* ==================================================
    8. Utility Classes
-========================= */
+================================================== */
 
-.text-center{
-    text-align: center;
+.text-center {
+  text-align: center;
 }
 
-.section-padding{
-    padding: 80px 0;
-}
-
-
-
-
-/* ===========================
-   Global Logo
-=========================== */
-
-.logo-details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo i{
-    font-size: 32px;
-    color: var(--secondary-color);
-}
-
-.logo-name{
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
-}
-
-.logo-name span{
-    color: var(--secondary-color);
-}
-
-.logo-details #btn{
-    font-size: 22px;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.logo-details #btn:hover{
-    color: var(--secondary-color);
-}
-
-.subtitle{
-    color: var(--dark-blue);
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/* ===========================
-   Global Sidebar Layout
-=========================== */
-
-.layout{
-    display:flex;
-    min-height:100vh;
-}
-
-.sidebar{
-    width:250px;
-    min-width:250px;
-    height:100vh;
-
-    position:sticky;
-    top:0;
-
-    flex-shrink:0;
-
-    background:var(--white);
-
-    padding:30px 20px;
-
-    box-shadow:var(--shadow);
-
-    overflow-y:auto;
-}
-
-.main-content{
-    flex:1;
-    padding:40px;
-    overflow-x:hidden;
-}
-
-/* ===========================
-   Global Navigation
-=========================== */
-
-.sidebar nav,
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 30px;
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.sidebar a,
-.sidebar button {
-  display: block;
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 12px;
-
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 600;
-
-  background: transparent;
-  border: none;
+.text-left {
   text-align: left;
-  cursor: pointer;
-
-  transition: 0.3s;
 }
 
-.sidebar a:hover,
-.sidebar button:hover,
-.sidebar a.active {
-  background: var(--secondary-color);
-  color: white;
+.text-right {
+  text-align: right;
 }
 
-/* Dropdown */
-.nav-dropdown .submenu {
-  display: none;
-  list-style: none;
-  padding-left: 25px;
-  margin-top: 8px;
+.section-padding {
+  padding: 80px 0;
 }
 
-.nav-dropdown .submenu.show {
-  display: block;
+.hidden {
+  display: none !important;
 }
 
-.submenu li a {
-  font-size: 15px;
-  padding: 10px 15px;
+.full-width {
+  width: 100%;
 }
 
-.arrow {
-  margin-left: auto;
+
+/* ==================================================
+   9. Accessible Focus Style
+================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--light-blue);
+  outline-offset: 3px;
 }
 
-/*=========
-User icon
-==========*/
+
+/* ==================================================
+   10. User Avatar
+================================================== */
+
 .user {
   color: var(--primary-color);
+
   font-weight: 600;
 }
 
 .user-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   width: 50px;
   height: 50px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--white);
+  color: var(--primary-color);
+
   border-radius: 50%;
-  background: #ffffff;
 
-  color: #03045e;
   text-decoration: none;
-  cursor: pointer;
 
-  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(3, 4, 94, 0.12);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .user-avatar:hover {
-  background: #00b4d8;
-  color: #ffffff;
+  background: var(--secondary-color);
+  color: var(--white);
+
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   11. Selection Colour
+================================================== */
+
+::selection {
+  background: var(--secondary-color);
+  color: var(--white);
 }

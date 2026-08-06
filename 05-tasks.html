@@ -5,14 +5,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tasks</title>
+    <title>Tasks | StudySmart</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
-    <link rel="stylesheet" href="assets/css/03-responsive.css" />
+    <!-- Shared Components -->
+    <link rel="stylesheet" href="assets/css/02-component.css" />
 
+    <!-- Tasks Page CSS -->
     <link rel="stylesheet" href="assets/css/08-tasks.css" />
 
+    <!-- Responsive CSS must load last -->
+    <link rel="stylesheet" href="assets/css/03-responsive.css" />
+
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -20,33 +27,176 @@
   </head>
 
   <body>
+    <!-- ==========================================
+         Mobile Hamburger Button
+    =========================================== -->
+
+    <button
+      type="button"
+      class="mobile-menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-controls="sidebar"
+      aria-expanded="false"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- ==========================================
+         Mobile Sidebar Overlay
+    =========================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ==========================================
+         Page Layout
+    =========================================== -->
+
     <div class="layout">
-      <!-- ================= Sidebar ================= -->
-      <aside class="sidebar">
+      <!-- ==========================================
+           Sidebar
+      =========================================== -->
+
+      <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Logo -->
+
         <div class="logo-details">
-          <div class="logo">
+          <a href="02-dashboard.html" class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
 
             <div class="logo-name">Study<span>Smart</span></div>
-          </div>
+          </a>
+
+          <!-- Mobile Close Button -->
+
+          <button
+            type="button"
+            class="sidebar-close-btn"
+            id="sidebarCloseBtn"
+            aria-label="Close navigation menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <nav>
-          <a href="02-dashboard.html"> Dashboard </a>
+        <!-- Sidebar Navigation -->
 
-          <a href="03-subjects.html"> Subjects </a>
+        <nav aria-label="Tasks page navigation">
+          <ul class="nav-list">
+            <!-- Search -->
 
-          <a href="05-tasks.html" class="active"> Tasks </a>
+            <li class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
 
-          <a href="07-calendar.html"> Calendar </a>
+              <input
+                type="search"
+                id="sidebarSearch"
+                placeholder="Search navigation..."
+                aria-label="Search navigation"
+                autocomplete="off"
+              />
+            </li>
 
-          <a href="11-pomodoro-settings.html"> Focus Timer </a>
+            <!-- Dashboard -->
+
+            <li class="nav-item">
+              <a href="02-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <!-- Calendar -->
+
+            <li class="nav-item">
+              <a href="07-calendar.html">
+                <i class="fa-regular fa-calendar"></i>
+
+                <span>Calendar</span>
+              </a>
+            </li>
+
+            <!-- Activities Dropdown -->
+
+            <li class="nav-dropdown">
+              <button
+                type="button"
+                class="dropdown-btn open"
+                id="activitiesBtn"
+                aria-expanded="true"
+                aria-controls="activitiesMenu"
+              >
+                <span class="dropdown-left">
+                  <i class="fa-solid fa-chart-line"></i>
+
+                  <span>Activities</span>
+                </span>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+              </button>
+
+              <ul class="submenu open" id="activitiesMenu">
+                <li>
+                  <a href="03-subjects.html">
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="05-tasks.html" class="active">
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <span>Tasks</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Focus Timer -->
+
+            <li class="nav-item">
+              <a href="11-pomodoro-settings.html">
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <span>Focus Timer</span>
+              </a>
+            </li>
+
+            <!-- FAQ -->
+
+            <li class="nav-item">
+              <a href="10-faq.html">
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>FAQ</span>
+              </a>
+            </li>
+
+            <!-- About -->
+
+            <li class="nav-item">
+              <a href="08-about.html">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About Us</span>
+              </a>
+            </li>
+          </ul>
         </nav>
       </aside>
 
-      <!-- ================= Main Content ================= -->
+      <!-- ==========================================
+           Main Content
+      =========================================== -->
+
       <main class="main-content">
-        <!-- ================= Top Bar ================= -->
+        <!-- ==========================================
+             Top Bar
+        =========================================== -->
+
         <header class="top-bar">
           <div class="task-search">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,6 +205,7 @@
               type="search"
               id="taskSearch"
               placeholder="Search tasks..."
+              aria-label="Search tasks"
               autocomplete="off"
             />
           </div>
@@ -67,11 +218,11 @@
             >
               <i class="fa-regular fa-bell"></i>
 
-              <span class="notification-badge"> 3 </span>
+              <span class="notification-badge">3</span>
             </button>
 
             <a
-              href="01-login.html"
+              href="01-login.html?mode=login"
               class="user-avatar"
               aria-label="Go to login page"
             >
@@ -80,7 +231,10 @@
           </div>
         </header>
 
-        <!-- ================= Tasks Header ================= -->
+        <!-- ==========================================
+             Tasks Header
+        =========================================== -->
+
         <section class="tasks-header">
           <div class="tasks-title">
             <p class="page-tag">Study Planner</p>
@@ -94,12 +248,16 @@
 
           <button type="button" class="add-task-button" id="addTaskButton">
             <i class="fa-solid fa-plus"></i>
-            Add Task
+
+            <span>Add Task</span>
           </button>
         </section>
 
-        <!-- ================= Task Filters ================= -->
-        <section class="task-filters">
+        <!-- ==========================================
+             Task Filters
+        =========================================== -->
+
+        <section class="task-filters" aria-label="Filter tasks">
           <button type="button" class="filter-button active" data-filter="all">
             All
           </button>
@@ -107,6 +265,7 @@
           <button type="button" class="filter-button" data-filter="scheduled">
             Scheduled
           </button>
+
           <button type="button" class="filter-button" data-filter="pending">
             Pending
           </button>
@@ -116,10 +275,13 @@
           </button>
         </section>
 
-        <!-- ================= Task List ================= -->
-        <section class="task-list-section">
+        <!-- ==========================================
+             Task List
+        =========================================== -->
+
+        <section class="task-list-section" aria-live="polite">
           <div class="task-list" id="taskList">
-            <!-- Task cards will be created here by JavaScript -->
+            <!-- JavaScript creates task cards here -->
           </div>
 
           <div class="empty-state" id="emptyTaskState">
@@ -132,6 +294,14 @@
         </section>
       </main>
     </div>
+
+    <!-- ==========================================
+         JavaScript
+    =========================================== -->
+
+    <script src="assets/js/storage.js"></script>
+
+    <script src="assets/js/dashboard.js"></script>
 
     <script src="assets/js/task.js"></script>
   </body>
