@@ -8,11 +8,14 @@
     <title>About Us | StudySmart</title>
 
     <!-- CSS -->
+
     <link rel="stylesheet" href="assets/css/01-global.css" />
     <link rel="stylesheet" href="assets/css/04-home.css" />
+    <link rel="stylesheet" href="assets/css/13-about.css" />
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
     <!-- Font Awesome -->
+
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -20,213 +23,164 @@
   </head>
 
   <body>
-    <!-- =========================
-Header
-========================= -->
+    <!-- ==========================================
+         Header
+    =========================================== -->
 
-    <header class="site-header">
-      <div class="site-header-logo">
-        <h1 class="logo">StudySmart</h1>
+    <header class="main-header">
+      <!-- Logo -->
 
-        <p class="subtitle">Plan Smart. Study Better.</p>
-      </div>
+      <a href="index.html" class="site-logo">
+        <span>Study</span>Smart
 
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="08-about.html">About Us</a>
-        <a href="10-faq.html">FAQ</a>
+        <small> Plan Smart. Study Better. </small>
+      </a>
+
+      <!-- Navigation -->
+
+      <nav class="main-navigation">
+        <a href="index.html"> Home </a>
+
+        <a href="08-about.html" class="active"> About Us </a>
+
+        <a href="10-faq.html"> FAQ </a>
       </nav>
 
-      <div class="header-buttons">
-        <a href="01-login.html?mode=login" class="login-btn"> Login </a>
+      <!-- Login Buttons -->
 
-        <a href="01-login.html?mode=signup" class="signup-btn"> Sign Up </a>
+      <div class="auth-links">
+        <a href="01-login.html"> Login </a>
+
+        <a href="01-login.html" class="signup-link"> Sign Up </a>
       </div>
     </header>
 
-    <!-- =========================
-Hero Section
-========================= -->
+    <!-- ==========================================
+         Hero Section
+    =========================================== -->
 
-    <section class="hero">
-      <div class="hero-content">
-        <span class="hero-badge"> About StudySmart </span>
+    <main>
+      <section class="about-hero">
+        <!-- Left Content -->
 
-        <h2>Helping Students Stay Organised and Succeed</h2>
+        <div class="about-hero-content">
+          <p class="about-label">About StudySmart</p>
 
-        <p>
-          StudySmart is a web-based study planner designed to help students
-          organise their subjects, manage assignments, schedule study sessions,
-          and improve productivity. Our goal is to make studying easier by
-          providing simple tools that keep everything in one place.
-        </p>
-      </div>
+          <h1>Helping Students Stay Organised and Succeed</h1>
 
-      <div class="hero-image">
-        <img
-          src="assets/images/hero-dashboard.png"
-          alt="Study Planner Dashboard"
-        />
-      </div>
-    </section>
-
-    <!-- =========================
-Mission Section
-========================= -->
-
-    <section class="feature-strip">
-      <div class="feature-item">
-        <i class="fa-solid fa-bullseye"></i>
-
-        <div>
-          <h3>Our Mission</h3>
-
-          <p>
-            To help students stay organised, reduce stress, and achieve their
-            academic goals through smart planning and effective time management.
+          <p class="about-description">
+            StudySmart is a web-based study planner created to help students
+            organise their learning, manage assignments, track progress and
+            improve study habits. It provides an easy-to-use dashboard,
+            calendar, task manager, focus timer and study planner to help
+            students achieve their academic goals.
           </p>
-        </div>
-      </div>
 
-      <div class="feature-item">
-        <i class="fa-solid fa-eye"></i>
+          <div class="about-buttons">
+            <a href="01-login.html" class="primary-button"> Get Started </a>
 
-        <div>
-          <h3>Our Vision</h3>
-
-          <p>
-            To become a trusted study planning platform that supports students
-            throughout their educational journey.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-Why Choose Us
-========================= -->
-
-    <section class="about-section">
-      <h2>Why Choose StudySmart?</h2>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <i class="fa-solid fa-book"></i>
-
-          <h3>Manage Subjects</h3>
-
-          <p>Keep all your subjects and study topics organised in one place.</p>
-        </div>
-
-        <div class="about-card">
-          <i class="fa-solid fa-calendar-days"></i>
-
-          <h3>Study Calendar</h3>
-
-          <p>
-            Plan your weekly study sessions and never miss an important date.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <i class="fa-solid fa-list-check"></i>
-
-          <h3>Task Manager</h3>
-
-          <p>Create tasks, monitor progress, and stay on top of deadlines.</p>
-        </div>
-
-        <div class="about-card">
-          <i class="fa-solid fa-hourglass-half"></i>
-
-          <h3>Focus Timer</h3>
-
-          <p>Improve concentration using the built-in Pomodoro focus timer.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-Our Features
-========================= -->
-
-    <section class="about-section">
-      <h2>Key Features</h2>
-
-      <ul class="about-list">
-        <li>✔ User Registration and Login</li>
-
-        <li>✔ Subject Management</li>
-
-        <li>✔ Task Management</li>
-
-        <li>✔ Weekly Study Calendar</li>
-
-        <li>✔ Focus Timer (Pomodoro)</li>
-
-        <li>✔ Study Progress Dashboard</li>
-
-        <li>✔ Frequently Asked Questions</li>
-
-        <li>✔ Responsive Design for Desktop and Mobile</li>
-      </ul>
-    </section>
-
-    <!-- =========================
-Call To Action
-========================= -->
-
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Start Your Study Journey Today</h2>
-
-        <p>
-          Join thousands of students using StudySmart to organise their studies,
-          improve productivity, and achieve better academic results.
-        </p>
-
-        <a href="01-login.html?mode=signup" class="signup-btn"> Get Started </a>
-      </div>
-    </section>
-
-    <!-- =========================
-Footer
-========================= -->
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>StudySmart</h3>
-
-          <p>Helping students study smarter every day.</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-
-          <p><a href="index.html">Home</a></p>
-
-          <p><a href="08-about.html">About Us</a></p>
-
-          <p><a href="10-faq.html">FAQ</a></p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-
-          <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="10-faq.html" class="secondary-button"> Learn More </a>
           </div>
         </div>
-      </div>
 
-      <p class="footer-bottom">© 2026 StudySmart. All Rights Reserved.</p>
+        <!-- Right Image -->
+
+        <div class="about-hero-image">
+          <img
+            src="assets/images/hero-dashboard.png"
+            alt="StudySmart Dashboard"
+          />
+        </div>
+      </section>
+
+      <!-- ==========================================
+             Mission
+        =========================================== -->
+
+      <section class="mission-section">
+        <div class="mission-card">
+          <i class="fa-solid fa-bullseye"></i>
+
+          <h2>Our Mission</h2>
+
+          <p>
+            Our mission is to help every student develop better study habits
+            through planning, organisation and time management.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <i class="fa-solid fa-lightbulb"></i>
+
+          <h2>Our Vision</h2>
+
+          <p>
+            We aim to make studying less stressful by providing one place to
+            organise all academic activities.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <i class="fa-solid fa-users"></i>
+
+          <h2>Who It's For</h2>
+
+          <p>
+            StudySmart is designed for GCSE, A-Level, college and university
+            students who want to improve productivity.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==========================================
+             Features
+        =========================================== -->
+
+      <section class="features-section">
+        <h2>What StudySmart Offers</h2>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h3>Study Calendar</h3>
+
+            <p>Organise your study schedule with a clear calendar view.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa-solid fa-list-check"></i>
+
+            <h3>Task Manager</h3>
+
+            <p>Keep track of assignments and completed work.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>Subject Planner</h3>
+
+            <p>Create personalised study plans for each subject.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>Focus Timer</h3>
+
+            <p>Stay productive using the Pomodoro technique.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         Footer
+    =========================================== -->
+
+    <footer class="footer">
+      <p>© 2026 StudySmart Planner. All Rights Reserved.</p>
     </footer>
   </body>
 </html>

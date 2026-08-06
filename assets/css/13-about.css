@@ -1,0 +1,638 @@
+/* ==================================================
+   About Page
+================================================== */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background: #f5f8fc;
+
+  color: #333333;
+}
+
+
+/* ==================================================
+   Header
+================================================== */
+
+.main-header {
+  width: 100%;
+  min-height: 85px;
+
+  padding: 15px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #03045e,
+    #0077b6,
+    #00b4d8
+  );
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* ==================================================
+   Logo
+================================================== */
+
+.site-logo {
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.site-logo span {
+  color: #90e0ef;
+}
+
+.site-logo small {
+  margin-top: 7px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   Navigation
+================================================== */
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.main-navigation a {
+  position: relative;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+  color: #90e0ef;
+}
+
+.main-navigation a.active::after {
+  content: "";
+
+  width: 100%;
+  height: 3px;
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  background: #90e0ef;
+
+  border-radius: 10px;
+}
+
+
+/* ==================================================
+   Login and Sign Up Links
+================================================== */
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.auth-links a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.auth-links .signup-link {
+  padding: 10px 22px;
+
+  background: #ffffff;
+  color: #03045e;
+
+  border-radius: 25px;
+
+  transition: 0.3s ease;
+}
+
+.auth-links .signup-link:hover {
+  background: #90e0ef;
+
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   About Hero Section
+================================================== */
+
+.about-hero {
+  width: 100%;
+
+  padding: 75px 7%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+
+  background: linear-gradient(
+    135deg,
+    #03045e 0%,
+    #0077b6 50%,
+    #48cae4 100%
+  );
+}
+
+
+/* ==================================================
+   About Hero Text
+================================================== */
+
+.about-hero-content {
+  max-width: 650px;
+}
+
+.about-label {
+  margin: 0 0 15px;
+
+  color: #caf0f8;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.about-hero-content h1 {
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.15;
+}
+
+.about-description {
+  margin: 0 0 30px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+/* ==================================================
+   About Buttons
+================================================== */
+
+.about-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.about-buttons a {
+  display: inline-block;
+
+  padding: 13px 25px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.primary-button {
+  background: #ffffff;
+  color: #03045e;
+}
+
+.secondary-button {
+  border: 2px solid #ffffff;
+
+  color: #ffffff;
+}
+
+.about-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ==================================================
+   About Hero Image
+================================================== */
+
+.about-hero-image {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==================================================
+   Mission Section
+================================================== */
+
+.mission-section {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 70px 7%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  background: #f5f8fc;
+}
+
+
+/* ==================================================
+   Mission Cards
+================================================== */
+
+.mission-card {
+  min-height: 250px;
+
+  padding: 35px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s ease;
+}
+
+.mission-card:nth-child(1) {
+  background: linear-gradient(
+    135deg,
+    #03045e,
+    #1b2ab5
+  );
+
+  color: #ffffff;
+}
+
+.mission-card:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    #0077b6,
+    #00b4d8
+  );
+
+  color: #ffffff;
+}
+
+.mission-card:nth-child(3) {
+  background: linear-gradient(
+    135deg,
+    #00b4d8,
+    #48cae4
+  );
+
+  color: #ffffff;
+}
+
+.mission-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+}
+
+.mission-card i {
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+}
+
+.mission-card h2 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+}
+
+.mission-card p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   Features Section
+================================================== */
+
+.features-section {
+  width: 100%;
+
+  padding: 70px 7%;
+
+  background: #ffffff;
+}
+
+.features-section > h2 {
+  margin: 0 0 40px;
+
+  color: #03045e;
+
+  text-align: center;
+
+  font-size: 36px;
+}
+
+
+/* ==================================================
+   Feature Grid
+================================================== */
+
+.feature-grid {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+
+/* ==================================================
+   Feature Cards
+================================================== */
+
+.feature-card {
+  padding: 30px 22px;
+
+  text-align: center;
+
+  background: #f7fbff;
+
+  border: 1px solid #dceef6;
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #00b4d8;
+}
+
+.feature-card i {
+  margin-bottom: 18px;
+
+  color: #00b4d8;
+
+  font-size: 35px;
+}
+
+.feature-card h3 {
+  margin: 0 0 12px;
+
+  color: #03045e;
+
+  font-size: 21px;
+}
+
+.feature-card p {
+  margin: 0;
+
+  color: #666666;
+
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   Footer
+================================================== */
+
+.footer {
+  width: 100%;
+
+  padding: 25px 7%;
+
+  background: #03045e;
+
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+
+  color: #ffffff;
+}
+
+
+/* ==================================================
+   Tablet Responsive Design
+================================================== */
+
+@media screen and (max-width: 950px) {
+  .main-header {
+    flex-wrap: wrap;
+  }
+
+  .main-navigation {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .about-hero-content {
+    max-width: 750px;
+
+    margin: 0 auto;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .about-hero-image img {
+    max-width: 700px;
+  }
+
+  .mission-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-card:last-child {
+    grid-column: 1 / -1;
+
+    max-width: 600px;
+
+    width: 100%;
+
+    justify-self: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==================================================
+   Mobile Responsive Design
+================================================== */
+
+@media screen and (max-width: 650px) {
+  .main-header {
+    padding: 18px 5%;
+
+    justify-content: center;
+  }
+
+  .site-logo {
+    width: 100%;
+
+    align-items: center;
+  }
+
+  .main-navigation {
+    gap: 18px;
+
+    flex-wrap: wrap;
+  }
+
+  .auth-links {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .about-hero {
+    padding: 50px 5%;
+
+    gap: 35px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 37px;
+  }
+
+  .about-description {
+    font-size: 16px;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+  }
+
+  .about-buttons a {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .mission-section {
+    padding: 50px 5%;
+
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card,
+  .mission-card:last-child {
+    width: 100%;
+    max-width: none;
+
+    grid-column: auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-section {
+    padding: 50px 5%;
+  }
+
+  .features-section > h2 {
+    font-size: 30px;
+  }
+}
