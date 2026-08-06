@@ -406,13 +406,6 @@ These features were selected to provide students with an organised and efficient
 - Focus Timer
 - FAQ Page
 - About Page
-
----
-
-## For a Level 5 project README, simply listing the features isn't enough. You should explain **what each feature does**, **how JavaScript is used**, and **the benefit to the user**.
-
-You can paste the following directly into your **README.md**.
-
 ---
 
 # Interactive Features
@@ -450,7 +443,6 @@ The dashboard automatically displays information based on the user's stored stud
 Statistics update automatically whenever tasks are added or completed, allowing users to monitor their academic progress in real time.
 
 ### Responsive Sidebar Navigation
-
 A reusable sidebar provides consistent navigation across every page. The active page is highlighted automatically to improve navigation.
 
 ### Mobile Hamburger Menu
@@ -498,17 +490,11 @@ JavaScript automatically creates a weekly study schedule based on the selected o
 The study plan cannot be generated until all required fields have been completed, preventing incomplete or invalid schedules.
 
 ### Subtopic Preview
-
 Before generating a study plan, users can preview the topics that will be scheduled in their calendar.
-
 ---
-
 # Task Management
-
 ### Create Tasks
-
 Users can create new study tasks which are instantly displayed on the Tasks page.
-
 ### Edit Tasks
 
 Existing tasks can be modified without creating duplicates.
@@ -642,12 +628,6 @@ Local Storage is used to save:
 The application makes extensive use of JavaScript event listeners to create an interactive user experience. User actions such as button clicks, form submissions, dropdown selections, search input and navigation events trigger dynamic updates throughout the application without requiring page reloads.
 
 These interactive features demonstrate the use of DOM manipulation, event handling, conditional logic, Local Storage, responsive navigation and dynamic content generation.
-
-
----
-
-## For a Level 5 README, it's better to explain **how each future feature would improve the application**, rather than simply listing them. You can paste the following directly into your **README.md**.
-
 ---
 
 # Future Features
@@ -714,12 +694,7 @@ The application could be expanded to support additional qualifications such as B
 
 ### Future Development Summary
 
-The planned future enhancements focus on improving usability, accessibility, personalisation and collaboration while expanding the application's capabilities. These additions would transform StudySmart Planner from a browser-based study planner into a comprehensive educational productivity platform capable of supporting students, parents and teachers across multiple devices and learning environments.
-
-
----
-
-# Here's a more detailed and professional version that you can paste directly into your **README.md**.
+The planned future enhancements focus on improving usability, accessibility, personalisation and collaboration while expanding the application's capabilities. These additions would transform StudySmart Planner from a browser-based study planner into a comprehensive educational productivity platform capable of supporting students, parents and teachers across multiple devices and learning environments.---
 
 ---
 
@@ -815,10 +790,6 @@ This logical hierarchy reduces navigation complexity and allows users to locate 
 
 ---
 
-# Here's a more detailed and professional version that you can paste directly into your **README.md**.
-
----
-
 # Skeleton Plane
 
 The **Skeleton Plane** focuses on the arrangement of interface elements, page layouts and navigation to create a clear, intuitive and user-friendly experience. At this stage of the User Experience (UX) design process, the application's wireframes were used to determine the placement of content, buttons, navigation menus and interactive components before development began.
@@ -865,11 +836,6 @@ The Subject page allows students to:
 - Select GCSE or A-Level.
 - Choose study topics.
 - Generate personalised study plans.
-
----
-
-## Here's a more detailed and professional version for your **README.md**.
-
 ---
 
 ## Task Page
@@ -891,8 +857,6 @@ The Task Page uses **JavaScript** to dynamically generate task cards, update pro
 The card-based layout, responsive design and interactive features provide a clear and user-friendly interface that enables students to manage their academic workload efficiently across desktop, tablet and mobile devices.
 
 ---
-
-## You can paste the following directly into your **README.md**.
 
 ---
 
@@ -917,10 +881,6 @@ The responsive calendar layout allows students to visualise their weekly study t
 
 ---
 
-## You can paste the following directly into your **README.md**.
-
----
-
 ## Focus Timer Page
 
 The **Focus Timer Page** is designed to help students improve concentration and productivity by using the **Pomodoro Technique**, a time management method that alternates focused study sessions with short breaks. This feature encourages users to stay focused, reduce distractions and develop consistent study habits.
@@ -940,12 +900,6 @@ The page includes the following features:
 The Focus Timer uses **JavaScript** to control the countdown, manage timer states, update the session counter and save user preferences locally within the browser. This creates a smooth and interactive experience without requiring a backend database.
 
 The responsive layout ensures that the Focus Timer remains easy to use across desktop, tablet and mobile devices, providing students with an effective tool to improve concentration, manage study sessions and build productive learning habits.
-
-
----
-
-## You can paste the following directly into your **README.md**.
-
 ---
 
 ## FAQ Page
@@ -963,11 +917,6 @@ The page includes the following features:
 The FAQ page uses **JavaScript** to control the accordion functionality and search feature. As users interact with the page, answers are dynamically expanded or collapsed without refreshing the page, providing a smooth and responsive user experience.
 
 The simple layout and interactive design enable users to quickly find the information they need while maintaining a clean and uncluttered interface. This improves the overall usability of the application and helps users understand its features more effectively.
-
----
-
-## You can paste the following directly into your **README.md**.
-
 ---
 
 ## About Page
@@ -985,12 +934,6 @@ The page includes the following sections:
 * **Responsive Layout** – Ensures that all content adapts seamlessly across desktop, tablet and mobile devices, providing a consistent and accessible user experience.
 
 The About Page was designed using **HTML5** and **CSS3**, with responsive layouts and reusable components to maintain consistency with the rest of the application. Its clean structure and informative content help users understand the purpose of StudySmart Planner while presenting the project in a professional and engaging manner.
-
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 # Surface Plane
@@ -1015,10 +958,6 @@ The overall visual design was carefully planned to balance aesthetics with usabi
 
 ---
 
-# You can paste the following directly into your **README.md**.
-
----
-
 ## Colour Scheme
 
 The colour scheme for **StudySmart Planner** was carefully selected to create a clean, modern and professional appearance while supporting usability and accessibility. A predominantly blue colour palette was chosen because blue is commonly associated with **education, trust, productivity and concentration**, making it well suited to an educational planning application.
@@ -1040,10 +979,6 @@ The consistent use of colours throughout the application helps users quickly rec
 
 ---
 
-# You can paste the following directly into your **README.md**.
-
----
-
 ## Typography
 
 Typography plays an important role in the overall user experience of **StudySmart Planner**. A clean, modern **sans-serif font** was selected to maximise readability, improve accessibility and ensure that information is easy to understand across all devices.
@@ -1062,11 +997,6 @@ To further improve the user experience, consistent spacing, line heights and fon
 The typography has also been designed to remain responsive across desktop, tablet and mobile devices. Font sizes and spacing adjust appropriately on smaller screens to ensure that content remains clear, readable and accessible regardless of the device being used.
 
 Overall, the typography contributes to the professional appearance of StudySmart Planner while supporting its primary goal of providing students with a simple, organised and user-friendly study planning experience.
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 ## Icons
@@ -1105,11 +1035,6 @@ Images include:
 - Feature Icons
 
 Images have been selected to support educational content without distracting users.
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 # Wireframes
@@ -1139,9 +1064,6 @@ Wireframes were produced for the main pages of the application, including:
 Creating wireframes before development helped reduce design issues during implementation, ensured a consistent layout across the application and made it easier to plan responsive behaviour for different screen sizes.
 
 > **Note:** The wireframes included in this repository represent the initial design concepts. Minor layout and styling changes were made during development to improve usability, responsiveness and the overall user experience.
-
-
-## You can paste the following directly into your **README.md**.
 
 ---
 
@@ -1180,11 +1102,6 @@ The layout adapts by reducing spacing while maintaining the sidebar and navigati
 The mobile version replaces the sidebar with a responsive hamburger menu while ensuring that all functionality remains available.
 
 *(Insert Mobile Wireframe Images Here)*
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 # Responsive Design
@@ -1217,11 +1134,6 @@ The application was tested on a variety of screen sizes to ensure that all layou
 During development, several responsive improvements were implemented, including redesigning the sidebar navigation, introducing a reusable hamburger menu, optimising dashboard layouts, resizing statistics cards, improving calendar responsiveness and ensuring that task cards, subject cards and forms displayed correctly on smaller screens.
 
 By combining responsive layouts, flexible components and adaptive navigation, StudySmart Planner delivers a seamless user experience across a wide range of devices while meeting modern front-end web development standards and accessibility best practices.
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 # Accessibility
@@ -1247,9 +1159,7 @@ Accessibility testing was carried out during development using browser developer
 
 By implementing these accessibility features, StudySmart Planner provides a more inclusive user experience, making the application easier to navigate and use for a wider range of users while following recognised front-end development and accessibility best practices.
 
-# You can paste the following directly into your **README.md**.
-
----
+--
 
 # Features
 
@@ -1274,11 +1184,6 @@ The application's main features include:
 * **Accessibility Features** – Includes semantic HTML, keyboard-accessible navigation, descriptive labels, visible focus states, responsive layouts and appropriate colour contrast to improve usability for all users.
 
 Together, these features provide students with a simple, organised and interactive platform for managing their studies. By combining planning, scheduling, task management and productivity tools into a single responsive web application, StudySmart Planner helps users stay organised, improve time management and develop more effective study habits while demonstrating modern front-end web development techniques.
-
----
-
-# You can paste the following directly into your **README.md**.
-
 ---
 
 ## Home / Landing Page
@@ -1299,9 +1204,6 @@ The Home Page was developed using **HTML5**, **CSS3** and **Vanilla JavaScript**
 
 The primary purpose of the Home Page is to introduce StudySmart Planner, explain the benefits it offers to students and provide a clear pathway for users to register, log in and begin organising their studies through the application's interactive features.
 
-
-### Here's a more detailed and professional version that you can paste directly into your **README.md**.
-
 ---
 
 ## Home / Landing Page
@@ -1321,11 +1223,6 @@ The **Home (Landing) Page** is the first page users see when they visit **StudyS
 ### Purpose
 
 The purpose of the Home Page is to introduce visitors to **StudySmart Planner** and clearly communicate the benefits of the application before users create an account or sign in. It provides an overview of the application's main features, encourages user engagement through clear call-to-action buttons and guides visitors to important sections such as the About and FAQ pages. By combining informative content with intuitive navigation and responsive design, the Home Page creates a welcoming first impression and encourages students to begin organising their studies using the application.
-
-
----
-
-# Here's a more professional, detailed version suitable for your **README.md**.
 
 ---
 
@@ -1381,11 +1278,6 @@ When selected, a dialog window opens where users can enter their registered emai
 ### Purpose
 
 The Login and Registration page allows users to create and access a personalised study planner while ensuring that account information is validated before being stored. By combining client-side validation with Local Storage, the application provides a simple and responsive authentication experience that demonstrates JavaScript form validation, DOM manipulation and browser-based data storage without requiring a backend database.
-
----
-
-# This version is much more detailed and professional and is suitable for a **Level 5 Gateway Qualifications README**. You can paste it directly into your README.
-
 ---
 
 # Dashboard
