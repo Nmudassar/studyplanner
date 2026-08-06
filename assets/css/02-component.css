@@ -50,7 +50,147 @@
   font-size: 16px;
   font-weight: 600;
 }
+/* ==================================================
+   Sidebar Overlay
+================================================== */
 
+.sidebar-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 998;
+}
+
+.sidebar-overlay.show {
+  display: block;
+}
+
+/* ==================================================
+   Menu Button
+================================================== */
+
+.menu-btn {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+  color: var(--primary-color);
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+/* ==================================================
+   Activities Button
+================================================== */
+
+.dropdown-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+  color: var(--primary-color);
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.dropdown-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dropdown-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* ==================================================
+   Activities Submenu
+================================================== */
+
+.submenu {
+  max-height: 0;
+
+  padding: 0;
+  margin: 0 0 0 20px;
+
+  overflow: hidden;
+
+  list-style: none;
+
+  transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+  max-height: 160px;
+}
+
+/* ==================================================
+   Responsive Sidebar
+================================================== */
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+
+    background: white;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 0;
+
+    padding-top: 85px;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
 /* =========================
    Dashboard Logo
 ========================= */

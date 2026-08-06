@@ -29,7 +29,12 @@
            Sidebar
       ====================================== -->
 
-      <aside class="sidebar">
+      <!-- Mobile Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Logo and Menu Button -->
         <div class="logo-details">
           <div class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
@@ -40,7 +45,9 @@
           <button
             type="button"
             class="menu-btn"
+            id="menuBtn"
             aria-label="Open navigation menu"
+            aria-expanded="false"
           >
             <i class="fa-solid fa-bars"></i>
           </button>
@@ -53,45 +60,51 @@
             <i class="fa-solid fa-magnifying-glass"></i>
 
             <input
-              type="text"
+              type="search"
+              id="sidebarSearch"
               placeholder="Search..."
-              aria-label="Search dashboard"
+              aria-label="Search dashboard navigation"
+              autocomplete="off"
             />
           </li>
 
           <!-- Dashboard -->
-          <li>
-            <a href="02-dashboard.html">
+          <li class="nav-item">
+            <a href="02-dashboard.html" class="active">
               <i class="fa-solid fa-house"></i>
-
               <span>Dashboard</span>
             </a>
           </li>
 
           <!-- Calendar -->
-          <li>
+          <li class="nav-item">
             <a href="07-calendar.html">
               <i class="fa-regular fa-calendar"></i>
-
               <span>Calendar</span>
             </a>
           </li>
 
           <!-- Activities Dropdown -->
           <li class="nav-dropdown">
-            <a href="#" onclick="toggleActivities(event)">
-              <i class="fa-solid fa-chart-line"></i>
-
-              <span>Activities</span>
+            <button
+              type="button"
+              class="dropdown-btn"
+              id="activitiesBtn"
+              aria-expanded="false"
+              aria-controls="activitiesMenu"
+            >
+              <span class="dropdown-left">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Activities</span>
+              </span>
 
               <i class="fa-solid fa-chevron-down arrow"></i>
-            </a>
+            </button>
 
             <ul class="submenu" id="activitiesMenu">
               <li>
                 <a href="03-subjects.html">
                   <i class="fa-solid fa-book"></i>
-
                   <span>Subjects</span>
                 </a>
               </li>
@@ -99,7 +112,6 @@
               <li>
                 <a href="05-tasks.html">
                   <i class="fa-solid fa-list-check"></i>
-
                   <span>Tasks</span>
                 </a>
               </li>
@@ -107,19 +119,17 @@
           </li>
 
           <!-- Focus Timer -->
-          <li>
+          <li class="nav-item">
             <a href="11-pomodoro-settings.html">
               <i class="fa-solid fa-hourglass-half"></i>
-
               <span>Focus Timer</span>
             </a>
           </li>
 
           <!-- FAQ -->
-          <li>
+          <li class="nav-item">
             <a href="10-faq.html">
               <i class="fa-solid fa-circle-question"></i>
-
               <span>FAQ</span>
             </a>
           </li>
