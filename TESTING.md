@@ -198,3 +198,21 @@ The application displayed the message "Please enter your email and password."
 
 ![T03 - Empty login fields](testing/screenshot/T03-login-empty-fields.png)
 
+### T06 – Dashboard Loads
+
+**Test:**  
+Open the Dashboard after successfully logging into the StudySmart application.
+
+**Expected result:**  
+The Dashboard should load successfully and display the main navigation, welcome message, focus timer, weekly study calendar, study-session information and task information.
+
+**Actual result:**  
+The Dashboard loaded successfully in the local development environment. The main navigation, welcome message, focus timer, weekly study calendar, study-session information and task information were displayed correctly. No obvious visual layout problems were identified during the initial check.
+
+**Result:** PASS
+
+**Evidence:**
+
+![T06 - Dashboard top](testing/screenshot/T06-dashboard-top.png)
+
+![T06 - Dashboard bottom](testing/screenshot/T06-dashboard-bottom.png)

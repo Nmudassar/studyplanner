@@ -7,12 +7,19 @@
 
     <title>FAQ | StudySmart</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
+    <!-- Shared Component CSS -->
+    <link rel="stylesheet" href="assets/css/02-component.css" />
+
+    <!-- FAQ Page CSS -->
     <link rel="stylesheet" href="assets/css/09-faq.css" />
 
+    <!-- Responsive CSS must load last -->
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
+    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -20,74 +27,182 @@
   </head>
 
   <body>
-    <div class="layout">
-      <!-- ==========================================
-           Sidebar
-      =========================================== -->
+    <!-- ==================================================
+         Mobile Hamburger Button
+    =================================================== -->
 
-      <aside class="sidebar">
+    <button
+      type="button"
+      class="mobile-menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-controls="sidebar"
+      aria-expanded="false"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- ==================================================
+         Mobile Sidebar Overlay
+    =================================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ==================================================
+         Main Layout
+    =================================================== -->
+
+    <div class="layout">
+      <!-- ==================================================
+           Sidebar
+      =================================================== -->
+
+      <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Logo -->
+
         <div class="logo-details">
-          <div class="logo">
+          <a href="02-dashboard.html" class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
 
             <div class="logo-name">Study<span>Smart</span></div>
-          </div>
+          </a>
+
+          <!-- Mobile Close Button -->
+
+          <button
+            type="button"
+            class="sidebar-close-btn"
+            id="sidebarCloseBtn"
+            aria-label="Close navigation menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <nav>
+        <!-- ==================================================
+             Sidebar Navigation
+        =================================================== -->
+
+        <nav aria-label="Dashboard navigation">
           <ul class="nav-list">
-            <li>
+            <!-- Sidebar Search -->
+
+            <li class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="search"
+                id="sidebarSearch"
+                placeholder="Search..."
+                aria-label="Search dashboard navigation"
+                autocomplete="off"
+              />
+            </li>
+
+            <!-- Dashboard -->
+
+            <li class="nav-item">
               <a href="02-dashboard.html">
                 <i class="fa-solid fa-house"></i>
+
                 <span>Dashboard</span>
               </a>
             </li>
 
-            <li>
-              <a href="03-subjects.html">
-                <i class="fa-solid fa-book"></i>
-                <span>Subjects</span>
-              </a>
-            </li>
+            <!-- Calendar -->
 
-            <li>
-              <a href="05-tasks.html">
-                <i class="fa-solid fa-list-check"></i>
-                <span>Tasks</span>
-              </a>
-            </li>
-
-            <li>
+            <li class="nav-item">
               <a href="07-calendar.html">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i class="fa-regular fa-calendar"></i>
+
                 <span>Calendar</span>
               </a>
             </li>
 
-            <li>
+            <!-- Activities Dropdown -->
+
+            <li class="nav-dropdown">
+              <button
+                type="button"
+                class="dropdown-btn"
+                id="activitiesBtn"
+                aria-expanded="false"
+                aria-controls="activitiesMenu"
+              >
+                <span class="dropdown-left">
+                  <i class="fa-solid fa-chart-line"></i>
+
+                  <span>Activities</span>
+                </span>
+
+                <i class="fa-solid fa-chevron-down arrow"></i>
+              </button>
+
+              <ul class="submenu" id="activitiesMenu">
+                <!-- Subjects -->
+
+                <li>
+                  <a href="03-subjects.html">
+                    <i class="fa-solid fa-book"></i>
+
+                    <span>Subjects</span>
+                  </a>
+                </li>
+
+                <!-- Tasks -->
+
+                <li>
+                  <a href="05-tasks.html">
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <span>Tasks</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Focus Timer -->
+
+            <li class="nav-item">
               <a href="11-pomodoro-settings.html">
-                <i class="fa-solid fa-clock"></i>
+                <i class="fa-solid fa-hourglass-half"></i>
+
                 <span>Focus Timer</span>
               </a>
             </li>
 
-            <li>
-              <a href="08-faq.html" class="active">
+            <!-- FAQ -->
+
+            <li class="nav-item">
+              <a href="10-faq.html" class="active" aria-current="page">
                 <i class="fa-solid fa-circle-question"></i>
+
                 <span>FAQ</span>
+              </a>
+            </li>
+
+            <!-- About Us -->
+
+            <li class="nav-item">
+              <a href="08-about.html">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About Us</span>
               </a>
             </li>
           </ul>
         </nav>
       </aside>
 
-      <!-- ==========================================
+      <!-- ==================================================
            Main Content
-      =========================================== -->
+      =================================================== -->
 
       <main class="main-content">
         <section class="faq-page">
-          <!-- Page heading -->
+          <!-- ==================================================
+               Page Heading
+          =================================================== -->
 
           <header class="faq-header">
             <div>
@@ -106,7 +221,9 @@
             </div>
           </header>
 
-          <!-- Search -->
+          <!-- ==================================================
+               FAQ Search
+          =================================================== -->
 
           <section class="faq-search-section">
             <label for="faqSearch"> Search for help </label>
@@ -123,14 +240,18 @@
             </div>
           </section>
 
-          <!-- FAQ accordion -->
+          <!-- ==================================================
+               FAQ Accordion
+          =================================================== -->
 
           <section
             class="faq-list"
             id="faqList"
             aria-label="Frequently asked questions"
           >
-            <!-- Question 1 -->
+            <!-- ==================================================
+                 Question 1
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -148,7 +269,9 @@
               </div>
             </article>
 
-            <!-- Question 2 -->
+            <!-- ==================================================
+                 Question 2
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -165,7 +288,9 @@
               </div>
             </article>
 
-            <!-- Question 3 -->
+            <!-- ==================================================
+                 Question 3
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -183,7 +308,9 @@
               </div>
             </article>
 
-            <!-- Question 4 -->
+            <!-- ==================================================
+                 Question 4
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -201,7 +328,9 @@
               </div>
             </article>
 
-            <!-- Question 5 -->
+            <!-- ==================================================
+                 Question 5
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -222,7 +351,9 @@
               </div>
             </article>
 
-            <!-- Question 6 -->
+            <!-- ==================================================
+                 Question 6
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -239,7 +370,9 @@
               </div>
             </article>
 
-            <!-- Question 7 -->
+            <!-- ==================================================
+                 Question 7
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -256,7 +389,9 @@
               </div>
             </article>
 
-            <!-- Question 8 -->
+            <!-- ==================================================
+                 Question 8
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -274,7 +409,9 @@
               </div>
             </article>
 
-            <!-- Question 9 -->
+            <!-- ==================================================
+                 Question 9
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -292,7 +429,9 @@
               </div>
             </article>
 
-            <!-- Question 10 -->
+            <!-- ==================================================
+                 Question 10
+            =================================================== -->
 
             <article class="faq-item">
               <button type="button" class="faq-question" aria-expanded="false">
@@ -311,7 +450,9 @@
             </article>
           </section>
 
-          <!-- No search results -->
+          <!-- ==================================================
+               No Search Results
+          =================================================== -->
 
           <div id="faqEmptyState" class="faq-empty-state" hidden>
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -321,7 +462,9 @@
             <p>Try searching with a different word.</p>
           </div>
 
-          <!-- Contact/help card -->
+          <!-- ==================================================
+               Contact / Help Card
+          =================================================== -->
 
           <section class="faq-help-card">
             <div class="faq-help-icon">
@@ -345,6 +488,14 @@
       </main>
     </div>
 
+    <!-- ==================================================
+         JavaScript
+    =================================================== -->
+
+    <!-- Shared navigation / sidebar behaviour -->
+    <script src="assets/js/dashboard.js"></script>
+
+    <!-- FAQ functionality -->
     <script src="assets/js/faq.js"></script>
   </body>
 </html>
