@@ -8,7 +8,6 @@
 ========================== */
 
 body {
-
     min-height: 100vh;
 
     display: flex;
@@ -22,7 +21,6 @@ body {
     text-align: center;
 
     background: var(--main-gradient);
-
 }
 
 
@@ -31,7 +29,6 @@ body {
 ========================== */
 
 .wrapper {
-
     position: relative;
 
     width: 420px;
@@ -45,14 +42,14 @@ body {
     z-index: 1;
 
     isolation: isolate;
-
 }
+
+
 /* ==========================================
    Reset Password Dialog
 ========================================== */
 
 dialog {
-
     width: 400px;
 
     padding: 25px;
@@ -61,18 +58,16 @@ dialog {
 
     border-radius: 12px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
 
 dialog::backdrop {
-
-    background: rgba(0,0,0,0.5);
-
+    background: rgba(0, 0, 0, 0.5);
 }
 
-dialog input {
 
+dialog input {
     width: 100%;
 
     padding: 12px;
@@ -82,19 +77,17 @@ dialog input {
     border: 1px solid #ccc;
 
     border-radius: 8px;
-
 }
 
-.dialog-buttons {
 
+.dialog-buttons {
     display: flex;
 
     justify-content: space-between;
-
 }
 
-.dialog-buttons button {
 
+.dialog-buttons button {
     width: 48%;
 
     padding: 10px;
@@ -104,22 +97,7 @@ dialog input {
     border-radius: 20px;
 
     cursor: pointer;
-
 }
-/* ==========================
-   Animated Border Property
-========================== */
-
-@property --angle {
-
-    syntax: "<angle>";
-
-    initial-value: 0deg;
-
-    inherits: false;
-
-}
-
 
 
 /* ==========================
@@ -127,82 +105,60 @@ dialog input {
 ========================== */
 
 .wrapper::before {
-
     content: "";
 
     position: absolute;
 
     inset: -3px;
 
-
     background: conic-gradient(
-
-        from var(--angle),
-
-        #03045E,
-
+        #03045e,
         #00d8b4,
-
         #b113ac,
-
-        #00B4D8,
-
-        #03045E
-
+        #00b4d8,
+        #03045e
     );
-
 
     border-radius: 14px;
 
     z-index: -2;
 
-
     animation: spin 4s linear infinite;
-
 }
 
 
-
-/* Inner Background */
+/* ==========================
+   Inner Background
+========================== */
 
 .wrapper::after {
-
     content: "";
 
     position: absolute;
 
     inset: 3px;
 
-
     background: var(--secondary-color);
 
     border-radius: 10px;
 
     z-index: -1;
-
 }
 
 
-
-/* Border Animation */
+/* ==========================
+   Border Animation
+========================== */
 
 @keyframes spin {
-
     from {
-
-        --angle: 0deg;
-
+        transform: rotate(0deg);
     }
-
 
     to {
-
-        --angle: 360deg;
-
+        transform: rotate(360deg);
     }
-
 }
-
 
 
 /* ==========================
@@ -210,17 +166,12 @@ dialog input {
 ========================== */
 
 .wrapper h1,
-
 .wrapper form,
-
 .wrapper p {
-
     position: relative;
 
     z-index: 5;
-
 }
-
 
 
 /* ==========================
@@ -228,28 +179,22 @@ dialog input {
 ========================== */
 
 .wrapper h1 {
-
     font-size: 30px;
 
     margin-bottom: 20px;
 
-    color: #03045E;
-
+    color: #03045e;
 }
 
 
-
 .wrapper h1::after {
-
     content: "";
 
     width: 100px;
 
     height: 4px;
 
-
-    background: #03045E;
-
+    background: #03045e;
 
     position: absolute;
 
@@ -257,14 +202,10 @@ dialog input {
 
     bottom: -12px;
 
-
     transform: translateX(-50%);
 
-
     border-radius: 15px;
-
 }
-
 
 
 /* ==========================
@@ -272,78 +213,61 @@ dialog input {
 ========================== */
 
 form {
-
     width: min(400px, 100%);
 
     margin: 25px auto 40px;
-
 
     display: flex;
 
     flex-direction: column;
 
-
     gap: 18px;
-
 }
 
 
-
-/* Input Container */
+/* ==========================
+   Input Container
+========================== */
 
 form > div:not(.btn-field) {
-
     display: flex;
 
     align-items: center;
-
 
     width: 100%;
 
     height: 55px;
 
+    background: rgba(255, 255, 255, 0.2);
 
-    background: rgba(255,255,255,0.2);
-
-
-    border: 2px solid rgba(29,17,95,0.2);
-
+    border: 2px solid rgba(29, 17, 95, 0.2);
 
     border-radius: 12px;
 
-
     overflow: hidden;
 
-
     transition: 0.3s ease;
-
 }
 
 
-
-/* Hover */
+/* ==========================
+   Hover
+========================== */
 
 form > div:hover {
-
     border-color: #d83a00;
-
 }
 
 
-
-/* Focus */
+/* ==========================
+   Focus
+========================== */
 
 form > div:focus-within {
+    border-color: #90e0ef;
 
-    border-color: #90E0EF;
-
-
-    box-shadow:
-
-    0 0 12px rgba(165,223,235,0.4);
-
+    box-shadow: 0 0 12px rgba(165, 223, 235, 0.4);
 }
-
 
 
 /* ==========================
@@ -351,11 +275,9 @@ form > div:focus-within {
 ========================== */
 
 form i {
-
     width: 55px;
 
     height: 100%;
-
 
     display: flex;
 
@@ -363,17 +285,12 @@ form i {
 
     align-items: center;
 
-
-    background: #03045E;
-
+    background: #03045e;
 
     color: white;
 
-
     font-size: 18px;
-
 }
-
 
 
 /* ==========================
@@ -381,41 +298,31 @@ form i {
 ========================== */
 
 form input {
-
     flex: 1;
 
-
     height: 100%;
-
 
     border: none;
 
     outline: none;
 
-
     background: white;
 
-
-    color: #03045E;
-
+    color: #03045e;
 
     font-size: 16px;
 
-
     padding: 0 18px;
-
 }
 
 
-
-/* Placeholder */
+/* ==========================
+   Placeholder
+========================== */
 
 form input::placeholder {
-
     color: #777;
-
 }
-
 
 
 /* ==========================
@@ -423,69 +330,49 @@ form input::placeholder {
 ========================== */
 
 .btn-field {
-
     width: 100%;
-
 
     display: flex;
 
-
     justify-content: space-between;
-
 }
-
 
 
 .btn-field button {
-
     flex-basis: 48%;
-
 
     height: 40px;
 
-
-    background: #03045E;
-
+    background: #03045e;
 
     color: white;
 
-
     border-radius: 20px;
-
 
     border: none;
 
-
     outline: none;
-
 
     cursor: pointer;
 
-
     transition: 0.3s ease;
-
 }
-
 
 
 .btn-field button:hover {
-
     transform: translateY(-2px);
-
 }
 
 
-
-/* Disabled Button */
+/* ==========================
+   Disabled Button
+========================== */
 
 .btn-field button.disable {
-
     background: #eaeaea;
 
     color: #555;
-
 }
-
 
 
 /* ==========================
@@ -493,24 +380,16 @@ form input::placeholder {
 ========================== */
 
 .wrapper p {
-
     text-align: left;
-
 
     color: #808080;
 
-
     font-size: 14px;
-
 }
 
 
-
 .wrapper p a {
-
     text-decoration: none;
 
-
     color: #3c00a0;
-
 }
