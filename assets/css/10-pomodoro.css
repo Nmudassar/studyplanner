@@ -1,85 +1,99 @@
-.setting-container{
+/* =========================================
+   Focus Timer / Pomodoro Settings
+========================================= */
+
+/* ===========================
+   Settings Container
+=========================== */
+
+.setting-container {
     width: 90%;
     max-width: 850px;
     margin: 60px auto;
     padding: 40px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,.15);
-
+    background-color: var(--white);
+    border-radius: var(--large-radius);
+    box-shadow: var(--shadow);
 }
+
 /* ===========================
    Heading
 =========================== */
 
-.settings-container h1{
+.setting-container h1 {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.settings-container p{
+.setting-container p {
     text-align: center;
-    color: #2e099e;
+    color: var(--muted-text-color);
     margin-bottom: 40px;
 }
+
 /* ===========================
    Settings Grid
 =========================== */
 
-.settings-grid{
+.settings-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
-.setting-card{
+/* ===========================
+   Setting Cards
+=========================== */
+
+.setting-card {
     display: flex;
     flex-direction: column;
 }
 
-.setting-card label{
+.setting-card label {
     margin-bottom: 8px;
     color: var(--primary-color);
     font-weight: 700;
 }
 
-.setting-card select{
+.setting-card select {
     height: 50px;
     padding: 0 15px;
-    border: 2px solid var(--light-yellow);
+    border: 2px solid var(--light-blue);
     border-radius: 10px;
-    background: #f8fdff;
+    background-color: #f8fdff;
+    color: var(--text-color);
     font-size: 16px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.setting-card select:focus{
+.setting-card select:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 10px rgba(0,180,216,.25);
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.25);
 }
+
 /* ===========================
    Sound Option
 =========================== */
 
-.sound-box{
+.sound-box {
     margin-top: 30px;
     padding: 20px;
-    background: #eef9fd;
+    background-color: var(--light-background);
     border-radius: 15px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sound-box label{
+.sound-box label {
     color: var(--primary-color);
     font-weight: 700;
 }
 
-.sound-box input{
+.sound-box input {
     width: 20px;
     height: 20px;
 }
@@ -88,7 +102,7 @@
    Buttons
 =========================== */
 
-.button-group{
+.button-group {
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -96,52 +110,104 @@
 }
 
 .save-btn,
-.cancel-btn{
+.cancel-btn {
     padding: 14px 40px;
     border-radius: 30px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: .3s;
-}
-
-.save-btn{
-    border: none;
-    background: var(--secondary-color);
-    color: white;
-}
-
-.save-btn:hover{
-    background: var(--primary-color);
-}
-
-.cancel-btn{
-    border: 2px solid var(--secondary-color);
-    background: white;
-    color: var(--secondary-color);
-}
-
-.cancel-btn:hover{
-    background: var(--secondary-color);
-    color: white;
+    transition: 0.3s;
 }
 
 /* ===========================
-   Responsive
+   Save Button
 =========================== */
 
-@media (max-width:768px){
+.save-btn {
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
 
-    .settings-grid{
-        grid-template-columns: 1fr;
+.save-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* ===========================
+   Cancel Button
+=========================== */
+
+.cancel-btn {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--white);
+    color: var(--secondary-color);
+}
+
+.cancel-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 768px) {
+
+    .setting-container {
+        width: calc(100% - 30px);
+        margin: 30px auto;
+        padding: 25px 20px;
     }
 
-    .button-group{
+    .settings-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .button-group {
         flex-direction: column;
+        gap: 12px;
     }
 
     .save-btn,
-    .cancel-btn{
+    .cancel-btn {
         width: 100%;
+    }
+}
+
+/* ===========================
+   Small Mobile Screens
+=========================== */
+
+@media (max-width: 480px) {
+
+    .setting-container {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+
+    .setting-container h1 {
+        font-size: 24px;
+    }
+
+    .setting-container p {
+        margin-bottom: 25px;
+    }
+
+    .setting-card select {
+        height: 46px;
+        font-size: 15px;
+    }
+
+    .sound-box {
+        padding: 15px;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        padding: 12px 25px;
+        font-size: 15px;
     }
 }

@@ -10,11 +10,11 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
 
-    <!-- Dashboard Page CSS -->
-    <link rel="stylesheet" href="assets/css/06-dashboard.css" />
-
     <!-- Shared Component CSS -->
     <link rel="stylesheet" href="assets/css/02-component.css" />
+
+    <!-- Dashboard Page CSS -->
+    <link rel="stylesheet" href="assets/css/06-dashboard.css" />
 
     <!-- Responsive CSS must load last -->
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
@@ -100,7 +100,7 @@
             <!-- Dashboard -->
 
             <li class="nav-item">
-              <a href="02-dashboard.html" class="active">
+              <a href="02-dashboard.html" class="active" aria-current="page">
                 <i class="fa-solid fa-house"></i>
 
                 <span>Dashboard</span>
@@ -133,10 +133,15 @@
                   <span>Activities</span>
                 </span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+                <i
+                  class="fa-solid fa-chevron-down arrow"
+                  aria-hidden="true"
+                ></i>
               </button>
 
               <ul class="submenu" id="activitiesMenu">
+                <!-- Subjects -->
+
                 <li>
                   <a href="03-subjects.html">
                     <i class="fa-solid fa-book"></i>
@@ -145,19 +150,13 @@
                   </a>
                 </li>
 
+                <!-- Tasks -->
+
                 <li>
                   <a href="05-tasks.html">
                     <i class="fa-solid fa-list-check"></i>
 
                     <span>Tasks</span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="06-analytics.html">
-                    <i class="fa-solid fa-chart-column"></i>
-
-                    <span>Analytics</span>
                   </a>
                 </li>
               </ul>
@@ -207,17 +206,14 @@
           <h1>Welcome to StudySmart</h1>
 
           <div class="header-buttons">
-            <!-- Sign In -->
-
-            <a href="01-login.html?mode=login" class="signin-btn">
-              <i class="fa-solid fa-right-to-bracket"></i>
-
-              <span>Sign In</span>
-            </a>
-
             <!-- Logout -->
 
-            <button type="button" class="logout-btn" id="logoutButton">
+            <button
+              type="button"
+              class="logout-btn"
+              id="logoutButton"
+              aria-label="Log out of StudySmart"
+            >
               <i class="fa-solid fa-right-from-bracket"></i>
 
               <span>Logout</span>
@@ -248,7 +244,7 @@
                 <div class="timer-circle">
                   <h3>Focus</h3>
 
-                  <span id="timer">25:00</span>
+                  <span id="timer"> 25:00 </span>
                 </div>
 
                 <div class="timer-buttons">
@@ -305,7 +301,7 @@
               <a href="07-calendar.html" class="dashboard-calendar-link">
                 View full calendar
 
-                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </a>
             </header>
 
@@ -317,7 +313,7 @@
                 id="dashboardPreviousWeek"
                 aria-label="Show previous week"
               >
-                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
               </button>
 
               <strong id="dashboardCalendarMonth"> August 2026 </strong>
@@ -327,7 +323,7 @@
                 id="dashboardNextWeek"
                 aria-label="Show next week"
               >
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
             </div>
 
@@ -363,7 +359,7 @@
 
           <a href="03-subjects.html" class="stat-card stat-card-link">
             <h3>
-              <i class="fa-solid fa-book-open"></i>
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
 
               Scheduled Sessions
             </h3>
@@ -375,7 +371,7 @@
             <span class="stat-card-action">
               View subjects
 
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </a>
 
@@ -383,7 +379,7 @@
 
           <a href="07-calendar.html" class="stat-card stat-card-link">
             <h3>
-              <i class="fa-regular fa-calendar-check"></i>
+              <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
 
               Upcoming Sessions
             </h3>
@@ -395,7 +391,7 @@
             <span class="stat-card-action">
               View calendar
 
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </a>
 
@@ -403,7 +399,7 @@
 
           <a href="05-tasks.html" class="stat-card stat-card-link">
             <h3>
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
 
               Tasks Completed
             </h3>
@@ -415,7 +411,7 @@
             <span class="stat-card-action">
               View tasks
 
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </a>
         </section>
@@ -433,6 +429,12 @@
     <!-- ==================================================
          JavaScript Files
     =================================================== -->
+
+    <!-- Authentication Guard MUST load first -->
+
+    <script src="assets/js/auth-guard.js"></script>
+
+    <!-- Application JavaScript -->
 
     <script src="assets/js/storage.js"></script>
 

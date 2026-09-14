@@ -1,10 +1,6 @@
 # 📚 StudySmart Planner
 
-![StudySmart Banner](assets/images/readme/banner.png)
-
 ## Interactive Front-End Web Application
-
-
 StudySmart Planner is a responsive front-end web application designed to help students organise their studies, manage academic tasks and improve productivity through structured study planning. The application provides an easy-to-use interface that enables students to create personalised study schedules, track upcoming sessions, manage daily tasks and use a built-in Pomodoro timer to maintain focus while studying.
 
 The project was developed using HTML5, CSS3, and Vanilla JavaScript, following modern web development practices, responsive web design principles and accessibility guidelines. The application demonstrates interactive front-end functionality through dynamic user interfaces, JavaScript event handling and browser-based data storage.
@@ -49,7 +45,7 @@ https://github.com/Nmudassar/studyplanner
 
 ---
 
-#Project Overview
+# Project Overview
 
 StudySmart Planner is a responsive educational web application designed to help students organise their studies, manage academic tasks and improve productivity through effective study planning.
 
@@ -80,8 +76,6 @@ The project focuses on creating an attractive, responsive and accessible user in
 ---
 
 # Project Objectives
-
-Project Objectives
 
 The main objective of StudySmart Planner is to develop a responsive and interactive front-end web application that helps students organise their studies, manage academic tasks and improve productivity through effective study planning.
 
@@ -374,11 +368,17 @@ The application focuses on essential study planning tools rather than including 
 The following features were included in the project:
 
 User Authentication – Allows users to register and log in, creating a personalised study experience using browser Local Storage.
+
 Dashboard – Displays an overview of study progress, upcoming study sessions and quick access to the application's main features.
+
 Subject Management – Enables students to organise GCSE and A-Level subjects and choose topics for study.
+
 Study Plan Generator – Creates personalised study plans based on the selected subject, topic, preferred study day and study duration.
+
 Task Manager – Allows users to add, edit, complete and organise study-related tasks.
+
 Study Calendar – Displays automatically generated study sessions within an interactive weekly calendar.
+
 Pomodoro Focus Timer – Helps students improve concentration and productivity using customisable focus and break intervals.
 FAQ Page – Provides answers to common questions about using the application.
 About Page – Explains the purpose, objectives and features of StudySmart Planner.
@@ -387,6 +387,7 @@ Responsive Design – Ensures the application functions effectively on desktop, 
 Local Storage Integration – Stores user information, study plans, tasks and application settings directly in the browser without requiring a backend database.
 
 These features were selected to provide students with an organised and efficient study planning experience while demonstrating key front-end development skills, including responsive design, interactive JavaScript functionality, dynamic content generation and browser-based data storage.
+
 ## Essential Features
 
 - User Registration
@@ -1032,72 +1033,7 @@ Images include:
 Images have been selected to support educational content without distracting users.
 ---
 
-# Wireframes
 
-Wireframes were created during the planning stage of the project to define the structure, layout and user journey before any development work began. Creating wireframes helped identify the placement of navigation, content sections, buttons and interactive elements, ensuring that the application would provide a clear and intuitive user experience.
-
-The wireframes acted as a blueprint for the development of StudySmart Planner and were used to organise information logically while maintaining consistency across every page. Although some visual details changed during development, the overall structure and navigation remained closely aligned with the original designs.
-
-To support responsive web design, separate wireframes were created for three different screen sizes:
-
-* **Desktop** – Designed for large screens with a full sidebar navigation, multi-column layouts and maximum use of available screen space.
-* **Tablet** – Adjusted layouts to improve usability on medium-sized devices while maintaining clear navigation and readable content.
-* **Mobile** – Simplified layouts with responsive components, a hamburger navigation menu and vertically stacked content to provide an optimal experience on smaller screens.
-
-Wireframes were produced for the main pages of the application, including:
-
-* **Home Page**
-* **Login / Registration Page**
-* **Dashboard**
-* **Subjects Page**
-* **Task Management Page**
-* **Study Calendar**
-* **Focus Timer**
-* **FAQ Page**
-* **About Page**
-
-Creating wireframes before development helped reduce design issues during implementation, ensured a consistent layout across the application and made it easier to plan responsive behaviour for different screen sizes.
-
-> **Note:** The wireframes included in this repository represent the initial design concepts. Minor layout and styling changes were made during development to improve usability, responsiveness and the overall user experience.
-
----
-
-## Desktop Wireframes
-
-Desktop wireframes were created to design the layout of the application for larger screens before development began. These wireframes focused on providing a spacious, well-organised interface that maximises screen space while maintaining clear navigation and an intuitive user experience.
-
-The desktop designs include the following pages:
-
-* **Login Page** – Displays the login and registration forms with a clean layout and clear call-to-action buttons.
-* **Dashboard** – Provides an overview of study progress, statistics, upcoming study sessions and quick access to the application's main features.
-* **Subjects Page** – Displays interactive subject cards, allowing users to select subjects, choose study levels and generate personalised study plans.
-* **Tasks Page** – Presents study tasks using a card-based layout with search, filtering and task management controls.
-* **Calendar Page** – Displays automatically generated study sessions in a structured weekly calendar with navigation controls.
-* **Focus Timer Page** – Provides an uncluttered interface for the Pomodoro timer, including timer controls and custom settings.
-* **FAQ Page** – Uses an accordion layout to organise frequently asked questions while keeping the page clean and easy to navigate.
-* **About Page** – Presents information about the application, including its purpose, mission, vision, target audience and key features.
-
-The desktop wireframes established the overall layout, navigation structure and placement of interactive elements that were later implemented during development. They also served as the foundation for creating responsive tablet and mobile versions of the application while maintaining a consistent user experience across all devices.
-
-
-*(Insert Desktop Wireframe Images Here)*
-
----
-
-## Tablet
-
-The layout adapts by reducing spacing while maintaining the sidebar and navigation.
-
-*(Insert Tablet Wireframe Images Here)*
-
----
-
-## Mobile
-
-The mobile version replaces the sidebar with a responsive hamburger menu while ensuring that all functionality remains available.
-
-*(Insert Mobile Wireframe Images Here)*
----
 
 # Responsive Design
 
@@ -1200,10 +1136,6 @@ The Home Page was developed using **HTML5**, **CSS3** and **Vanilla JavaScript**
 The primary purpose of the Home Page is to introduce StudySmart Planner, explain the benefits it offers to students and provide a clear pathway for users to register, log in and begin organising their studies through the application's interactive features.
 
 ---
-
-## Home / Landing Page
-
-The **Home (Landing) Page** is the first page users see when they visit **StudySmart Planner**. It introduces the application, explains its purpose and highlights the benefits of using a single platform to manage study activities. The page has been designed to create a positive first impression through a clean, modern and responsive interface while providing clear navigation to the rest of the application.
 
 ### Features
 
@@ -1685,7 +1617,103 @@ The project has been written using beginner-friendly JavaScript while following 
 ---
 
 # Frameworks, Libraries and Resources
+## UX Design and Wireframes
 
+StudySmart Planner was designed with the needs of students in mind.
+The interface was planned to make it easy for students to organise
+subjects, manage study tasks, view their study calendar and use
+focused study sessions.
+
+The main UX design goals were:
+
+- Keep navigation simple and consistent.
+- Make important features easy to find.
+- Use a clear visual hierarchy.
+- Use consistent buttons, cards and navigation components.
+- Make the application usable on desktop and mobile devices.
+- Provide clear feedback when users interact with forms and features.
+- Use semantic HTML and accessible labels where appropriate.
+
+### Navigation Design
+
+The member area uses a consistent navigation structure across the
+main application pages.
+
+The main navigation includes:
+
+- Dashboard
+- Subjects
+- Tasks
+- Calendar
+- FAQ
+- About Us
+- Focus Timer
+
+The navigation allows users to move between the main features without
+having to return to the homepage.
+
+### Responsive Design
+
+The application was designed to adapt to different screen sizes.
+
+Desktop layouts provide more space for navigation, cards and
+information, while smaller screen layouts reorganise content and
+navigation to maintain usability.
+
+Responsive behaviour was checked using Chrome DevTools device
+emulation during testing.
+
+### Wireframes
+
+Wireframes were created to document the planned structure and layout
+of the main StudySmart Planner screens.
+
+The wireframes show the planned placement of navigation, content
+areas, cards, controls and interactive features before considering
+the final visual styling.
+
+#### Login Wireframe
+
+The login wireframe shows the planned structure of the login form,
+including the email field, password field and login action.
+
+![Login wireframe](assets/images/wireframes/login-wireframe.png)
+
+#### Dashboard Wireframe
+
+The dashboard wireframe shows the planned structure for the main
+student overview, including navigation, focus timer, weekly calendar,
+study information and tasks.
+
+![Dashboard wireframe](assets/images/wireframes/dashboard-wireframe.png)
+
+#### Subjects Wireframe
+
+The Subjects wireframe shows the planned subject-card layout used
+to organise the student's subjects.
+
+![Subjects wireframe](assets/images/wireframes/subjects-wireframe.png)
+
+#### Tasks Wireframe
+
+The Tasks wireframe shows the planned task-management interface,
+including search, adding tasks, filters and task information.
+
+![Tasks wireframe](assets/images/wireframes/tasks-wireframe.png)
+
+#### Calendar Wireframe
+
+The Calendar wireframe shows the planned calendar area used to
+display and organise study sessions.
+
+![Calendar wireframe](assets/images/wireframes/calendar-wireframe.png)
+
+#### Focus Timer Wireframe
+
+The Focus Timer wireframe shows the planned timer interface,
+including the timer display, controls and timer settings.
+
+![Focus Timer wireframe](assets/images/wireframes/focus-timer-wireframe.png)
 The following external resources were used during development.
 
 ## Font Awesome
@@ -1749,17 +1777,19 @@ Extensions were used to improve productivity including:
 
 ---
 
-# Project Structure
+#  Project Structure
 
 The project has been organised into separate folders to improve readability and maintainability.
 
 Separating HTML, CSS, JavaScript and images makes the project easier to understand and update.
+
 
 ```
 
 StudySmart Planner
 
 ```
+
 assets
 │
 ├── css
@@ -1769,6 +1799,7 @@ assets
 ├── images
 │
 └── icons
+
 
 01-login.html
 
@@ -1793,7 +1824,8 @@ README.md
 
 ---
 
-# CSS File Structure
+
+#  CSS File Structure
 
 Each page has its own stylesheet where appropriate.
 
@@ -1839,6 +1871,7 @@ JavaScript has been divided into multiple files based on functionality.
 assets/js/
 
 ```
+
 login.js
 
 dashboard.js
@@ -1861,7 +1894,7 @@ Separating JavaScript into multiple files improves readability and makes future 
 
 ---
 
-# Image Structure
+#  Image Structure
 
 Images are stored separately inside the assets folder.
 
@@ -1892,11 +1925,13 @@ Testing screenshots
 
 ```
 
+
 Keeping images organised makes documentation easier and avoids broken file paths.
 
 ---
 
-# JavaScript Architecture
+
+#  JavaScript Architecture
 
 The project follows a modular approach where each JavaScript file is responsible for a specific area of functionality.
 
@@ -2293,12 +2328,6 @@ Future versions could include:
 
 ---
 
-## Google Calendar Integration
-
-Allow users to synchronise study sessions directly with Google Calendar.
-
----
-
 ## AI Study Assistant
 
 Future versions may include an AI assistant capable of:
@@ -2415,7 +2444,6 @@ Example:
 - Educational graphics — https://storyset.com/
 - Icons — Font Awesome
 
-If screenshots are your own work, no attribution is required.
 
 ---
 
