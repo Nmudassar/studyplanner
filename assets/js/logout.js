@@ -3,7 +3,7 @@ const logoutButton = document.getElementById("logoutButton");
 if (logoutButton) {
   logoutButton.addEventListener("click", function () {
     // Remove saved login information (if used)
-    localStorage.removeItem("studySmartUser");
+    localStorage.removeItem("loggedIn");
 
     // Or clear everything (optional)
     // localStorage.clear();
