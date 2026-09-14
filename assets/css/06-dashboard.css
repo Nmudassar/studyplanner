@@ -31,207 +31,6 @@ body {
 
 
 /* ==================================================
-   Sidebar
-================================================== */
-
-.sidebar {
-  width: 260px;
-  min-width: 260px;
-  min-height: 100vh;
-  flex-shrink: 0;
-
-  padding: 30px 20px;
-
-  background-color: #ffffff;
-
-  overflow-y: auto;
-}
-
-
-/* ==================================================
-   Sidebar Logo
-================================================== */
-
-.logo-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-
-  margin-bottom: 35px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo > i {
-  color: var(--secondary-color);
-  font-size: 24px;
-}
-
-.logo-name {
-  color: var(--primary-color);
-
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.logo-name span {
-  color: var(--secondary-color);
-}
-
-.menu-btn {
-  padding: 6px;
-
-  background: transparent;
-  color: var(--primary-color);
-
-  border: none;
-
-  font-size: 18px;
-  cursor: pointer;
-}
-
-
-/* ==================================================
-   Sidebar Navigation
-================================================== */
-
-.nav-list {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.nav-list > li {
-  margin-bottom: 14px;
-}
-
-.nav-list a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  width: 100%;
-  padding: 14px 16px;
-
-  color: var(--primary-color);
-
-  border-radius: 12px;
-
-  font-weight: 600;
-  text-decoration: none;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.nav-list a:hover {
-  background-color: var(--secondary-color);
-  color: #ffffff;
-
-  transform: translateX(3px);
-}
-
-.nav-list a i {
-  width: 20px;
-
-  text-align: center;
-}
-
-
-/* ==================================================
-   Sidebar Search
-================================================== */
-
-.search-box {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  margin-bottom: 25px;
-}
-
-.search-box > i {
-  position: absolute;
-  left: 14px;
-
-  color: #777777;
-
-  pointer-events: none;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 11px 12px 11px 40px;
-
-  background-color: #f7f9fc;
-
-  border: 1px solid #d6dde5;
-  border-radius: 9px;
-
-  font-family: inherit;
-  font-size: 14px;
-}
-
-.search-box input:focus {
-  border-color: var(--secondary-color);
-  outline: none;
-
-  box-shadow: 0 0 0 3px rgba(18, 183, 213, 0.15);
-}
-
-
-/* ==================================================
-   Navigation Dropdown
-================================================== */
-
-.nav-dropdown > a {
-  position: relative;
-}
-
-.arrow {
-  margin-left: auto;
-
-  transition: transform 0.3s ease;
-}
-
-.nav-dropdown.open .arrow {
-  transform: rotate(180deg);
-}
-
-.nav-dropdown .submenu {
-  display: none;
-
-  margin-top: 8px;
-  padding-left: 20px;
-
-  list-style: none;
-}
-
-.nav-dropdown .submenu.show {
-  display: block;
-}
-
-.submenu li {
-  margin-bottom: 6px;
-}
-
-.submenu li a {
-  padding: 10px 14px;
-
-  font-size: 14px;
-}
-
-
-/* ==================================================
    Main Content
 ================================================== */
 
@@ -239,7 +38,6 @@ body {
   flex: 1;
   min-width: 0;
   min-height: 100vh;
-
   padding: 32px 40px;
 }
 
@@ -406,10 +204,6 @@ body {
    Focus Timer Card
 ================================================== */
 
-/* ==================================================
-   White Focus Timer Card
-================================================== */
-
 .focus-card {
   width: 100%;
   min-width: 0;
@@ -430,15 +224,11 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Text inside the white card */
-
 .focus-card h2,
 .focus-card h3,
 .focus-card p {
   color: var(--primary-color);
 }
-
-/* Timer number */
 
 .focus-card #timer,
 .focus-card .timer-circle span {
@@ -1037,7 +827,7 @@ footer {
 
 
 /* ==================================================
-   Responsive: Smaller Laptops
+   Dashboard Responsive
 ================================================== */
 
 @media screen and (max-width: 1100px) {
@@ -1059,19 +849,9 @@ footer {
 }
 
 
-/* ==================================================
-   Responsive: Tablets
-================================================== */
-
 @media screen and (max-width: 800px) {
   .dashboard-layout {
     flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    min-width: 100%;
-    min-height: auto;
   }
 
   .main-content {
@@ -1090,9 +870,7 @@ footer {
 
   .header-buttons {
     width: 100%;
-
     margin-left: 0;
-
     justify-content: flex-start;
   }
 
@@ -1113,10 +891,6 @@ footer {
   }
 }
 
-
-/* ==================================================
-   Responsive: Mobile
-================================================== */
 
 @media screen and (max-width: 600px) {
   .main-content {
@@ -1146,7 +920,6 @@ footer {
 
   .focus-card {
     flex-direction: column;
-
     padding: 25px 18px;
   }
 
@@ -1166,7 +939,6 @@ footer {
   .timer-buttons button {
     width: 52px;
     height: 52px;
-
     font-size: 19px;
   }
 
