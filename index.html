@@ -2,20 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>StudySmart | Student Study Planner</title>
 
-    <!-- CSS Files -->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="assets/css/01-global.css" />
+
+    <!-- Shared Components -->
     <link rel="stylesheet" href="assets/css/02-component.css" />
+
+    <!-- Home Page CSS -->
     <link rel="stylesheet" href="assets/css/04-home.css" />
 
-    <!-- Responsive CSS must load last -->
+    <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/03-responsive.css" />
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/62d2ea7a17.js"
       crossorigin="anonymous"
@@ -23,16 +26,15 @@
   </head>
 
   <body>
-    <!-- ==========================================
-         Header
-    =========================================== -->
+    <!-- ==================================================
+         PUBLIC HEADER
+    =================================================== -->
 
     <header class="site-header">
       <!-- Logo -->
-
       <div class="site-header-logo">
         <a href="index.html" class="logo">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
 
           <span class="logo-text"> Study<span>Smart</span> </span>
         </a>
@@ -40,33 +42,30 @@
         <p class="subtitle">Plan Smart. Study Better.</p>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-
+      <!-- Mobile Menu Button -->
       <button
         type="button"
         class="home-menu-btn"
         id="homeMenuBtn"
-        aria-label="Open navigation menu"
+        aria-label="Open main navigation"
         aria-controls="homeNavbar"
         aria-expanded="false"
       >
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
 
       <!-- Navigation -->
-
       <nav class="navbar" id="homeNavbar" aria-label="Main navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active" aria-current="page"> Home </a>
 
-        <a href="08-about.html">About Us</a>
+        <a href="08-about.html"> About Us </a>
 
-        <a href="#features">Features</a>
+        <a href="#features"> Features </a>
 
-        <a href="10-faq.html">FAQ</a>
+        <a href="10-faq.html"> FAQ </a>
       </nav>
 
-      <!-- Login and Sign Up Buttons -->
-
+      <!-- Header Buttons -->
       <div class="header-buttons">
         <a href="01-login.html?mode=login" class="login-btn"> Login </a>
 
@@ -74,206 +73,253 @@
       </div>
     </header>
 
-    <!-- ==========================================
-         Main Content
-    =========================================== -->
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
 
     <main>
-      <!-- ==========================================
-           Hero Section
-      =========================================== -->
+      <!-- ==================================================
+           HERO SECTION
+      =================================================== -->
 
-      <section class="hero">
+      <section class="home-hero" aria-labelledby="home-hero-heading">
         <!-- Hero Text -->
+        <div class="home-hero-content">
+          <!-- Trust Badge -->
+          <div class="trust-badge">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
 
-        <div class="hero-content">
-          <span class="hero-badge"> ⭐ Trusted by 10,000+ Students </span>
+            <span> Trusted by 10,000+ Students </span>
+          </div>
 
-          <h1>The Ultimate Student Productivity Tool</h1>
+          <!-- Main Heading -->
+          <h1 id="home-hero-heading">
+            The Ultimate Student
+            <span>Productivity Tool</span>
+          </h1>
 
-          <p>
-            Many students struggle with procrastination, missed deadlines and
-            academic stress. StudySmart is designed to help students organise
-            their work, improve focus and manage the real demands of student
-            life. It provides a smarter way to plan, study and succeed.
+          <!-- Description -->
+          <p class="home-hero-description">
+            Plan, organise and achieve your academic goals with StudySmart.
+            Manage your study schedule, track assignments, stay focused and
+            build better study habits — all in one place.
           </p>
 
-          <div class="hero-btn">
-            <a href="01-login.html?mode=signup" class="signup-btn">
+          <!-- Hero Buttons -->
+          <div class="home-hero-buttons">
+            <a href="01-login.html?mode=signup" class="primary-button">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
               Get Started for Free
+            </a>
+
+            <a href="#features" class="secondary-button">
+              <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+
+              Watch Video
             </a>
           </div>
         </div>
 
         <!-- Hero Image -->
-
-        <div class="hero-image">
+        <div class="home-hero-image">
           <img
             src="assets/images/hero-dashboard.png"
-            alt="StudySmart planner displayed on a laptop and mobile phone"
+            alt="StudySmart dashboard displayed on a laptop and mobile phone"
           />
         </div>
       </section>
 
-      <!-- ==========================================
-           Features Section
-      =========================================== -->
+      <!-- ==================================================
+           FEATURES
+      =================================================== -->
 
       <section
-        class="feature-strip"
+        class="features-section"
         id="features"
-        aria-label="StudySmart features"
+        aria-labelledby="features-heading"
       >
-        <article class="feature-item">
-          <i class="fa-solid fa-clipboard-list"></i>
+        <div class="features-grid">
+          <!-- Study Calendar -->
+          <article class="feature-card">
+            <div class="feature-icon calendar-icon">
+              <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+            </div>
+
+            <div class="feature-content">
+              <h2>Study Calendar</h2>
+
+              <p>Organise your study schedule with a clear calendar view.</p>
+            </div>
+          </article>
+
+          <!-- Task Manager -->
+          <article class="feature-card">
+            <div class="feature-icon task-icon">
+              <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            </div>
+
+            <div class="feature-content">
+              <h2>Task Manager</h2>
+
+              <p>Keep track of assignments and completed work.</p>
+            </div>
+          </article>
+
+          <!-- Subject Planner -->
+          <article class="feature-card">
+            <div class="feature-icon subject-icon">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            </div>
+
+            <div class="feature-content">
+              <h2>Subject Planner</h2>
+
+              <p>Create personalised study plans for each subject.</p>
+            </div>
+          </article>
+
+          <!-- Focus Timer -->
+          <article class="feature-card">
+            <div class="feature-icon timer-icon">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            </div>
+
+            <div class="feature-content">
+              <h2>Focus Timer</h2>
+
+              <p>Stay productive using the Pomodoro technique.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           STATISTICS
+      =================================================== -->
+
+      <section class="stats-section" aria-label="StudySmart statistics">
+        <!-- Students -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          </div>
 
           <div>
-            <h2>Plan Smart</h2>
-
-            <p>Organise your tasks, classes and deadlines in one place.</p>
+            <strong>10,000+</strong>
+            <span>Students</span>
           </div>
-        </article>
+        </div>
 
-        <article class="feature-item">
-          <i class="fa-solid fa-bullseye"></i>
+        <!-- Recommendation -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+          </div>
 
           <div>
-            <h2>Stay Focused</h2>
-
-            <p>Built-in focus tools help you reduce distractions.</p>
+            <strong>95%</strong>
+            <span>Would recommend</span>
           </div>
-        </article>
+        </div>
 
-        <article class="feature-item">
-          <i class="fa-solid fa-chart-line"></i>
+        <!-- Productivity -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+          </div>
 
           <div>
-            <h2>Track Progress</h2>
-
-            <p>Visualise your progress and work towards your goals.</p>
+            <strong>25%</strong>
+            <span>Improve productivity</span>
           </div>
-        </article>
+        </div>
 
-        <article class="feature-item">
-          <i class="fa-solid fa-bell"></i>
+        <!-- Community -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+          </div>
 
           <div>
-            <h2>Never Miss</h2>
-
-            <p>Smart reminders help you stay on track and reduce stress.</p>
+            <strong>Growing</strong>
+            <span>Student community</span>
           </div>
-        </article>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           CALL TO ACTION
+      =================================================== -->
+
+      <section class="home-cta">
+        <div class="home-cta-content">
+          <h2>Start Your Study Journey Today</h2>
+
+          <p>Join thousands of students who are already studying smarter.</p>
+        </div>
+
+        <a href="01-login.html?mode=signup" class="cta-button">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+          Sign Up Now
+        </a>
       </section>
     </main>
 
-    <!-- ==========================================
-         Footer
-    =========================================== -->
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
 
-    <footer>
-      <div class="footer-content">
-        <!-- Contact Information -->
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
 
-        <div class="footer-section">
-          <h2>Contact Us</h2>
+          <span> Study<span>Smart</span> </span>
+        </a>
 
-          <p>
-            Email:
-            <a href="mailto:info@studysmart.com"> info@studysmart.com </a>
-          </p>
-
-          <p>
-            Phone:
-            <a href="tel:+447721750024"> +44 7721 750024 </a>
-          </p>
-
-          <p>London, United Kingdom</p>
-        </div>
-
-        <!-- Quick Links -->
-
-        <div class="footer-section">
-          <h2>Quick Links</h2>
-
-          <ul class="list">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-
-            <li>
-              <a href="08-about.html">About Us</a>
-            </li>
-
-            <li>
-              <a href="#features">Features</a>
-            </li>
-
-            <li>
-              <a href="10-faq.html">FAQ</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Social Media -->
-
-        <div class="footer-section">
-          <h2>Follow Us</h2>
-
-          <ul class="social-icons">
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit StudySmart on Facebook"
-              >
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit StudySmart on Twitter"
-              >
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit StudySmart on LinkedIn"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit StudySmart on Instagram"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <p>Plan Smart. Study Better.</p>
       </div>
 
-      <p class="footer-bottom">&copy; 2026 StudySmart. All rights reserved.</p>
+      <!-- Footer Navigation -->
+      <nav class="footer-navigation" aria-label="Footer navigation">
+        <a href="index.html"> Home </a>
+
+        <span aria-hidden="true">|</span>
+
+        <a href="08-about.html"> About Us </a>
+
+        <span aria-hidden="true">|</span>
+
+        <a href="#features"> Features </a>
+
+        <span aria-hidden="true">|</span>
+
+        <a href="10-faq.html"> FAQ </a>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" aria-label="Twitter">
+          <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>© 2026 StudySmart Planner.</p>
+
+        <p>All Rights Reserved.</p>
+      </div>
     </footer>
-
-    <!-- ==========================================
-         JavaScript
-    =========================================== -->
-
-    <script src="assets/js/login.js"></script>
   </body>
 </html>

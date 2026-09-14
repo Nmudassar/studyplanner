@@ -1,14 +1,16 @@
+"use strict";
+
+/*
+ * StudySmart logout functionality.
+ * Clears the login state and returns the user to the homepage.
+ */
+
 const logoutButton = document.getElementById("logoutButton");
 
 if (logoutButton) {
   logoutButton.addEventListener("click", function () {
-    // Remove saved login information (if used)
     localStorage.removeItem("loggedIn");
 
-    // Or clear everything (optional)
-    // localStorage.clear();
-
-    // Redirect to home page
     window.location.href = "index.html";
   });
 }

@@ -216,3 +216,82 @@ The Dashboard loaded successfully in the local development environment. The main
 ![T06 - Dashboard top](testing/screenshot/T06-dashboard-top.png)
 
 ![T06 - Dashboard bottom](testing/screenshot/T06-dashboard-bottom.png)
+
+
+## Authentication Testing
+
+Authentication testing was carried out to ensure that member-only pages
+could not be accessed by users who were not logged in, while authenticated
+users could access the application normally.
+
+The authentication process uses the `loggedIn` state stored in browser
+localStorage.
+
+### Authentication Test Results
+
+| Test ID | Feature | Test | Expected Result | Actual Result | Result |
+|---|---|---|---|---|---|
+| A01 | Authentication | Open FAQ directly while logged out | User is redirected to Login | User was redirected to Login | PASS |
+| A02 | Authentication | Open FAQ while logged in | FAQ page opens successfully | FAQ page opened successfully | PASS |
+| A03 | Logout | Logout and open FAQ directly | User is redirected to Login | User was redirected to Login | PASS |
+
+### A01 – Unauthenticated FAQ Access
+
+**Test:**  
+
+Remove the `loggedIn` state and enter the FAQ URL directly while logged out.
+
+**Expected result:**  
+
+The user should be redirected to the Login page.
+
+**Actual result:**  
+
+The user was redirected to the Login page instead of being allowed to access
+the FAQ page.
+
+**Result:** PASS
+
+**Evidence:**
+
+![A01 - Unauthenticated FAQ access](testing/screenshot/A01-unauthenticated-faq.png)
+
+### A02 – Authenticated FAQ Access
+
+**Test:**  
+
+Log in successfully and open the FAQ page.
+
+**Expected result:**  
+
+The FAQ page should load successfully.
+
+**Actual result:**  
+
+The FAQ page loaded successfully after login.
+
+**Result:** PASS
+
+**Evidence:**
+
+![A02 - Authenticated FAQ access](testing/screenshot/A02-authenticated-faq.png)
+
+### A03 – Access After Logout
+
+**Test:**  
+
+Log out and then attempt to open the FAQ page directly.
+
+**Expected result:**  
+
+The user should be redirected to the Login page.
+
+**Actual result:**  
+
+The user was redirected to the Login page.
+
+**Result:** PASS
+
+**Evidence:**
+
+![A03 - Logout protection](testing/screenshot/A03-logout-protection.png)
